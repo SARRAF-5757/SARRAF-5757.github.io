@@ -1,7 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarraf's Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <!--link href="./output.css" rel="stylesheet"-->
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <!------------------------general-------------------------------->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" alt="logo" width="300px">
+                <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="#">Socials</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Student at the <span1>University</span1> of <span2>Michigan</span2></p>
+                <h1>Hi, I'm your <br> friendly neighborhood <br> <span>Sarraf</span> Ahmed.</h1>
+            </div>
+        </div>
+    </div>
+
+    <!------------------------about me-------------------------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/me.1.png" alt="Photo of me" width="500px">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="tittle" >About Me</h1>
+                    <p class="paragraph">blah blah blah blah blah blah blah blah blah 
+                        blah blah blah blah blah blah blah blah blah blah blah blah 
+                        blah blah blah blah blah blah blah blah blah</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('Education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="Skills">
+                    <ul>
+                        <li><span>C++</span><br>blah blah blah</li>
+                        <li><span>Python</span><br>blah blah blah</li>
+                        <li><span>Java</span><br>blah blah blah</li>
+                    </ul>
+                </div>
+
+                <div class="tab-contents" id="Experience">
+                    <ul>
+                        <li><span>Arduino</span><br>blah blah blah</li>
+                        <li><span>Rocket</span><br>blah blah blah</li>
+                        <li><span>HGMP</span><br>blah blah blah</li>
+                    </ul>
+                </div>
+
+                <div class="tab-contents" id="Education">
+                    <ul>
+                        <li><span>University of Michigan</span><br>blah blah blah</li>
+                        <li><span>Hamtramck High School</span><br>blah blah blah</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!------------------------My Work-------------------------------->
+    <div id="myWork">
+        <div class="container">
+            <h1 class="tittle">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work-1.png" alt="Work 1">
+                    <div class="layer">
+                        <h3> Project 1</h3>
+                        <p>So what it does is blah blah blah blah blah blah blah blah blah 
+                        blah blah blah blah blah blah blah blah blah blah blah blah 
+                        blah blah blah blah blah blah blah blah blah</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-1.png" alt="Work 2">
+                    <div class="layer">
+                        <h3> Project 2</h3>
+                        <p>So what it does is blah blah blah blah blah blah blah blah blah 
+                        blah blah blah blah blah blah blah blah blah blah blah blah 
+                        blah blah blah blah blah blah blah blah blah</p>
+                        <a href="#"><i class="fa-solid fa-square-up-right"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-1.png" alt="Work 3">
+                    <div class="layer">
+                        <h3> Project 3</h3>
+                        <p>So what it does is blah blah blah blah blah blah blah blah blah 
+                        blah blah blah blah blah blah blah blah blah blah blah blah 
+                        blah blah blah blah blah blah blah blah blah</p>
+                        <a href="#"><i class="fa-solid fa-square-up-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+
+    <!------------------------Find Me In Other Places-------------------------------->
+    
+
+
+
+
+
+        <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script> 
+
 </body>
 </html>
