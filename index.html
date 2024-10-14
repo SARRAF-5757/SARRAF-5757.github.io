@@ -14,10 +14,10 @@
             <nav>
                 <img src="images/logo.png" alt="logo" width="300px">
                 <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Socials</a></li>
+                <li><a href="#index.html#header">Home</a></li>
+                <li><a href="index.html#about">Skills</a></li>
+                <li><a href="index.html#myWork">Work</a></li>
+                <li><a href="index.html#links">Socials</a></li>
                 </ul>
             </nav>
             <div class="header-text">
@@ -36,9 +36,9 @@
                 </div>
                 <div class="about-col-2">
                     <h1 class="tittle" >About Me</h1>
-                    <p class="paragraph">blah blah blah blah blah blah blah blah blah 
-                        blah blah blah blah blah blah blah blah blah blah blah blah 
-                        blah blah blah blah blah blah blah blah blah</p>
+                    <p class="paragraph">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem 
+                        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
+                        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem</p>
 
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
@@ -47,24 +47,24 @@
                 </div>
                 <div class="tab-contents active-tab" id="Skills">
                     <ul>
-                        <li><span>C++</span><br>blah blah blah</li>
-                        <li><span>Python</span><br>blah blah blah</li>
-                        <li><span>Java</span><br>blah blah blah</li>
+                        <li><span>C++</span><br>Lorem Ipsum Lorem</li>
+                        <li><span>Python</span><br>Lorem Ipsum Lorem</li>
+                        <li><span>Java</span><br>Lorem Ipsum Lorem</li>
                     </ul>
                 </div>
 
                 <div class="tab-contents" id="Experience">
                     <ul>
-                        <li><span>Arduino</span><br>blah blah blah</li>
-                        <li><span>Rocket</span><br>blah blah blah</li>
-                        <li><span>HGMP</span><br>blah blah blah</li>
+                        <li><span>Arduino</span><br>Lorem Ipsum Lorem</li>
+                        <li><span>Rocket</span><br>Lorem Ipsum Lorem</li>
+                        <li><span>HGMP</span><br>Lorem Ipsum Lorem</li>
                     </ul>
                 </div>
 
                 <div class="tab-contents" id="Education">
                     <ul>
-                        <li><span>University of Michigan</span><br>blah blah blah</li>
-                        <li><span>Hamtramck High School</span><br>blah blah blah</li>
+                        <li><span>University of Michigan</span><br>Lorem Ipsum Lorem</li>
+                        <li><span>Hamtramck High School</span><br>Lorem Ipsum Lorem</li>
                     </ul>
                 </div>
             </div>
@@ -80,9 +80,9 @@
                     <img src="images/work-1.png" alt="Work 1">
                     <div class="layer">
                         <h3> Project 1</h3>
-                        <p>So what it does is blah blah blah blah blah blah blah blah blah 
-                        blah blah blah blah blah blah blah blah blah blah blah blah 
-                        blah blah blah blah blah blah blah blah blah</p>
+                        <p>So what it does is Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem 
+                        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
+                        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem</p>
                         <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
@@ -90,9 +90,9 @@
                     <img src="images/work-1.png" alt="Work 2">
                     <div class="layer">
                         <h3> Project 2</h3>
-                        <p>So what it does is blah blah blah blah blah blah blah blah blah 
-                        blah blah blah blah blah blah blah blah blah blah blah blah 
-                        blah blah blah blah blah blah blah blah blah</p>
+                        <p>So what it does is Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem 
+                        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
+                        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem</p>
                         <a href="#"><i class="fa-solid fa-square-up-right"></i></a>
                     </div>
                 </div>
@@ -100,38 +100,27 @@
                     <img src="images/work-1.png" alt="Work 3">
                     <div class="layer">
                         <h3> Project 3</h3>
-                        <p>So what it does is blah blah blah blah blah blah blah blah blah 
-                        blah blah blah blah blah blah blah blah blah blah blah blah 
-                        blah blah blah blah blah blah blah blah blah</p>
+                        <p>So what it does is Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem 
+                        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
+                        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem</p>
                         <a href="#"><i class="fa-solid fa-square-up-right"></i></a>
                     </div>
                 </div>
             </div>
-            <a href="#" class="btn">See more</a>
+            <a href="index.html#header" class="btn">See more</a>
         </div>
     </div>
 
     <!------------------------Find Me In Other Places-------------------------------->
     
-
-
-
-
-
-        <script>
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
-        function opentab(tabname){
-            for(tablink of tablinks){
-                tablink.classList.remove("active-link");
-            }
-            for(tabcontent of tabcontents){
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-        }
-    </script> 
+    <footer id="links">
+        <div class="socials">
+            <a href="https://www.linkedin.com/in/sarraf-ahmed/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/SARRAF-5757" target="_blank">GitHub</a>
+            <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+            <a href="https://www.instagram.com/yourprofile" target="_blank">Instagram</a>
+        </div>
+    </footer>
 
 </body>
 </html>
