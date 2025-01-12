@@ -78,7 +78,7 @@ nav ul li a:hover::after {
 /**------------about me------------**/
 #about {
     padding: 80px 0;
-    background-color: #14101A !important;
+    background-color: #ff0000 !important;
     z-index: 1;
     opacity: 1;
 }
