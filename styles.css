@@ -79,9 +79,6 @@ nav ul li a:hover::after {
 #about {
     padding: 80px 0;
     background-color: #493e59;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 .row {
     display: flex;
