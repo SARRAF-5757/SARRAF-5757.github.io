@@ -78,7 +78,9 @@ nav ul li a:hover::after {
 /**------------about me------------**/
 #about {
     padding: 80px 0;
-    background-color: #14101A;
+    background-color: #14101A !important;
+    z-index: 1;
+    opacity: 1;
 }
 .row {
     display: flex;
@@ -147,7 +149,9 @@ nav ul li a:hover::after {
 /**------------My Work------------**/
 #myWork {
     padding: 50px 0;
-    background-color: #14101A;
+    background-color: #14101A !important;
+    z-index: 1;
+    opacity: 1;
 }
 .work-list {
     display: grid;
