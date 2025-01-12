@@ -12,7 +12,7 @@
     font-family: 'Roboto', Acme;
 }
 body {
-    background: #151019;
+    background: #14101A;
     color: #ffffff;
 }
 #header {
@@ -78,7 +78,7 @@ nav ul li a:hover::after {
 /**------------about me------------**/
 #about {
     padding: 80px 0;
-    background-color: #ff0000 !important;
+    background-color: #14101A !important;
     z-index: 1;
     opacity: 1;
 }
