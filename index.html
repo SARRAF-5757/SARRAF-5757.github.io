@@ -8,7 +8,7 @@
     <!--link href="./output.css" rel="stylesheet"-->
 </head>
 <body>
-    <!------------------------general-------------------------------->
+    <!---------------------------------------general-------------------------------------->
     <div id="header">
         <div class="container">
             <nav>
@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    <!------------------------about me-------------------------------->
+    <!--------------------------------------about me-------------------------------------->
     <div id="about">
         <div class="container">
             <div class="row">
@@ -36,102 +36,151 @@
                 </div>
                 <div class="about-col-2">
                     <h1 class="tittle" >About Me</h1>
-                    <p class="paragraph">I'm a sophomore at the University of Michigan studying Computer Science in the College of LSA.</p>
-
+                    <p class="paragraph">I'm a sophomore at the University of Michigan studying Computer Science</p>
+                    <br>
                     <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('Experience')">Experience</p>
-                        <p class="tab-links" onclick="opentab('Education')">Education</p>
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
                 </div>
-                <div class="tab-contents active-tab" id="Skills">
+                <div class="tab-contents active-tab" id="skills">
                     <ul>
-                        <li><span>C++</span><br>Lorem Ipsum Lorem</li>
-                        <li><span>Python</span><br>Lorem Ipsum Lorem</li>
-                        <li><span>Java</span><br>Lorem Ipsum Lorem</li>
+                        <li><span>System-level software</span><br>Writing efficient software using <strong>C++</strong><br></li>
+                        <li><span>Web Development</span><br>Front-end using <strong>HTML</strong>, <strong>CSS</strong> and back-end using <strong>Python</strong> - <strong>flask</strong>, <strong>jinja</strong>, etc.<br></li>
+                        <li><span>VR Development</span><br>Developing 3D experiences using <strong>Unity</strong></li>
                     </ul>
                 </div>
 
-                <div class="tab-contents" id="Experience">
+                <div class="tab-contents" id="experience">
                     <ul>
-                        <li><span>Intern at Ford</span><br>
+                        <li><span>Ford Motor Company - Data Analytics Intern</span><br>
                             <ul>
-                                <li>Spearheaded a project to generate an FAQ page from employee forums, creating an Alteryx workflow to extract, clean, and visualize data from different sources.</li>
-                                <li>Mined and analyzed over 9,000 messages from Yammer and Webex forums using REST APIs.</li>
-                                <li>Gained proficiency in API functionality, mastering two specific APIs.</li>
-                                <li>Transformed raw data into actionable visualizations utilizing Qlik Sense, creating a data-driven FAQ document for the Analytics Visualization Enablement team.</li>
-                                <li>Collaborated with other interns and 7 senior team members, as a part of the Analytics Visualization Enablement team at Ford's Global Data and Insight Analytics department.</li>
+                                <li>❇️ Worked alongside senior analysts & interns in Ford's analytics team to build an <strong>automated interactive FAQ dashboard</strong>.</li>
+                                <li>❇️ Used <strong>Alteryx</strong> to extract, clean & <strong>Qlik Sense</strong> to visualize forum data.</li>
+                                <li>❇️ Analyzed <strong>9,000+ messages</strong> from Yammer & Webex using <strong>REST APIs</strong>.</li>
                             </ul>
                         </li>
-                        <li><span>Hacker at MHacks</span><br>
+                        <li><span><br>Hacker at MHacks</span><br>
                             <ul>
-                                <li>Designed and built a competitive Wordle game with an intelligent artificial opponent using algorithms to efficiently analyze word patterns and make optimal guesses.</li>
-                                <li>Developed a strategy algorithm that leveraged the New York Times' Wordle word bank to provide feedback and guide the AI's word choices strategically.</li>
-                                <li>Collaborated with a team of students from other universities, combining complementary skill sets.</li>
+                                <li>❇️ Developed a strategy algorithm that leveraged the New York Times' <strong>Wordle</strong> word bank data to find optimal guesses for a game.</li>
+                                <li>❇️ Designed and built a competitive Wordle web game with an <strong>intelligent artificial opponent</strong> leveraging the algorithm to efficiently analyze word patterns and solve the game in as few attempts as possible.</li>
+                                <li>❇️ Collaborated with a team of students from other universities, combining complementary skill sets.</li>
                             </ul>
                         </li>
                     </ul>
                 </div>
 
-                <div class="tab-contents" id="Education">
+                <div class="tab-contents" id="education">
                     <ul>
                         <li><span>University of Michigan</span><br>BS in Computer Science (2023-Current)</li>
-                        <li><span>Hamtramck High School</span><br>High School Diploma (2019-2023)</li>
+                        <li><span><br>Hamtramck High School</span><br>High School Diploma (2019-2023)</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <!------------------------My Work-------------------------------->
+    <!---------------------------------------My Work-------------------------------------->
     <div id="myWork">
         <div class="container">
-            <h1 class="tittle">My Work</h1>
+            <h1 class="tittle">Fun Projects</h1>
             <div class="work-list">
                 <div class="work">
                     <img src="images/work-1.png" alt="Work 1">
                     <div class="layer">
-                        <h3> Project 1</h3>
-                        <p>So what it does is Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem 
-                        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
-                        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem</p>
-                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                        <h3>Wordle Bot</h3>
+                        <p>Algorithm that solves a wordle problem faster than most human. Want to challenge yourself? <br> Give the Wordle Bot a try!</p>
+                        <a href="https://github.com/ColeCurrent/Wordle-Bot">🔗GitHub</a>
+                        <a href="https://devpost.com/software/wordle-bot-av9s34">🔗DevPost</a>
                     </div>
                 </div>
                 <div class="work">
-                    <img src="images/work-1.png" alt="Work 2">
+                    <img src="images/work-2.png" alt="Work 2">
                     <div class="layer">
-                        <h3> Project 2</h3>
-                        <p>So what it does is Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem 
-                        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
-                        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem</p>
-                        <a href="#"><i class="fa-solid fa-square-up-right"></i></a>
+                        <h3>Saricons</h3>
+                        <p>Fork of an android icon pack app with further customizations and added icon support</p>
+                        <a href="https://github.com/SARRAF-5757/Saricons">🔗GitHub</a>
                     </div>
                 </div>
                 <div class="work">
-                    <img src="images/work-1.png" alt="Work 3">
+                    <img src="images/work-3.png" alt="Work 3">
+                    <div class="layer">
+                        <h3>Xiaomi Mi Band Resources</h3>
+                        <p>Custom flashable resource packs for Xiaomi Mi Band 3 and 4</p>
+                        <a href="https://sarrafsmbstudio.carrd.co/">🔗Website</a>
+                        <a href="https://geekdoing.com/members/sarraf.157979/">🔗GD</a>
+                    </div>
+                </div>
+            </div>
+            <!--<a href="index.html#header" class="btn">See more</a> <!--change this to a different html for more projects-->
+        </div>
+    </div>
+
+    <div id="myWork">
+        <div class="container">
+            <h1 class="tittle">Technical Projects</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work.png" alt="Work 1">
+                    <div class="layer">
+                        <h3>Project 1</h3>
+                        <p>So what it does is Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem 
+                        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
+                        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem</p>
+                        <a href="#">🔗</a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work.png" alt="Work 2">
+                    <div class="layer">
+                        <h3>Saricons</h3>
+                        <p>So what it does is Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem 
+                        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
+                        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem</p>
+                        <a href="#">🔗</a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work.png" alt="Work 3">
                     <div class="layer">
                         <h3> Project 3</h3>
                         <p>So what it does is Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem 
                         Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
                         Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem</p>
-                        <a href="#"><i class="fa-solid fa-square-up-right"></i></a>
+                        <a href="#">🔗</a>
                     </div>
                 </div>
             </div>
-            <a href="index.html#header" class="btn">See more</a>
+            <!--<a href="index.html#header" class="btn">See more</a> <!--change this to a different html for more projects-->
         </div>
     </div>
 
-    <!------------------------Find Me In Other Places-------------------------------->
+    <!-------------------------------Find Me In Other Places------------------------------>
     
     <footer id="links">
         <div class="socials">
             <a href="https://www.linkedin.com/in/sarraf-ahmed/" target="_blank">LinkedIn</a>
             <a href="https://github.com/SARRAF-5757" target="_blank">GitHub</a>
-            <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
-            <a href="https://www.instagram.com/yourprofile" target="_blank">Instagram</a>
+            <a href="https://unsplash.com/@sarraf5757" target="_blank">Unsplash</a>
+            <a href="https://www.instagram.com/sarraf_5757" target="_blank">Instagram</a>
         </div>
     </footer>
+
+    <!-----------------------------------------JS----------------------------------------->
+    <script>
+        function opentab(tabname) {
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+            for (var tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (var tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
 
 </body>
 </html>
