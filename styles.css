@@ -174,9 +174,9 @@ nav ul li a:hover::after {
     transition: transform 0.5s;
 }
 .layer {
-    width: 80%;
+    width: 85%;
     height: 0;
-    background: linear-gradient(rgba(0,0,0,0.6), #61D2FA);
+    background: linear-gradient(rgba(0, 0, 0, 0.447), #000000ee);
     border-radius: 10px;
     position: absolute;
     left: 0;
