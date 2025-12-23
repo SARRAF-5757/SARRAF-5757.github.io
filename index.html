@@ -4,177 +4,519 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sarraf's Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <!--link href="./output.css" rel="stylesheet"-->
 </head>
-<body>
-    <!---------------------------------------general-------------------------------------->
-    <div id="header">
-        <div class="container">
-            <nav>
-                <img src="images/logo.png" alt="logo" width="300px">
-                <ul>
-                    <li><a href="#index.html#header">Home</a></li>
-                    <li><a href="index.html#about">Skills</a></li>
-                    <li><a href="index.html#myWork">Work</a></li>
-                    <li><a href="index.html#links">Socials</a></li>
-                </ul>
+<body class="bg-primary text-white">
+    <!--* Navigation *-->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <img src="images/logo.png" alt="Logo" class="h-10">
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">Skills</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#misc" class="nav-link">Misc</a>
+                    <a href="#socials" class="nav-link">Socials</a>
+                </div>
+                <button class="md:hidden text-white">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
             </nav>
-            <div class="header-text">
-                <p>Student at the <span1>University</span1> of <span2>Michigan</span2></p>
-                <h1>Hi, I'm your <br> friendly neighborhood <br> <span>Sarraf</span> Ahmed.</h1>
+
+    <!--* Main Page *-->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden" style="background-image: url('images/background.png'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-primary/70"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-transparent to-primary" style="background: linear-gradient(to bottom, transparent 0%, transparent 50%, rgba(21, 16, 25, 0.3) 70%, rgba(21, 16, 25, 0.7) 85%, #151019 100%);"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-right md:text-right fade-in max-w-4xl ml-auto">
+                <p class="text-xl md:text-2xl mb-4 px-6 py-3 inline-block rounded-lg font-semibold glass-effect-purple">
+                    Student at the <span class="text-um-blue">University</span> of <span class="text-um-maize">Michigan</span>
+                </p>
+                <h1 class="tagline-text text-5xl md:text-7xl font-bold mb-6 text-right leading-loose">
+                    Hi, It's your<br>
+                    friendly neighborhood<br>
+                    <span class="gradient-text">Sarraf</span> Ahmed.
+                </h1>
+                <div class="mt-8 flex justify-end space-x-4">
+                    <a href="#about" class="px-8 py-3 btn-gradient rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all text-white">
+                        Learn More
+                    </a>
+                    <a href="#projects" class="px-8 py-3 glass-effect rounded-lg font-semibold hover:bg-white/10 transition-all">
+                        View Projects
+                    </a>
+                </div>
             </div>
         </div>
+    </section>
+
+    <!--* About Section *-->
+    <section id="about" class="py-20 bg-primary">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center fade-in">
+                About <span class="gradient-text">Me</span>
+            </h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+                    <div class="slide-in-left">
+                        <img src="images/dev.png" alt="Sarraf Ahmed" class="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover border-4 border-accent-blue shadow-lg">
+                    </div>
+                    <p class="text-xl text-gray-300 text-center md:text-left slide-in-right flex-1">
+                        I'm a junior at the University of Michigan studying Computer Science, passionate about building software solutions to real-life hurdles and exploring the fun world of technology.
+                    </p>
+                </div>
+                
+                <br>
+
+                <!--# Tabs #-->
+                <div class="glass-effect rounded-xl p-8 slide-in-right">
+                    <div class="flex flex-wrap gap-4 mb-8 border-b border-gray-700">
+                        <button class="tab-button active px-6 py-2 font-semibold" onclick="openTab('skills')">Skills</button>
+                        <button class="tab-button px-6 py-2 font-semibold" onclick="openTab('experience')">Experience</button>
+                        <button class="tab-button px-6 py-2 font-semibold" onclick="openTab('education')">Education</button>
     </div>
 
-    <!--------------------------------------about me-------------------------------------->
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <!-- <div class="about-col-1">
-                    <img src="images/me.1.png" alt="Photo of me" width="500px">
-                </div> -->
-                <div class="about-col-2">
-                    <h1 class="tittle" >About Me</h1>
-                    <p class="paragraph">I'm a junior at the University of Michigan studying Computer Science</p>
-                    <br>
-                    <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    <!--@ Skills Tab @-->
+                    <div id="skills" class="tab-content">
+                        <div class="space-y-8">
+                            <!--$ Languages & Frameworks $-->
+                            <div>
+                                <h3 class="text-2xl font-bold text-blue mb-4">Languages & Frameworks</h3>
+                                <div class="flex flex-wrap gap-4 items-center">
+                                    <div class="flex items-center space-x-2 glass-effect rounded-lg px-4 py-2 card-hover">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" class="w-8 h-8" />
+                                        <span class="text-gray-300 font-semibold">C++</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 glass-effect rounded-lg px-4 py-2 card-hover">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="w-8 h-8" />
+                                        <span class="text-gray-300 font-semibold">Python</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 glass-effect rounded-lg px-4 py-2 card-hover">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" class="w-8 h-8" />
+                                        <span class="text-gray-300 font-semibold">Java</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 glass-effect rounded-lg px-4 py-2 card-hover">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactnative/reactnative-original.svg" alt="React Native" class="w-8 h-8" />
+                                        <span class="text-gray-300 font-semibold">React Native</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 glass-effect rounded-lg px-4 py-2 card-hover">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML" class="w-8 h-8" />
+                                        <span class="text-gray-300 font-semibold">HTML</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 glass-effect rounded-lg px-4 py-2 card-hover">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS" class="w-8 h-8" />
+                                        <span class="text-gray-300 font-semibold">CSS</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 glass-effect rounded-lg px-4 py-2 card-hover">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" class="w-8 h-8" />
+                                        <span class="text-gray-300 font-semibold">Tailwind CSS</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 glass-effect rounded-lg px-4 py-2 card-hover">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-8 h-8" />
+                                        <span class="text-gray-300 font-semibold">JavaScript</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 glass-effect rounded-lg px-4 py-2 card-hover">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" class="w-8 h-8" />
+                                        <span class="text-gray-300 font-semibold">TypeScript</span>
+                                    </div>
                 </div>
-                <div class="tab-contents active-tab" id="skills">
-                    <ul>
-                        <li><span>System-level software</span><br>Writing efficient software using <strong>C++</strong><br></li>
-                        <li><span>Web Development</span><br>Front-end using <strong>React</strong>, <strong>HTML</strong>, <strong>CSS</strong> and back-end using <strong>Python</strong> - <strong>flask</strong>, <strong>jinja</strong>, etc.<br></li>
-                        <li><span>VR Development</span><br>Developing 3D experiences using <strong>Unity</strong>, <strong>8th Wall</strong>, and <strong>Blender</strong></li>
-                    </ul>
                 </div>
 
-                <div class="tab-contents" id="experience">
-                    <ul>
-                        <li><span>Ford Motor Company - Data Analytics Intern</span><br>
-                            <ul>
-                                <li>❇️ Worked alongside senior analysts & interns in Ford's analytics team to build an <strong>automated interactive FAQ dashboard</strong>.</li>
-                                <li>❇️ Used <strong>Alteryx</strong> to extract, clean & <strong>Qlik Sense</strong> to visualize forum data.</li>
-                                <li>❇️ Analyzed <strong>9,000+ messages</strong> from Yammer & Webex using <strong>REST APIs</strong>.</li>
+                            <!--$ My Toolset $-->
+                            <div>
+                                <h3 class="text-2xl font-bold text-blue mb-4">My Toolset</h3>
+                                <div class="flex flex-wrap gap-4 items-center">
+                                    <div class="flex items-center space-x-2 glass-effect rounded-lg px-4 py-2 card-hover">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/neovim/neovim-original.svg" alt="Neovim" class="w-8 h-8" />
+                                        <span class="text-gray-300 font-semibold">Neovim</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 glass-effect rounded-lg px-4 py-2 card-hover">
+                                        <img src="https://static0.xdaimages.com/wordpress/wp-content/uploads/2025/01/ghostty-logo.png?q=70&fit=contain&w=420&dpr=1" alt="Ghostty" class="w-8 h-8" />
+                                        <span class="text-gray-300 font-semibold">Ghostty</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 glass-effect rounded-lg px-4 py-2 card-hover">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VSCode" class="w-8 h-8" />
+                                        <span class="text-gray-300 font-semibold">VSCode</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 glass-effect rounded-lg px-4 py-2 card-hover">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" class="w-8 h-8" />
+                                        <span class="text-gray-300 font-semibold">Git</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 glass-effect rounded-lg px-4 py-2 card-hover">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original.svg" alt="Unity" class="w-8 h-8" />
+                                        <span class="text-gray-300 font-semibold">Unity</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 glass-effect rounded-lg px-4 py-2 card-hover">
+                                        <img src="https://miro.medium.com/v2/resize:fit:1500/1%2ASYC2GgJ5vG1DJrRI9A9Leg.png" alt="8th Wall" class="w-8 h-8" />
+                                        <span class="text-gray-300 font-semibold">8th Wall</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 glass-effect rounded-lg px-4 py-2 card-hover">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/arduino/arduino-original-wordmark.svg" alt="Arduino" class="w-8 h-8" />
+                                        <span class="text-gray-300 font-semibold">Arduino</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 glass-effect rounded-lg px-4 py-2 card-hover">
+                                        <img src="https://media.imgcdn.org/repo/2023/03/alteryx-designer/alteryx-designer-logo.png" alt="Alteryx" class="w-8 h-8" />
+                                        <span class="text-gray-300 font-semibold">Alteryx</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 glass-effect rounded-lg px-4 py-2 card-hover">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Qlik_Logo_No_Trademark_2_Color_Positive_RGB.png" alt="Qlik" class="w-8 h-8" />
+                                        <span class="text-gray-300 font-semibold">Qlik</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--@ Experience Tab @-->
+                    <div id="experience" class="tab-content hidden">
+                        <ul class="space-y-8">
+                            <li>
+                                <h3 class="text-xl font-semibold text-blue mb-3">Ford Motor Company - Data Analytics Intern</h3>
+                                <ul class="space-y-2 text-gray-300 ml-4">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-chevron-right text-blue text-sm mr-3 mt-1"></i>
+                                        <span>Worked alongside senior analysts & interns in Ford's analytics team to build an <strong class="text-purple">automated interactive FAQ dashboard</strong>.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-chevron-right text-blue text-sm mr-3 mt-1"></i>
+                                        <span>Used <strong class="text-purple">Alteryx</strong> to extract, clean & <strong class="text-purple">Qlik Sense</strong> to visualize forum data.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-chevron-right text-blue text-sm mr-3 mt-1"></i>
+                                        <span>Analyzed <strong class="text-purple">9,000+ messages</strong> from Yammer & Webex using <strong class="text-purple">REST APIs</strong>.</span>
+                                    </li>
                             </ul>
                         </li>
-                        <li><span><br>Hacker at MHacks</span><br>
-                            <ul>
-                                <li>❇️ Developed a strategy algorithm that leveraged the New York Times' <strong>Wordle</strong> word bank data to find optimal guesses for a game.</li>
-                                <li>❇️ Designed and built a competitive Wordle web game with an <strong>intelligent artificial opponent</strong> leveraging the algorithm to efficiently analyze word patterns and solve the game in as few attempts as possible.</li>
-                                <li>❇️ Collaborated with a team of students from other universities, combining complementary skill sets.</li>
+                            <li>
+                                <h3 class="text-xl font-semibold text-blue mb-3">Hacker at MHacks</h3>
+                                <ul class="space-y-2 text-gray-300 ml-4">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-chevron-right text-blue text-sm mr-3 mt-1"></i>
+                                        <span>Developed a strategy algorithm that leveraged the New York Times' <strong class="text-purple">Wordle</strong> word bank data to find optimal guesses for a game.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-chevron-right text-blue text-sm mr-3 mt-1"></i>
+                                        <span>Designed and built a competitive Wordle web game with an <strong class="text-purple">intelligent artificial opponent</strong> leveraging the algorithm to efficiently analyze word patterns and solve the game in as few attempts as possible.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-chevron-right text-blue text-sm mr-3 mt-1"></i>
+                                        <span>Collaborated with a team of students from other universities, combining complementary skill sets.</span>
+                                    </li>
                             </ul>
                         </li>
                     </ul>
                 </div>
 
-                <div class="tab-contents" id="education">
-                    <ul>
-                        <li><span>University of Michigan</span><br>BS in Computer Science (2023-Current)</li>
-                        <li><span><br>Hamtramck High School</span><br>High School Diploma (2019-2023)</li>
+                    <!--@ Education Tab @-->
+                    <div id="education" class="tab-content hidden">
+                        <ul class="space-y-6">
+                            <li class="flex items-start space-x-4">
+                                <i class="fas fa-graduation-cap icon-blue text-2xl mt-1"></i>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-blue mb-2">University of Michigan</h3>
+                                    <p class="text-gray-300">BS in Computer Science (2023-Current)</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-4">
+                                <i class="fas fa-school icon-blue text-2xl mt-1"></i>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-blue mb-2">Hamtramck High School</h3>
+                                    <p class="text-gray-300">High School Diploma (2019-2023)</p>
+                                </div>
+                            </li>
                     </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="myWork">
-        <div class="container">
-            <h1 class="tittle">Technical Projects</h1>
-            <div class="work-list">
-                <div class="work">
-                    <img src="https://github.com/SARRAF-5757/Waqt/blob/master/assets/images/icons/ios-tinted.png?raw=true" alt="Work 1">
-                    <div class="layer">
-                        <h3>Waqt</h3>
-                        <p>An app to help you build a better relationship with your daily prayers</p>
-                        <a href="https://github.com/SARRAF-5757/Waqt">🔗GitHub</a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="https://freewili.com/wp-content/uploads/2025/09/Free_WiLi.png" alt="Work 2">
-                    <div class="layer">
-                        <h3>FreeWili-IR</h3>
-                        <p>A fusion of the games "Whack-a-mole" & "Keep Talking" in the embedded system FreeWili Platform.</p>
-                        <a href="https://github.com/SARRAF-5757/FreeWil-iR">🔗GitHub</a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="https://github.com/ColeCurrent/Wordle-Bot/blob/main/public/favicon.png?raw=true" alt="Work 1">
-                    <div class="layer">
-                        <h3>Wordle Bot</h3>
-                        <p>Algorithm that solves a wordle problem faster than most human. Want to challenge yourself? <br> Give the Wordle Bot a try!</p>
-                        <a href="https://github.com/ColeCurrent/Wordle-Bot">🔗GitHub</a>
-                        <a href="https://devpost.com/software/wordle-bot-av9s34">🔗DevPost</a>
                     </div>
                 </div>
             </div>
-            <!--<a href="index.html#header" class="btn">See more</a> <!--change this to a different html for more projects-->
         </div>
-    </div>
+    </section>
 
-    <!---------------------------------------My Work-------------------------------------->
-    <div id="myWork">
-        <div class="container">
-            <h1 class="tittle">Fun Projects</h1>
-            <div class="work-list">
-                <div class="work">
-                    <img src="images/BlackGlass.png" alt="Work 1">
-                    <div class="layer">
-                        <h3>BlackGlass</h3>
-                        <p>An opinionated browser skin for Firefox based Zen browser focused to bring transparency and pleasant roundness in your web experience.</p>
-                        <a href="https://github.com/SARRAF-5757/BlackGlass">🔗GitHub</a>
+
+    <!--* Projects Section *-->
+    <section id="projects" class="py-20 bg-secondary">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center fade-in">
+                Technical <span class="gradient-text">Projects</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-12">Need-induced personal projects and hackathon projects</p>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!--# Project 1 #-->
+                <div class="project-card card-hover glass-effect rounded-xl overflow-hidden">
+                    <img src="https://github.com/SARRAF-5757/Waqt/blob/master/assets/images/icons/ios-tinted.png?raw=true" alt="Waqt">
+                    <div class="project-overlay">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Waqt</h3>
+                        <p class="text-white text-center mb-4">A simple React Native app for helping you improve your prayer habits.</p>
+                        <a href="https://github.com/SARRAF-5757/Waqt" target="_blank" class="px-4 py-2 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition">
+                            <i class="fab fa-github mr-2"></i>GitHub
+                        </a>
                     </div>
                 </div>
-                <div class="work">
-                    <img src="images/work-2.png" alt="Work 2">
-                    <div class="layer">
-                        <h3>Saricons</h3>
-                        <p>Fork of an android icon pack app with further customizations and added icon support</p>
-                        <a href="https://github.com/SARRAF-5757/Saricons">🔗GitHub</a>
+                
+                <!--# Project 2 #-->
+                <div class="project-card card-hover glass-effect rounded-xl overflow-hidden">
+                    <img src="images/OMP-Wizard.png" alt="OMP-Wizard" onerror="this.src='https://via.placeholder.com/400?text=OMP-Wizard'">
+                    <div class="project-overlay">
+                        <h3 class="text-2xl font-bold mb-2 text-white">OMP-Wizard</h3>
+                        <p class="text-white text-center mb-4">A TUI setup wizard for Oh-My-Posh prompt engine</p>
+                        <a href="https://github.com/SARRAF-5757/OMP-Wizard" target="_blank" class="px-4 py-2 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition">
+                            <i class="fab fa-github mr-2"></i>GitHub
+                        </a>
                     </div>
                 </div>
-                <div class="work">
-                    <img src="images/work-3.png" alt="Work 3">
-                    <div class="layer">
-                        <h3>Xiaomi Mi Band Resources</h3>
-                        <p>Custom flashable resource packs for Xiaomi Mi Band 3 and 4</p>
-                        <a href="https://sarrafsmbstudio.carrd.co/">🔗Website</a>
-                        <a href="https://geekdoing.com/members/sarraf.157979/">🔗GD</a>
+                
+                <!--# Project 3 #-->
+                <div class="project-card card-hover glass-effect rounded-xl overflow-hidden">
+                    <img src="https://github.com/ColeCurrent/Wordle-Bot/blob/main/public/favicon.png?raw=true" alt="Wordle Bot">
+                    <div class="project-overlay">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Wordle Bot</h3>
+                        <p class="text-white text-center mb-4">Algorithm that solves a wordle problem faster than most human. Want to challenge yourself? Give the Wordle Bot a try!</p>
+                        <div class="flex space-x-2">
+                            <a href="https://github.com/ColeCurrent/Wordle-Bot" target="_blank" class="px-4 py-2 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition">
+                                <i class="fab fa-github mr-2"></i>GitHub
+                            </a>
+                            <a href="https://devpost.com/software/wordle-bot-av9s34" target="_blank" class="px-4 py-2 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition">
+                                DevPost
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!--<a href="index.html#header" class="btn">See more</a> <!--change this to a different html for more projects-->
+            
+            <div class="text-center">
+                <a href="projects.html" class="inline-block px-8 py-3 btn-gradient rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all text-white">
+                    View More <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!--* Fun Projects Section *-->
+    <section id="fun-projects" class="py-20 bg-primary">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center fade-in">
+                Fun <span class="gradient-text">Projects</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-12">Creative and less intensive projects</p>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!--# Fun Project 1 #-->
+                <div class="project-card card-hover glass-effect rounded-xl overflow-hidden">
+                    <img src="images/BlackGlass.png" alt="BlackGlass">
+                    <div class="project-overlay">
+                        <h3 class="text-2xl font-bold mb-2 text-white">BlackGlass</h3>
+                        <p class="text-white text-center mb-4">An opinionated browser skin for Firefox based Zen browser focused to bring transparency and pleasant roundness in your web experience.</p>
+                        <a href="https://github.com/SARRAF-5757/BlackGlass" target="_blank" class="px-4 py-2 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition">
+                            <i class="fab fa-github mr-2"></i>GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <!--# Fun Project 2 #-->
+                <div class="project-card card-hover glass-effect rounded-xl overflow-hidden">
+                    <img src="images/saricons.png" alt="Saricons">
+                    <div class="project-overlay">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Saricons</h3>
+                        <p class="text-white text-center mb-4">Fork of an android icon pack app with further customizations and added icon support</p>
+                        <a href="https://github.com/SARRAF-5757/Saricons" target="_blank" class="px-4 py-2 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition">
+                            <i class="fab fa-github mr-2"></i>GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <!--# Fun Project 3 #-->
+                <div class="project-card card-hover glass-effect rounded-xl overflow-hidden">
+                    <img src="images/mi-band.png" alt="Xiaomi Mi Band Resources">
+                    <div class="project-overlay">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Xiaomi Mi Band Resources</h3>
+                        <p class="text-white text-center mb-4">Custom flashable resource packs and watch faces for Xiaomi Mi Band 3 and 4</p>
+                        <div class="flex space-x-2">
+                            <a href="https://sarrafsmbstudio.carrd.co/" target="_blank" class="px-4 py-2 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition">
+                                Website
+                            </a>
+                            <a href="https://geekdoing.com/members/sarraf.157979/" target="_blank" class="px-4 py-2 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition">
+                                GeekDoing
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="fun-projects.html" class="inline-block px-8 py-3 btn-gradient rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all text-white">
+                    View More <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!--* Miscellaneous Section *-->
+    <section id="misc" class="py-20 bg-secondary">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center fade-in">
+                <span class="gradient-text">Miscellaneous</span>
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <a href="https://github.com/SARRAF-5757/.dotfiles" target="_blank" class="misc-card glass-effect rounded-xl p-8 text-center hover:bg-white/10 transition">
+                    <i class="fas fa-code text-5xl icon-blue mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">Dotfiles</h3>
+                    <p class="text-gray-400">All of my configurations</p>
+                </a>
+                
+                <a href="https://unsplash.com/@sarraf5757" target="_blank" class="misc-card glass-effect rounded-xl p-8 text-center hover:bg-white/10 transition">
+                    <i class="fas fa-camera text-5xl icon-blue mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">Unsplash</h3>
+                    <p class="text-gray-400">My occasional photography whims</p>
+                </a>
+                
+                <a href="https://macosicons.com/#/u/s@rr@f" target="_blank" class="misc-card glass-effect rounded-xl p-8 text-center hover:bg-white/10 transition">
+                    <i class="fas fa-palette text-5xl icon-blue mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">macOS Icons</h3>
+                    <p class="text-gray-400">MacOS app icons by me :)</p>
+                </a>
+                
+                <a href="https://monkeytype.com/profile/SARRAF5757" target="_blank" class="misc-card glass-effect rounded-xl p-8 text-center hover:bg-white/10 transition">
+                    <i class="fas fa-keyboard text-5xl icon-blue mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">MonkeyType</h3>
+                    <p class="text-gray-400">My best so far</p>
+                </a>
         </div>
     </div>
+    </section>
 
-    <!-------------------------------Find Me In Other Places------------------------------>
-    
-    <footer id="links">
-        <div class="socials">
-            <a href="https://www.linkedin.com/in/sarraf-ahmed/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/SARRAF-5757" target="_blank">GitHub</a>
-            <a href="https://unsplash.com/@sarraf5757" target="_blank">Unsplash</a>
-            <a href="https://www.instagram.com/sarraf_5757" target="_blank">Instagram</a>
+    <!--* Fun Things Section *-->
+    <section id="fun-things" class="py-20 bg-primary">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center fade-in">
+                Fun <span class="gradient-text">Things</span>
+            </h2>
+            <div class="max-w-5xl mx-auto">
+                <!--# Tabs #-->
+                <div class="glass-effect rounded-xl p-8 slide-in-right">
+                    <div class="flex flex-wrap gap-4 mb-8 border-b border-gray-700">
+                        <button class="tab-button active px-6 py-2 font-semibold" onclick="openFunTab('hobbies-hopped')">Hobbies Hopped</button>
+                        <button class="tab-button px-6 py-2 font-semibold" onclick="openFunTab('+')">+</button>
+    </div>
+
+                    <!--@ Hobbies Hopped Tab @-->
+                    <div id="hobbies-hopped" class="tab-content">
+                        <ul class="space-y-4 text-gray-300">
+                            <span>I tend to go in-and out of hobbies a lot. And when I get into one, I REALLY get into it. Here are some of the ones I've gone through over the years</span>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
+                                <span>Mi Band Modding</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
+                                <span>Action Figure Collecting</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
+                                <span>Mechanical Keyboards</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
+                                <span>Coding (still ongoing, apparently)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
+                                <span>Skateboarding</span>
+                            </li>
+                        </ul>
+    </div>
+
+                    <!--@ + @-->
+                    <div id="+" class="tab-content hidden">
+                        <ul class="space-y-4 text-gray-300">
+                            <span>More coming...</span>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+    </section>
 
-    <!-----------------------------------------JS----------------------------------------->
+    <!--* Socials Section *-->
+    <section id="socials" class="py-20 bg-secondary">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center fade-in">
+                Find Me <span class="gradient-text">Here</span>
+            </h2>
+            <div class="flex justify-center space-x-8 flex-wrap gap-6">
+                <a href="https://www.linkedin.com/in/sarraf-ahmed/" target="_blank" class="social-icon glass-effect rounded-full p-6 hover:bg-white/10">
+                    <i class="fab fa-linkedin text-4xl icon-blue"></i>
+                    <p class="text-center mt-2 font-semibold">LinkedIn</p>
+                </a>
+                <a href="https://github.com/SARRAF-5757" target="_blank" class="social-icon glass-effect rounded-full p-6 hover:bg-white/10">
+                    <i class="fab fa-github text-4xl icon-blue"></i>
+                    <p class="text-center mt-2 font-semibold">GitHub</p>
+                </a>
+                <a href="https://devpost.com/SARRAF-5757" target="_blank" class="social-icon glass-effect rounded-full p-6 hover:bg-white/10">
+                    <i class="fab fa-dev text-4xl icon-blue"></i>
+                    <p class="text-center mt-2 font-semibold">Devpost</p>
+                </a>
+                <a href="https://discordapp.com/users/737065241309085746" target="_blank" class="social-icon glass-effect rounded-full p-6 hover:bg-white/10">
+                    <i class="fab fa-discord text-4xl icon-blue"></i>
+                    <p class="text-center mt-2 font-semibold">Discord</p>
+                </a>
+                <a href="https://www.instagram.com/sarraf_5757" target="_blank" class="social-icon glass-effect rounded-full p-6 hover:bg-white/10">
+                    <i class="fab fa-instagram text-4xl icon-blue"></i>
+                    <p class="text-center mt-2 font-semibold">Instagram</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!--! Scripts !-->
     <script>
-        function opentab(tabname) {
-            var tablinks = document.getElementsByClassName("tab-links");
-            var tabcontents = document.getElementsByClassName("tab-contents");
-            for (var tablink of tablinks) {
-                tablink.classList.remove("active-link");
-            }
-            for (var tabcontent of tabcontents) {
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
+        function openTab(tabName) {
+            // Hide all tab contents in the about section
+            const aboutSection = document.getElementById('about');
+            const tabContents = aboutSection.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Remove active class from all buttons in the about section
+            const tabButtons = aboutSection.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.remove('hidden');
+            
+            // Add active class to clicked button
+            event.currentTarget.classList.add('active');
+        }
+        
+        function openFunTab(tabName) {
+            // Hide all tab contents in the fun things section
+            const funSection = document.getElementById('fun-things');
+            const tabContents = funSection.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Remove active class from all buttons in the fun things section
+            const tabButtons = funSection.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.remove('hidden');
+            
+            // Add active class to clicked button
+            event.currentTarget.classList.add('active');
         }
     </script>
-
 </body>
 </html>
