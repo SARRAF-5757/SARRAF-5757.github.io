@@ -1,110 +1,112 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technical Projects</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technical Projects | Sarraf's Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body class="bg-primary text-white">
+    <link rel="icon" type="/image/png" href="images/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-primary text-white">
     <!--* Navigation *-->
     <nav class="fixed top-0 w-full z-50 glass-effect">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <a href="index.html" class="flex items-center space-x-2">
-                    <img src="images/logo.png" alt="Logo" class="h-10">
-                </a>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link">Home</a>
-                    <a href="#about" class="nav-link">Skills</a>
-                    <a href="#projects" class="nav-link">Projects</a>
-                    <a href="#misc" class="nav-link">Misc</a>
-                    <a href="#socials" class="nav-link">Socials</a>
-                </div>
-            </div>
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <a href="index.html" class="flex items-center space-x-2">
+            <img src="images/logo.png" alt="Logo" class="h-10" />
+          </a>
+          <div class="hidden md:flex space-x-8">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#misc" class="nav-link">Misc</a>
+            <a href="#socials" class="nav-link">Socials</a>
+          </div>
         </div>
+      </div>
     </nav>
 
     <!--* Projects Header *-->
     <section class="pt-32 pb-20 bg-primary">
-        <div class="container mx-auto px-6">
-            <h1 class="text-5xl md:text-6xl font-bold mb-4 text-center fade-in">
-                Technical <span class="gradient-text">Projects</span>
-            </h1>
-            <p class="text-center text-gray-400 text-xl mb-8">All my technical and development projects</p>
-        </div>
+      <div class="container mx-auto px-6">
+        <h1 class="text-5xl md:text-6xl font-bold mb-4 text-center fade-in">Technical <span class="gradient-text">Projects</span></h1>
+        <p class="text-center text-gray-400 text-xl mb-8">All my technical and development projects</p>
+      </div>
     </section>
 
     <!--* All Projects *-->
     <section class="py-20 bg-primary">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!--# Project 1: Waqt #-->
-                <div class="project-card card-hover glass-effect rounded-xl overflow-hidden">
-                    <img src="https://github.com/SARRAF-5757/Waqt/blob/master/assets/images/icons/ios-tinted.png?raw=true" alt="Waqt">
-                    <div class="project-overlay">
-                        <h3 class="text-2xl font-bold mb-2 text-white">Waqt</h3>
-                        <p class="text-white text-center mb-4 px-4">A simple React Native app for helping you improve your prayer habits.</p>
-                        <a href="https://github.com/SARRAF-5757/Waqt" target="_blank" class="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition">
-                            <i class="fab fa-github mr-2"></i>View on GitHub
-                        </a>
-                    </div>
-                </div>
-                
-                <!--# Project 2: OMP-Wizard #-->
-                <div class="project-card card-hover glass-effect rounded-xl overflow-hidden">
-                    <img src="images/OMP-Wizard.png" alt="OMP-Wizard" onerror="this.src='https://via.placeholder.com/400?text=OMP-Wizard'">
-                    <div class="project-overlay">
-                        <h3 class="text-2xl font-bold mb-2 text-white">OMP-Wizard</h3>
-                        <p class="text-white text-center mb-4 px-4">A TUI setup wizard for Oh-My-Posh prompt engine</p>
-                        <a href="https://github.com/SARRAF-5757/OMP-Wizard" target="_blank" class="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition">
-                            <i class="fab fa-github mr-2"></i>View on GitHub
-                        </a>
-                    </div>
-                </div>
-                
-                <!--# Project 3: Wordle Bot #-->
-                <div class="project-card card-hover glass-effect rounded-xl overflow-hidden">
-                    <img src="https://github.com/ColeCurrent/Wordle-Bot/blob/main/public/favicon.png?raw=true" alt="Wordle Bot">
-                    <div class="project-overlay">
-                        <h3 class="text-2xl font-bold mb-2 text-white">Wordle Bot</h3>
-                        <p class="text-white text-center mb-4 px-4">Algorithm that solves a wordle problem faster than most human. Want to challenge yourself? Give the Wordle Bot a try!</p>
-                        <div class="flex flex-col space-y-2">
-                            <a href="https://github.com/ColeCurrent/Wordle-Bot" target="_blank" class="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition">
-                                <i class="fab fa-github mr-2"></i>View on GitHub
-                            </a>
-                            <a href="https://devpost.com/software/wordle-bot-av9s34" target="_blank" class="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition">
-                                <i class="fas fa-external-link-alt mr-2"></i>View on DevPost
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!--# Project 4: FreeWili-IR #-->
-                <div class="project-card card-hover glass-effect rounded-xl overflow-hidden">
-                    <img src="https://freewili.com/wp-content/uploads/2025/09/Free_WiLi.png" alt="FreeWili-IR">
-                    <div class="project-overlay">
-                        <h3 class="text-2xl font-bold mb-2 text-white">FreeWili-IR</h3>
-                        <p class="text-white text-center mb-4 px-4">A fusion of the games "Whack-a-mole" & "Keep Talking" in the embedded system FreeWili Platform.</p>
-                        <a href="https://github.com/SARRAF-5757/FreeWil-iR" target="_blank" class="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition">
-                            <i class="fab fa-github mr-2"></i>View on GitHub
-                        </a>
-                    </div>
-                </div>
+      <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!--# Project 1: Waqt #-->
+          <div class="project-card card-hover glass-effect rounded-xl overflow-hidden">
+            <img src="https://github.com/SARRAF-5757/Waqt/blob/master/assets/images/icons/ios-tinted.png?raw=true" alt="Waqt" />
+            <div class="project-overlay">
+              <h3 class="text-2xl font-bold mb-2 text-white">Waqt</h3>
+              <p class="text-white text-center mb-4 px-4">A simple React Native app for helping you improve your prayer habits.</p>
+              <a href="https://github.com/SARRAF-5757/Waqt" target="_blank" class="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition">
+                <i class="fab fa-github mr-2"></i>View on GitHub
+              </a>
             </div>
+          </div>
+
+          <!--# Project 2: OMP-Wizard #-->
+          <div class="project-card card-hover glass-effect rounded-xl overflow-hidden">
+            <img src="images/OMP-Wizard.png" alt="OMP-Wizard" onerror="this.src = 'https://via.placeholder.com/400?text=OMP-Wizard'" />
+            <div class="project-overlay">
+              <h3 class="text-2xl font-bold mb-2 text-white">OMP-Wizard</h3>
+              <p class="text-white text-center mb-4 px-4">A TUI setup wizard for Oh-My-Posh prompt engine</p>
+              <a href="https://github.com/SARRAF-5757/OMP-Wizard" target="_blank" class="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition">
+                <i class="fab fa-github mr-2"></i>View on GitHub
+              </a>
+            </div>
+          </div>
+
+          <!--# Project 3: Wordle Bot #-->
+          <div class="project-card card-hover glass-effect rounded-xl overflow-hidden">
+            <img src="https://github.com/ColeCurrent/Wordle-Bot/blob/main/public/favicon.png?raw=true" alt="Wordle Bot" />
+            <div class="project-overlay">
+              <h3 class="text-2xl font-bold mb-2 text-white">Wordle Bot</h3>
+              <p class="text-white text-center mb-4 px-4">Algorithm that solves a wordle problem faster than most human. Want to challenge yourself? Give the Wordle Bot a try!</p>
+              <div class="flex flex-col space-y-2">
+                <a href="https://github.com/ColeCurrent/Wordle-Bot" target="_blank" class="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition">
+                  <i class="fab fa-github mr-2"></i>View on GitHub
+                </a>
+                <a
+                  href="https://devpost.com/software/wordle-bot-av9s34"
+                  target="_blank"
+                  class="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition"
+                >
+                  <i class="fas fa-external-link-alt mr-2"></i>View on DevPost
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!--# Project 4: FreeWili-IR #-->
+          <div class="project-card card-hover glass-effect rounded-xl overflow-hidden">
+            <img src="https://freewili.com/wp-content/uploads/2025/09/Free_WiLi.png" alt="FreeWili-IR" />
+            <div class="project-overlay">
+              <h3 class="text-2xl font-bold mb-2 text-white">FreeWili-IR</h3>
+              <p class="text-white text-center mb-4 px-4">A fusion of the games "Whack-a-mole" & "Keep Talking" in the embedded system FreeWili Platform.</p>
+              <a href="https://github.com/SARRAF-5757/FreeWil-iR" target="_blank" class="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition">
+                <i class="fab fa-github mr-2"></i>View on GitHub
+              </a>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!--* Back to Home *-->
     <section class="py-12 bg-secondary">
-        <div class="container mx-auto px-6 text-center">
-            <a href="index.html" class="inline-block px-8 py-3 btn-gradient rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all text-white">
-                <i class="fas fa-arrow-left mr-2"></i>Back to Home
-            </a>
-        </div>
+      <div class="container mx-auto px-6 text-center">
+        <a href="index.html" class="inline-block px-8 py-3 btn-gradient rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all text-white">
+          <i class="fas fa-arrow-left mr-2"></i>Back to Home
+        </a>
+      </div>
     </section>
-</body>
+  </body>
 </html>
-
