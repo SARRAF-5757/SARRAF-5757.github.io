@@ -24,9 +24,20 @@
             <a href="#misc" onclick="smoothScroll(event, 'misc')" class="nav-link">Misc</a>
             <a href="#socials" onclick="smoothScroll(event, 'socials')" class="nav-link">Socials</a>
           </div>
-          <button class="md:hidden text-white">
-            <i class="fas fa-bars text-2xl"></i>
+          <button id="mobile-menu-button" class="md:hidden text-white" onclick="toggleMobileMenu()">
+            <i id="menu-icon" class="fas fa-bars text-2xl"></i>
           </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+          <div class="flex flex-col space-y-4">
+            <a href="#home" onclick="smoothScroll(event, 'home'); toggleMobileMenu();" class="nav-link py-2">Home</a>
+            <a href="#about" onclick="smoothScroll(event, 'about'); toggleMobileMenu();" class="nav-link py-2">Skills</a>
+            <a href="#projects" onclick="smoothScroll(event, 'projects'); toggleMobileMenu();" class="nav-link py-2">Projects</a>
+            <a href="#misc" onclick="smoothScroll(event, 'misc'); toggleMobileMenu();" class="nav-link py-2">Misc</a>
+            <a href="#socials" onclick="smoothScroll(event, 'socials'); toggleMobileMenu();" class="nav-link py-2">Socials</a>
+          </div>
+        </div>
         </div>
       </div>
     </nav>
@@ -40,10 +51,10 @@
       ></div>
       <div class="container mx-auto px-6 relative z-10">
         <div class="text-right md:text-right fade-in max-w-4xl ml-auto">
-          <p class="text-xl md:text-2xl mb-4 px-6 py-3 inline-block rounded-full font-semibold glass-effect-purple">
+          <p class="text-lg md:text-2xl mb-4 px-6 py-3 inline-block rounded-full font-semibold glass-effect-purple">
             Student at the <span class="text-um-blue">University</span> of <span class="text-um-maize">Michigan</span>
           </p>
-          <h1 class="md:leading-snug tagline-text text-5xl md:text-7xl font-bold mb-6 text-right">
+          <h1 class="leading-snug md:leading-snug tagline-text text-5xl md:text-7xl font-bold mb-6 text-right">
             Hi, It's your<br />
             friendly neighborhood<br />
             <span class="gradient-text">Sarraf</span> Ahmed.
@@ -490,6 +501,21 @@
 
     <!--! Scripts !-->
     <script>
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        
+        mobileMenu.classList.toggle('hidden');
+        
+        if (mobileMenu.classList.contains('hidden')) {
+          menuIcon.classList.remove('fa-times');
+          menuIcon.classList.add('fa-bars');
+        } else {
+          menuIcon.classList.remove('fa-bars');
+          menuIcon.classList.add('fa-times');
+        }
+      }
+      
       function smoothScroll(event, targetId) {
         event.preventDefault();
         const targetElement = document.getElementById(targetId);
