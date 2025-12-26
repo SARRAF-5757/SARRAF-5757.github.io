@@ -31,13 +31,52 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden mt-4 pb-4">
           <div class="flex flex-col space-y-4">
-            <a href="#home" onclick="smoothScroll(event, 'home'); toggleMobileMenu();" class="nav-link py-2">Home</a>
-            <a href="#about" onclick="smoothScroll(event, 'about'); toggleMobileMenu();" class="nav-link py-2">Skills</a>
-            <a href="#projects" onclick="smoothScroll(event, 'projects'); toggleMobileMenu();" class="nav-link py-2">Projects</a>
-            <a href="#misc" onclick="smoothScroll(event, 'misc'); toggleMobileMenu();" class="nav-link py-2">Misc</a>
-            <a href="#socials" onclick="smoothScroll(event, 'socials'); toggleMobileMenu();" class="nav-link py-2">Socials</a>
+            <a
+              href="#home"
+              onclick="
+                smoothScroll(event, 'home');
+                toggleMobileMenu();
+              "
+              class="nav-link py-2"
+              >Home</a
+            >
+            <a
+              href="#about"
+              onclick="
+                smoothScroll(event, 'about');
+                toggleMobileMenu();
+              "
+              class="nav-link py-2"
+              >Skills</a
+            >
+            <a
+              href="#projects"
+              onclick="
+                smoothScroll(event, 'projects');
+                toggleMobileMenu();
+              "
+              class="nav-link py-2"
+              >Projects</a
+            >
+            <a
+              href="#misc"
+              onclick="
+                smoothScroll(event, 'misc');
+                toggleMobileMenu();
+              "
+              class="nav-link py-2"
+              >Misc</a
+            >
+            <a
+              href="#socials"
+              onclick="
+                smoothScroll(event, 'socials');
+                toggleMobileMenu();
+              "
+              class="nav-link py-2"
+              >Socials</a
+            >
           </div>
-        </div>
         </div>
       </div>
     </nav>
@@ -54,7 +93,7 @@
           <p class="text-lg md:text-2xl mb-4 px-6 py-3 inline-block rounded-full font-semibold glass-effect-purple">
             Student at the <span class="text-um-blue">University</span> of <span class="text-um-maize">Michigan</span>
           </p>
-          <h1 class="leading-snug md:leading-snug tagline-text text-5xl md:text-7xl font-bold mb-6 text-right">
+          <h1 class="leading-snug md:leading-snug tagline-text text-6xl md:text-7xl font-bold mb-6 text-right">
             Hi, It's your<br />
             friendly neighborhood<br />
             <span class="gradient-text">Sarraf</span> Ahmed.
@@ -182,7 +221,7 @@
                     </div>
                     <div class="flex items-center space-x-2 glass-effect rounded-lg px-4 py-2 card-hover">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Qlik_Logo_No_Trademark_2_Color_Positive_RGB.png" alt="Qlik" class="w-8 h-8" />
-                      <span class="text-gray-300 font-semibold">Qlik</span>
+                      <span class="text-gray-300 font-semibold">Qlik Sense</span>
                     </div>
                   </div>
                 </div>
@@ -429,16 +468,19 @@
           <div class="glass-effect rounded-xl p-8 slide-in-right">
             <div class="flex flex-wrap gap-4 mb-8 border-b border-gray-700">
               <button class="tab-button active px-6 py-2 font-semibold" onclick="openFunTab('hobbies-hopped')">Hobbies Hopped</button>
+              <button class="tab-button px-6 py-2 font-semibold" onclick="openFunTab('Ex-browsers')">Ex-Browsers</button>
               <button class="tab-button px-6 py-2 font-semibold" onclick="openFunTab('+')">+</button>
             </div>
 
             <!--@ Hobbies Hopped Tab @-->
             <div id="hobbies-hopped" class="tab-content">
+              <p class="mb-4 text-gray-300">
+                I tend to go in-and out of hobbies a lot. And when I get into one, I REALLY get into it. Here are some of the ones I've gone through over the years
+              </p>
               <ul class="space-y-4 text-gray-300">
-                <span>I tend to go in-and out of hobbies a lot. And when I get into one, I REALLY get into it. Here are some of the ones I've gone through over the years</span>
                 <li class="flex items-start">
                   <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
-                  <span>Mi Band Modding</span>
+                  <span>Fitness Tracker Modding</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
@@ -446,7 +488,7 @@
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
-                  <span>Mechanical Keyboards</span>
+                  <span>Building Mechanical Keyboards</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
@@ -454,7 +496,77 @@
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
-                  <span>Skateboarding</span>
+                  <span>Skateboarding (current)</span>
+                </li>
+              </ul>
+            </div>
+
+            <!--@ Browsers Hopped Tab @-->
+            <div id="Ex-browsers" class="tab-content hidden">
+              <p class="mb-4 text-gray-300">In search of the perfect browser, I've gone through many over the years. Here's a log of all of them.</p>
+              <h3 class="text-lg font-bold mb-2 text-white">Desktop</h3>
+              <ul class="space-y-4 text-gray-300">
+                <li class="flex items-start">
+                  <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
+                  <span>Chrome 🤮</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
+                  <span>Edge (For a very short period)</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
+                  <span>Opera (Someone recommended, also for a short time)</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
+                  <span>Chrome (Came crawling back)</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
+                  <span>Vivaldi</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
+                  <span>Brave</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
+                  <span>Firefox</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
+                  <span>Arc</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
+                  <span>Zen (current)</span>
+                </li>
+              </ul>
+
+              <br />
+
+              <h3 class="text-lg font-bold mb-2 text-white">Mobile</h3>
+              <ul class="space-y-4 text-gray-300">
+                <li class="flex items-start">
+                  <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
+                  <span>Chrome</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
+                  <span>Firefox</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
+                  <span>Kiwi</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
+                  <span>Firefox</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
+                  <span>Soul (current)</span>
                 </li>
               </ul>
             </div>
@@ -502,20 +614,20 @@
     <!--! Scripts !-->
     <script>
       function toggleMobileMenu() {
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-        
-        mobileMenu.classList.toggle('menu-open');
-        
-        if (mobileMenu.classList.contains('menu-open')) {
-          menuIcon.classList.remove('fa-bars');
-          menuIcon.classList.add('fa-times');
+        const mobileMenu = document.getElementById("mobile-menu");
+        const menuIcon = document.getElementById("menu-icon");
+
+        mobileMenu.classList.toggle("menu-open");
+
+        if (mobileMenu.classList.contains("menu-open")) {
+          menuIcon.classList.remove("fa-bars");
+          menuIcon.classList.add("fa-times");
         } else {
-          menuIcon.classList.remove('fa-times');
-          menuIcon.classList.add('fa-bars');
+          menuIcon.classList.remove("fa-times");
+          menuIcon.classList.add("fa-bars");
         }
       }
-      
+
       function smoothScroll(event, targetId) {
         event.preventDefault();
         const targetElement = document.getElementById(targetId);
