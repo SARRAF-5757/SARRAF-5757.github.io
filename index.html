@@ -425,8 +425,43 @@
       </div>
     </section>
 
+    <!--* Course Projects Section *-->
+    <section id="course-projects" class="py-20 bg-secondary">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center fade-in">Course <span class="gradient-text">Projects</span></h2>
+        <p class="text-center text-gray-400 mb-12">Projects that were part of my course curriculum</p>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          <!--# Course Project 1 #-->
+          <div class="course-project-card card-hover glass-effect rounded-xl p-6">
+            <h3 class="text-2xl font-bold mb-4 text-white text-center">Instagram Clone</h3>
+            <p class="text-gray-300 text-center">
+              Full-stack web application featuring user authentication, posts, follows, likes, and comments. Built with Flask backend and modern JavaScript frontend.
+            </p>
+          </div>
+
+          <!--# Course Project 2 #-->
+          <div class="course-project-card card-hover glass-effect rounded-xl p-6">
+            <h3 class="text-2xl font-bold mb-4 text-white text-center">Search Engine</h3>
+            <p class="text-gray-300 text-center">Distributed search engine with custom map-reduce implementation for indexing and querying large document collections.</p>
+          </div>
+
+          <!--# Course Project 3 #-->
+          <div class="course-project-card card-hover glass-effect rounded-xl p-6">
+            <h3 class="text-2xl font-bold mb-4 text-white text-center">Terminal Text Editor</h3>
+            <p class="text-gray-300 text-center">Terminal-based text editor backend using doubly linked list data structures, designed for femto and e0 frontend interfaces.</p>
+          </div>
+        </div>
+        <div class="text-center">
+          <a href="projects.html#course" class="inline-block px-8 py-3 btn-gradient rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all text-white">
+            View More <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!--* Miscellaneous Section *-->
-    <section id="misc" class="py-20 bg-secondary">
+    <section id="misc" class="py-20 bg-primary">
       <div class="container mx-auto px-6">
         <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center fade-in">
           <span class="gradient-text">Miscellaneous</span>
@@ -460,7 +495,7 @@
     </section>
 
     <!--* Fun Things Section *-->
-    <section id="fun-things" class="py-20 bg-primary">
+    <section id="fun-things" class="py-20 bg-secondary">
       <div class="container mx-auto px-6">
         <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center fade-in">Fun <span class="gradient-text">Things</span></h2>
         <div class="max-w-5xl mx-auto">
@@ -469,6 +504,7 @@
             <div class="flex flex-wrap gap-4 mb-8 border-b border-gray-700">
               <button class="tab-button active px-6 py-2 font-semibold" onclick="openFunTab('hobbies-hopped')">Hobbies Hopped</button>
               <button class="tab-button px-6 py-2 font-semibold" onclick="openFunTab('Ex-browsers')">Ex-Browsers</button>
+              <!-- <button class="tab-button px-6 py-2 font-semibold" onclick="openFunTab('android-apps')">Favorite Android Apps</button> -->
               <button class="tab-button px-6 py-2 font-semibold" onclick="openFunTab('+')">+</button>
             </div>
 
@@ -501,7 +537,7 @@
               </ul>
             </div>
 
-            <!--@ Browsers Hopped Tab @-->
+            <!--@ Ex-Browsers Tab @-->
             <div id="Ex-browsers" class="tab-content hidden">
               <p class="mb-4 text-gray-300">In search of the perfect browser, I've gone through many over the years. Here's a log of all of them.</p>
               <h3 class="text-lg font-bold mb-2 text-white">Desktop</h3>
@@ -512,19 +548,11 @@
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
-                  <span>Edge (For a very short period)</span>
+                  <span>Edge (Only because I was on windows)</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
-                  <span>Opera (Someone recommended, also for a short time)</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
-                  <span>Chrome (Came crawling back)</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
-                  <span>Vivaldi</span>
+                  <span>Opera (For a very short while)</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
@@ -532,11 +560,15 @@
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
+                  <span>Vivaldi</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
                   <span>Firefox</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
-                  <span>Arc</span>
+                  <span>Arc (BCNY stopped developement)</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
@@ -558,7 +590,7 @@
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
-                  <span>Kiwi</span>
+                  <span>Kiwi (Discontinued)</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
@@ -566,10 +598,31 @@
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
+                  <span>Chromite</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
                   <span>Soul (current)</span>
                 </li>
               </ul>
             </div>
+
+            <!--@ Favorite Android Apps Tab @-->
+            <!-- <div id="android-apps" class="tab-content hidden">
+                <p class="mb-4 text-gray-300">
+                  Coming...
+                </p>
+                <ul class="space-y-4 text-gray-300">
+                  <li class="flex items-start">
+                    <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
+                    <span>...</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-circle text-blue text-xs mr-3 mt-2"></i>
+                    <span>...</span>
+                  </li>
+                </ul>
+              </div> -->
 
             <!--@ + @-->
             <div id="+" class="tab-content hidden">
@@ -583,7 +636,7 @@
     </section>
 
     <!--* Socials Section *-->
-    <section id="socials" class="py-20 bg-secondary">
+    <section id="socials" class="py-20 bg-primary">
       <div class="container mx-auto px-6">
         <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center fade-in">Find Me <span class="gradient-text">Here</span></h2>
         <div class="flex justify-center space-x-8 flex-wrap gap-6">

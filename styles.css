@@ -236,6 +236,15 @@ body {
   opacity: 1;
 }
 
+.course-project-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: default;
+}
+
 /*! ----------------MISCELLANEOUS PAGE---------------- !*/
 
 .misc-card {
