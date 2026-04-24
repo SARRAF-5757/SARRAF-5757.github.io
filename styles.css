@@ -42,6 +42,15 @@ body {
   box-shadow: 0 20px 40px rgba(139, 111, 168, 0.3);
 }
 
+.card-hover2 {
+  transition: all 0.3s ease;
+}
+
+.card-hover2:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px #00d1ff56;
+}
+
 .fade-in {
   animation: fadeIn 0.8s ease-in;
 }
