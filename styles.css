@@ -12,43 +12,64 @@ body {
 }
 
 :root {
-  --accent-purple: #8b6fa8;
-  --accent-blue: #00d1ff;
-  --bg-primary: #151019;
-  --bg-secondary: #1a1520;
+  --accent-main: #e23636;
+  --accent-dark: #b91c1c;
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #121212;
   --um-blue: #205a95;
   --um-maize: #ffcb05;
 }
 
-.gradient-text {
-  background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-blue) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+
 
 .glass-effect {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
 }
 
 .card-hover {
+  position: relative;
   transition: all 0.3s ease;
+  isolation: isolate;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  border: none !important;
 }
 
-.card-hover:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(139, 111, 168, 0.3);
+/* spider web */
+.card-hover::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  right: -40px;
+  bottom: -40px;
+  z-index: -2;
+  background-image: url("images/spider-web.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
 }
 
-.card-hover2 {
-  transition: all 0.3s ease;
+.card-hover:hover::before {
+  opacity: 1;
+  transform: scale(1.3);
 }
 
-.card-hover2:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px #00d1ff56;
+/* glass background */
+.card-hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  border-radius: inherit;
+  pointer-events: none;
 }
 
 .fade-in {
@@ -105,29 +126,18 @@ body {
   background-color: var(--bg-secondary) !important;
 }
 
-.text-blue {
-  color: var(--accent-blue);
+.text-accent {
+  color: var(--accent-main);
 }
 
-.text-purple {
-  color: var(--accent-purple);
+/* Buttons */
+.btn {
+  background-color: var(--accent-main);
+  color: #fff;
 }
 
-.icon-blue {
-  color: var(--accent-blue);
-}
-
-.border-accent-blue {
-  border-color: var(--accent-blue);
-}
-
-/* Gradient buttons */
-.btn-gradient {
-  background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-blue) 100%);
-}
-
-.btn-gradient:hover {
-  box-shadow: 0 10px 30px rgba(139, 111, 168, 0.4);
+.btn:hover {
+  background-color: var(--accent-dark);
 }
 
 /*! ------------------NAVIGATION------------------ !*/
@@ -176,7 +186,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
+  background: var(--accent-main);
   transition: width 0.3s ease;
 }
 
@@ -185,12 +195,6 @@ body {
 }
 
 /*! -------------------MAIN PAGE------------------- !*/
-
-.glass-effect-purple {
-  background: rgba(55, 42, 77, 0.5);
-  backdrop-filter: blur(3px);
-  border: 1px solid rgba(255, 255, 255, 0);
-}
 
 .text-um-blue {
   color: var(--um-blue);
@@ -207,15 +211,15 @@ body {
 }
 
 .tab-button.active {
-  color: var(--accent-blue);
-  border-bottom: 2px solid var(--accent-blue);
+  color: var(--accent-main);
+  border-bottom: 2px solid var(--accent-main);
 }
 
 /*! ------------------PROJECTS PAGE------------------ !*/
 
 .project-card {
   position: relative;
-  overflow: hidden;
+  overflow: visible !important;
   aspect-ratio: 1 / 1;
 }
 
@@ -223,6 +227,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: inherit;
 }
 
 .project-overlay {
@@ -231,7 +236,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(139, 111, 168, 0.661) 10%, rgba(0, 166, 255, 0.626) 100%);
+  background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
@@ -240,6 +245,7 @@ body {
   opacity: 0;
   transition: opacity 0.3s ease;
   padding: 20px;
+  border-radius: inherit;
 }
 
 .project-card:hover .project-overlay {
@@ -253,17 +259,6 @@ body {
   flex-direction: column;
   justify-content: center;
   cursor: default;
-}
-
-/*! ----------------MISCELLANEOUS PAGE---------------- !*/
-
-.misc-card {
-  transition: all 0.3s ease;
-}
-
-.misc-card:hover {
-  transform: scale(1.05);
-  border-color: var(--accent-blue);
 }
 
 /*! ------------------SOCIALS SECTION------------------ !*/
