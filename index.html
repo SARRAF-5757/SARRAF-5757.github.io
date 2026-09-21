@@ -13,38 +13,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
-    <style>
-      body {
-        background-color: var(--md-sys-color-background);
-        color: var(--md-sys-color-on-background);
-      }
-      .glass-effect {
-        background-color: var(--md-sys-color-surface-container);
-        :28px;
-      }
-      .tab-content {
-        transition: opacity 0.3s ease;
-      }
-      .project-card {
-        :28px;
-        position: relative;
-      }
-
-      .nav-link {
-        color: var(--md-sys-color-on-surface);
-        text-decoration: none;
-        padding: 8px 16px;
-        :20px;
-        transition: background-color 0.2s;
-      }
-      .nav-link:hover {
-        background-color: var(--md-sys-color-surface-container-highest);
-      }
-    </style>
   </head>
   <body class="bg-background text-onBackground">
     <!--* Navigation *-->
-    <nav class="fixed top-0 w-full z-50 glass-effect">
+    <nav class="fixed top-0 w-full z-50 bg-surfaceContainer/80 backdrop-blur-md">
       <div class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
           <div class="flex items-center space-x-2">
@@ -120,7 +92,7 @@
 
       <div class="container mx-auto px-6 relative z-10">
         <div class="text-right md:text-right fade-in max-w-4xl ml-auto">
-          <p class="text-lg md:text-2xl mb-4 px-6 py-3 inline-block rounded-full font-semibold glass-effect">
+          <p class="text-lg md:text-2xl mb-4 px-6 py-3 inline-block rounded-full font-semibold bg-surfaceContainer/80 backdrop-blur-md">
             Student at the <span class="text-um-blue">University</span> of <span class="text-um-maize">Michigan</span>
           </p>
           <h1 class="leading-snug md:leading-snug tagline-text text-6xl md:text-7xl font-bold mb-6 text-right">
@@ -144,7 +116,7 @@
           <div class="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
             <div class="slide-in-left relative flex items-center justify-center w-48 h-48 md:w-64 md:h-64 shrink-0">
               <div class="absolute inset-0 rounded-full" style="background-color: var(--md-sys-color-primary)"></div>
-              <div class="absolute rounded-full w-36 h-36 md:w-48 md:h-48" style="background-color: rgba(0, 0, 0, 0.25)"></div>
+              <div class="absolute rounded-full w-36 h-36 md:w-48 md:h-48" style="background-color: rgba(0, 0, 0, 0.5)"></div>
               <img src="images/dev.png" alt="Sarraf Ahmed" class="relative w-full h-full object-contain p-4 z-10" />
             </div>
             <p class="text-xl text-onSurfaceVariant text-center md:text-left slide-in-right flex-1">
@@ -156,7 +128,7 @@
           <br />
 
           <!--# Tabs #-->
-          <div class="glass-effect rounded-xl p-8 slide-in-right">
+          <div class="bg-surfaceContainer/80 backdrop-blur-md rounded-xl p-8 slide-in-right">
             <div class="segmented-btn-container mb-8">
               <button class="segmented-btn active" onclick="openTab('skills', this)">Skills</button>
               <button class="segmented-btn" onclick="openTab('experience', this)">Experience</button>
@@ -170,53 +142,53 @@
                 <div>
                   <h3 class="text-2xl font-bold text-primary mb-4">Languages & Frameworks</h3>
                   <div class="flex flex-wrap gap-4 items-center">
-                    <div class="flex items-center space-x-2 bg-surfaceContainerHighest rounded-lg px-4 py-2">
+                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
                       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" class="w-8 h-8" />
-                      <span class="text-onSurfaceVariant font-semibold">C++</span>
+                      <span class="text-white font-semibold">C++</span>
                     </div>
-                    <div class="flex items-center space-x-2 bg-surfaceContainerHighest rounded-lg px-4 py-2">
+                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
                       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="w-8 h-8" />
-                      <span class="text-onSurfaceVariant font-semibold">Python</span>
+                      <span class="text-white font-semibold">Python</span>
                     </div>
-                    <div class="flex items-center space-x-2 bg-surfaceContainerHighest rounded-lg px-4 py-2">
+                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
                       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" class="w-8 h-8" />
-                      <span class="text-onSurfaceVariant font-semibold">Java</span>
+                      <span class="text-white font-semibold">Java</span>
                     </div>
-                    <div class="flex items-center space-x-2 bg-surfaceContainerHighest rounded-lg px-4 py-2">
+                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
                       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/expo/expo-original.svg" alt="React Native" class="w-8 h-8" />
-                      <span class="text-onSurfaceVariant font-semibold">Expo</span>
+                      <span class="text-white font-semibold">Expo</span>
                     </div>
-                    <div class="flex items-center space-x-2 bg-surfaceContainerHighest rounded-lg px-4 py-2">
+                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
                       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactnative/reactnative-original.svg" alt="React Native" class="w-8 h-8" />
-                      <span class="text-onSurfaceVariant font-semibold">React Native</span>
+                      <span class="text-white font-semibold">React Native</span>
                     </div>
-                    <div class="flex items-center space-x-2 bg-surfaceContainerHighest rounded-lg px-4 py-2">
+                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
                       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML" class="w-8 h-8" />
-                      <span class="text-onSurfaceVariant font-semibold">HTML</span>
+                      <span class="text-white font-semibold">HTML</span>
                     </div>
-                    <div class="flex items-center space-x-2 bg-surfaceContainerHighest rounded-lg px-4 py-2">
+                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
                       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS" class="w-8 h-8" />
-                      <span class="text-onSurfaceVariant font-semibold">CSS</span>
+                      <span class="text-white font-semibold">CSS</span>
                     </div>
-                    <div class="flex items-center space-x-2 bg-surfaceContainerHighest rounded-lg px-4 py-2">
+                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
                       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" class="w-8 h-8" />
-                      <span class="text-onSurfaceVariant font-semibold">Tailwind CSS</span>
+                      <span class="text-white font-semibold">Tailwind CSS</span>
                     </div>
-                    <div class="flex items-center space-x-2 bg-surfaceContainerHighest rounded-lg px-4 py-2">
+                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
                       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-8 h-8" />
-                      <span class="text-onSurfaceVariant font-semibold">JavaScript</span>
+                      <span class="text-white font-semibold">JavaScript</span>
                     </div>
-                    <div class="flex items-center space-x-2 bg-surfaceContainerHighest rounded-lg px-4 py-2">
+                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
                       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" class="w-8 h-8" />
-                      <span class="text-onSurfaceVariant font-semibold">TypeScript</span>
+                      <span class="text-white font-semibold">TypeScript</span>
                     </div>
-                    <div class="flex items-center space-x-2 bg-surfaceContainerHighest rounded-lg px-4 py-2">
+                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
                       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" alt="TypeScript" class="w-8 h-8" />
-                      <span class="text-onSurfaceVariant font-semibold">SQlite</span>
+                      <span class="text-white font-semibold">SQlite</span>
                     </div>
-                    <div class="flex items-center space-x-2 bg-surfaceContainerHighest rounded-lg px-4 py-2">
+                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
                       <img src="https://www.svgrepo.com/show/374163/verilog.svg" alt="TypeScript" class="w-8 h-8" />
-                      <span class="text-onSurfaceVariant font-semibold">Verilog</span>
+                      <span class="text-white font-semibold">Verilog</span>
                     </div>
                   </div>
                 </div>
@@ -225,53 +197,53 @@
                 <div>
                   <h3 class="text-2xl font-bold text-primary mb-4">My Toolset</h3>
                   <div class="flex flex-wrap gap-4 items-center">
-                    <div class="flex items-center space-x-2 bg-surfaceContainerHighest rounded-lg px-4 py-2">
+                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
                       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/neovim/neovim-original.svg" alt="Neovim" class="w-8 h-8" />
-                      <span class="text-onSurfaceVariant font-semibold">Neovim</span>
+                      <span class="text-white font-semibold">Neovim</span>
                     </div>
-                    <div class="flex items-center space-x-2 bg-surfaceContainerHighest rounded-lg px-4 py-2">
+                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
                       <img
                         src="https://static0.xdaimages.com/wordpress/wp-content/uploads/2025/01/ghostty-logo.png?q=70&fit=contain&w=420&dpr=1"
                         alt="Ghostty"
                         class="w-8 h-8"
                       />
-                      <span class="text-onSurfaceVariant font-semibold">Ghostty</span>
+                      <span class="text-white font-semibold">Ghostty</span>
                     </div>
-                    <div class="flex items-center space-x-2 bg-surfaceContainerHighest rounded-lg px-4 py-2">
+                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
                       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VSCode" class="w-8 h-8" />
-                      <span class="text-onSurfaceVariant font-semibold">VSCode</span>
+                      <span class="text-white font-semibold">VSCode</span>
                     </div>
-                    <div class="flex items-center space-x-2 bg-surfaceContainerHighest rounded-lg px-4 py-2">
+                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
                       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" class="w-8 h-8" />
-                      <span class="text-onSurfaceVariant font-semibold">Git</span>
+                      <span class="text-white font-semibold">Git</span>
                     </div>
-                    <div class="flex items-center space-x-2 bg-surfaceContainerHighest rounded-lg px-4 py-2">
+                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
                       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/zsh/zsh-original.svg" alt="Git" class="w-8 h-8" />
-                      <span class="text-onSurfaceVariant font-semibold">ZSH</span>
+                      <span class="text-white font-semibold">ZSH</span>
                     </div>
-                    <div class="flex items-center space-x-2 bg-surfaceContainerHighest rounded-lg px-4 py-2">
+                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
                       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unrealengine/unrealengine-original.svg" alt="Unity" class="w-8 h-8" />
-                      <span class="text-onSurfaceVariant font-semibold">Unreal Engine</span>
+                      <span class="text-white font-semibold">Unreal Engine</span>
                     </div>
-                    <div class="flex items-center space-x-2 bg-surfaceContainerHighest rounded-lg px-4 py-2">
+                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
                       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original.svg" alt="Unity" class="w-8 h-8" />
-                      <span class="text-onSurfaceVariant font-semibold">Unity</span>
+                      <span class="text-white font-semibold">Unity</span>
                     </div>
-                    <div class="flex items-center space-x-2 bg-surfaceContainerHighest rounded-lg px-4 py-2">
+                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
                       <img src="https://miro.medium.com/v2/resize:fit:1500/1%2ASYC2GgJ5vG1DJrRI9A9Leg.png" alt="8th Wall" class="w-8 h-8" />
-                      <span class="text-onSurfaceVariant font-semibold">8th Wall</span>
+                      <span class="text-white font-semibold">8th Wall</span>
                     </div>
-                    <div class="flex items-center space-x-2 bg-surfaceContainerHighest rounded-lg px-4 py-2">
+                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
                       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/arduino/arduino-original-wordmark.svg" alt="Arduino" class="w-8 h-8" />
-                      <span class="text-onSurfaceVariant font-semibold">Arduino</span>
+                      <span class="text-white font-semibold">Arduino</span>
                     </div>
-                    <div class="flex items-center space-x-2 bg-surfaceContainerHighest rounded-lg px-4 py-2">
+                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
                       <img src="https://media.imgcdn.org/repo/2023/03/alteryx-designer/alteryx-designer-logo.png" alt="Alteryx" class="w-8 h-8" />
-                      <span class="text-onSurfaceVariant font-semibold">Alteryx</span>
+                      <span class="text-white font-semibold">Alteryx</span>
                     </div>
-                    <div class="flex items-center space-x-2 bg-surfaceContainerHighest rounded-lg px-4 py-2">
+                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Qlik_Logo_No_Trademark_2_Color_Positive_RGB.png" alt="Qlik" class="w-8 h-8" />
-                      <span class="text-onSurfaceVariant font-semibold">Qlik Sense</span>
+                      <span class="text-white font-semibold">Qlik Sense</span>
                     </div>
                   </div>
                 </div>
@@ -282,27 +254,34 @@
             <div id="experience" class="tab-content hidden">
               <ul class="space-y-8">
                 <li>
-                  <h3 class="text-xl font-semibold text-primary mb-3">Ford Motor Company - Data Analytics Intern</h3>
+                  <h3 class="text-xl font-semibold text-primary mb-3">University of Michigan Transportation Research Institute - Research Assistant</h3>
                   <ul class="space-y-2 text-onSurfaceVariant ml-4">
                     <li class="flex items-start">
                       <i class="fas fa-chevron-right text-primary text-sm mr-3 mt-1"></i>
                       <span
-                        >Worked alongside senior analysts & interns in Ford's analytics team to build an
-                        <strong class="text-onBackground">automated interactive FAQ dashboard</strong>.</span
+                        >Upgraded a <strong class="text-onBackground">driving simulator in Unreal Engine</strong> to facilitate UMTRI studies, peer-review research
+                        proposals, and conduct interactive demos.</span
                       >
                     </li>
                     <li class="flex items-start">
                       <i class="fas fa-chevron-right text-primary text-sm mr-3 mt-1"></i>
                       <span
-                        >Used <strong class="text-onBackground">Alteryx</strong> to extract, clean & <strong class="text-onBackground">Qlik Sense</strong> to visualize
-                        forum data.</span
+                        >Developed an infinite highway map using <strong class="text-onBackground">seed-based procedural content generation</strong> and implemented a
+                        novel experimental traffic light system.</span
                       >
                     </li>
                     <li class="flex items-start">
                       <i class="fas fa-chevron-right text-primary text-sm mr-3 mt-1"></i>
                       <span
-                        >Analyzed <strong class="text-onBackground">9,000+ messages</strong> from Yammer & Webex using
-                        <strong class="text-onBackground">REST APIs</strong>.</span
+                        >Overhauled <strong class="text-onBackground">steering wheel torque feedback</strong> for true-to-life resistance scaling and integrated
+                        <strong class="text-onBackground">lane alert systems</strong> including rumble strips and Botts' Dots.</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-chevron-right text-primary text-sm mr-3 mt-1"></i>
+                      <span
+                        >Engineered <strong class="text-onBackground">physically accurate vehicle models</strong> and authored extensive technical documentation and
+                        transition guides for the returning team.</span
                       >
                     </li>
                   </ul>
@@ -353,6 +332,32 @@
                     </li>
                   </ul>
                 </li>
+                <li>
+                  <h3 class="text-xl font-semibold text-primary mb-3">Ford Motor Company - Data Analytics Intern</h3>
+                  <ul class="space-y-2 text-onSurfaceVariant ml-4">
+                    <li class="flex items-start">
+                      <i class="fas fa-chevron-right text-primary text-sm mr-3 mt-1"></i>
+                      <span
+                        >Worked alongside senior analysts & interns in Ford's analytics team to build an
+                        <strong class="text-onBackground">automated interactive FAQ dashboard</strong>.</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-chevron-right text-primary text-sm mr-3 mt-1"></i>
+                      <span
+                        >Used <strong class="text-onBackground">Alteryx</strong> to extract, clean & <strong class="text-onBackground">Qlik Sense</strong> to visualize
+                        forum data.</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-chevron-right text-primary text-sm mr-3 mt-1"></i>
+                      <span
+                        >Analyzed <strong class="text-onBackground">9,000+ messages</strong> from Yammer & Webex using
+                        <strong class="text-onBackground">REST APIs</strong>.</span
+                      >
+                    </li>
+                  </ul>
+                </li>
               </ul>
             </div>
 
@@ -388,27 +393,31 @@
 
         <div class="grid md:grid-cols-3 gap-8 mb-12">
           <!--# Project 1 #-->
-          <div class="project-card card-hover glass-effect rounded-xl">
+          <div class="project-card card-hover bg-surfaceContainer/80 backdrop-blur-md rounded-xl">
             <img src="https://github.com/SARRAF-5757/Waqt/blob/master/images/icon.png?raw=true" alt="Waqt" />
             <div class="project-overlay m3-shape-slanted">
               <h3 class="text-2xl font-bold mb-2 text-onPrimary">Waqt</h3>
               <p class="text-onPrimary text-center mb-4">A simple React Native app for helping you improve your prayer habits.</p>
-              <md-elevated-button href="https://github.com/SARRAF-5757/Waqt" target="_blank"><i class="fab fa-github mr-2"></i> GitHub </md-elevated-button>
+              <md-elevated-button href="https://github.com/SARRAF-5757/Waqt" target="_blank"
+                ><i class="fab fa-github mr-2 btn-icon-circle"></i> GitHub
+              </md-elevated-button>
             </div>
           </div>
 
           <!--# Project 2 #-->
-          <div class="project-card card-hover glass-effect rounded-xl">
+          <div class="project-card card-hover bg-surfaceContainer/80 backdrop-blur-md rounded-xl">
             <img src="images/OMP-Wizard.png" alt="OMP-Wizard" onerror="this.src = 'https://via.placeholder.com/400?text=OMP-Wizard'" />
             <div class="project-overlay m3-shape-sunny">
               <h3 class="text-2xl font-bold mb-2 text-onPrimary">OMP-Wizard</h3>
               <p class="text-onPrimary text-center mb-4">A TUI setup wizard for Oh-My-Posh prompt engine</p>
-              <md-elevated-button href="https://github.com/SARRAF-5757/OMP-Wizard" target="_blank"><i class="fab fa-github mr-2"></i> GitHub </md-elevated-button>
+              <md-elevated-button href="https://github.com/SARRAF-5757/OMP-Wizard" target="_blank"
+                ><i class="fab fa-github mr-2 btn-icon-circle"></i> GitHub
+              </md-elevated-button>
             </div>
           </div>
 
           <!--# Project 3 #-->
-          <div class="project-card card-hover glass-effect rounded-xl">
+          <div class="project-card card-hover bg-surfaceContainer/80 backdrop-blur-md rounded-xl">
             <img src="https://github.com/ColeCurrent/Wordle-Bot/blob/main/public/favicon.png?raw=true" alt="Wordle Bot" />
             <div class="project-overlay m3-shape-pill">
               <h3 class="text-2xl font-bold mb-2 text-onPrimary">Wordle Bot</h3>
@@ -416,7 +425,9 @@
                 Algorithm that solves a wordle problem faster than most human. Want to challenge yourself? Give the Wordle Bot a try!
               </p>
               <div class="flex space-x-2">
-                <md-elevated-button href="https://github.com/ColeCurrent/Wordle-Bot" target="_blank"><i class="fab fa-github mr-2"></i> GitHub </md-elevated-button>
+                <md-elevated-button href="https://github.com/ColeCurrent/Wordle-Bot" target="_blank"
+                  ><i class="fab fa-github mr-2 btn-icon-circle"></i> GitHub
+                </md-elevated-button>
                 <md-elevated-button href="https://devpost.com/software/wordle-bot-av9s34" target="_blank"> DevPost </md-elevated-button>
               </div>
             </div>
@@ -424,7 +435,7 @@
         </div>
 
         <div class="text-center">
-          <md-filled-button href="projects.html" has-icon> View More <md-icon slot="icon">arrow_forward</md-icon></md-filled-button>
+          <md-filled-button href="projects.html" trailing-icon> View More <md-icon slot="icon" class="btn-icon-circle">arrow_forward</md-icon></md-filled-button>
         </div>
       </div>
     </section>
@@ -437,29 +448,33 @@
 
         <div class="grid md:grid-cols-3 gap-8 mb-12">
           <!--# Fun Project 1 #-->
-          <div class="project-card card-hover glass-effect rounded-xl">
+          <div class="project-card card-hover bg-surfaceContainer/80 backdrop-blur-md rounded-xl">
             <img src="images/BlackGlass.png" alt="BlackGlass" />
             <div class="project-overlay m3-shape-gem">
               <h3 class="text-2xl font-bold mb-2 text-onPrimary">BlackGlass</h3>
               <p class="text-onPrimary text-center mb-4">
                 An opinionated browser skin for Firefox based Zen browser focused to bring transparency and pleasant roundness in your web experience.
               </p>
-              <md-elevated-button href="https://github.com/SARRAF-5757/BlackGlass" target="_blank"><i class="fab fa-github mr-2"></i> GitHub </md-elevated-button>
+              <md-elevated-button href="https://github.com/SARRAF-5757/BlackGlass" target="_blank"
+                ><i class="fab fa-github mr-2 btn-icon-circle"></i> GitHub
+              </md-elevated-button>
             </div>
           </div>
 
           <!--# Fun Project 2 #-->
-          <div class="project-card card-hover glass-effect rounded-xl">
+          <div class="project-card card-hover bg-surfaceContainer/80 backdrop-blur-md rounded-xl">
             <img src="images/saricons.png" alt="Saricons" />
             <div class="project-overlay m3-shape-clover4leaf">
               <h3 class="text-2xl font-bold mb-2 text-onPrimary">Saricons</h3>
               <p class="text-onPrimary text-center mb-4">Fork of an android icon pack app with further customizations and added icon support</p>
-              <md-elevated-button href="https://github.com/SARRAF-5757/Saricons" target="_blank"><i class="fab fa-github mr-2"></i> GitHub </md-elevated-button>
+              <md-elevated-button href="https://github.com/SARRAF-5757/Saricons" target="_blank"
+                ><i class="fab fa-github mr-2 btn-icon-circle"></i> GitHub
+              </md-elevated-button>
             </div>
           </div>
 
           <!--# Fun Project 3 #-->
-          <div class="project-card card-hover glass-effect rounded-xl">
+          <div class="project-card card-hover bg-surfaceContainer/80 backdrop-blur-md rounded-xl">
             <img src="images/mi-band.png" alt="Xiaomi Mi Band Resources" />
             <div class="project-overlay m3-shape-pentagon">
               <h3 class="text-2xl font-bold mb-2 text-onPrimary">Xiaomi Mi Band Resources</h3>
@@ -473,7 +488,7 @@
         </div>
 
         <div class="text-center">
-          <md-filled-button href="projects.html#fun" has-icon> View More <md-icon slot="icon">arrow_forward</md-icon></md-filled-button>
+          <md-filled-button href="projects.html#fun" trailing-icon> View More <md-icon slot="icon" class="btn-icon-circle">arrow_forward</md-icon></md-filled-button>
         </div>
       </div>
     </section>
@@ -510,7 +525,7 @@
           </div>
         </div>
         <div class="text-center">
-          <md-filled-button href="projects.html#course" has-icon> View More <md-icon slot="icon">arrow_forward</md-icon></md-filled-button>
+          <md-filled-button href="projects.html#course" trailing-icon> View More <md-icon slot="icon" class="btn-icon-circle">arrow_forward</md-icon></md-filled-button>
         </div>
       </div>
     </section>
@@ -555,7 +570,7 @@
         <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center fade-in">Fun <span class="text-primary">Things</span></h2>
         <div class="max-w-5xl mx-auto">
           <!--# Tabs #-->
-          <div class="glass-effect rounded-xl p-8 slide-in-right">
+          <div class="bg-surfaceContainer/80 backdrop-blur-md rounded-xl p-8 slide-in-right">
             <div class="segmented-btn-container mb-8">
               <button class="segmented-btn active" onclick="openFunTab('hobbies-hopped', this)">Hobbies Hopped</button>
               <button class="segmented-btn" onclick="openFunTab('Ex-browsers', this)">Ex-Browsers</button>

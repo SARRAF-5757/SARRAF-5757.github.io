@@ -20,19 +20,9 @@ body {
   --um-maize: #ffcb05;
 }
 
-
-
-.glass-effect {
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(6px);
-}
-
-
-
 /* Material You card hover */
 
 .card-hover:hover {
-  
 }
 
 .fade-in {
@@ -180,17 +170,13 @@ body {
 
 /*! ------------------PROJECTS PAGE------------------ !*/
 
-
-
-
-
-
-
 .project-card {
   position: relative;
   overflow: visible !important;
   aspect-ratio: 1 / 1;
-  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    background-color 0.4s ease,
+    box-shadow 0.4s ease;
 }
 .project-card:hover {
   background-color: transparent !important;
@@ -209,7 +195,10 @@ body {
 }
 .project-overlay {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   color: var(--md-sys-color-on-primary);
   display: flex;
   flex-direction: column;
@@ -224,7 +213,10 @@ body {
 .project-overlay::before {
   content: "";
   position: absolute;
-  top: -25%; left: -25%; right: -25%; bottom: -25%;
+  top: -25%;
+  left: -25%;
+  right: -25%;
+  bottom: -25%;
   background: var(--md-sys-color-primary);
   z-index: -1;
   opacity: 0;
@@ -241,7 +233,7 @@ body {
 }
 .project-card:hover .project-overlay::before {
   opacity: 1;
-  transform: scale(0.9);
+  transform: scale(0.75);
 }
 
 /* Official Material 3 Expressive Shapes generated via material-shapes-ts */
@@ -277,11 +269,11 @@ body {
 }
 
 md-icon {
-  font-family: 'Material Symbols Outlined' !important;
+  font-family: "Material Symbols Outlined" !important;
 }
 
-
-.project-card, .course-project-card {
+.project-card,
+.course-project-card {
   border-radius: 24px;
 }
 
@@ -295,7 +287,10 @@ md-icon {
   overflow: visible !important;
   /* Slightly less saturated and lighter background */
   background-color: color-mix(in srgb, var(--md-sys-color-background) 92%, #ffffff 8%);
-  transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
+  transition:
+    background-color 0.4s ease,
+    box-shadow 0.4s ease,
+    color 0.4s ease;
   z-index: 1;
 }
 
@@ -317,7 +312,10 @@ md-icon {
 .course-project-card::before {
   content: "";
   position: absolute;
-  top: -15%; left: -15%; right: -15%; bottom: -15%;
+  top: -15%;
+  left: -15%;
+  right: -15%;
+  bottom: -15%;
   background: var(--md-sys-color-primary);
   z-index: -1;
   opacity: 0;
@@ -331,7 +329,7 @@ md-icon {
 
 .course-project-card:hover::before {
   opacity: 1;
-  transform: scale(1.02); /* Slightly smaller scale so it doesn't overlap crazy */
+  transform: scale(0.85);
 }
 
 .misc-card {
@@ -347,9 +345,12 @@ md-icon {
 }
 
 .misc-card::before {
-  content: '';
+  content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: var(--md-sys-color-primary);
   -webkit-mask-image: var(--m3-mask);
   mask-image: var(--m3-mask);
@@ -361,25 +362,35 @@ md-icon {
   mask-position: center;
   scale: 1;
   rotate: 0deg;
-  transition: scale 0.4s cubic-bezier(0.2, 0, 0, 1), rotate 0.4s cubic-bezier(0.2, 0, 0, 1);
+  transition:
+    scale 0.4s cubic-bezier(0.2, 0, 0, 1),
+    rotate 0.4s cubic-bezier(0.2, 0, 0, 1);
   z-index: -1;
 }
 
-
-
 @keyframes playful-rotate {
-  0% { rotate: 0deg; }
-  100% { rotate: 360deg; }
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
 }
 
 @keyframes playful-bounce {
-  0% { scale: 1; }
-  50% { scale: 1.2; }
-  100% { scale: 1.05; }
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1.05;
+  }
 }
 
 .misc-card:hover::before {
-  animation: 
+  animation:
     playful-rotate 1.4s ease-in-out forwards,
     playful-bounce 1.4s ease-in-out forwards;
   scale: 1.05;
@@ -421,4 +432,39 @@ md-icon {
 .segmented-btn.active {
   background: var(--md-sys-color-secondary-container);
   color: var(--md-sys-color-on-secondary-container);
+}
+
+.btn-icon-circle {
+  background-color: color-mix(in srgb, var(--md-sys-color-primary) 50%, #000000);
+  color: var(--md-sys-color-on-primary) !important;
+  border-radius: 50%;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  font-size: 16px;
+}
+/* Ensure md-icon scales its internal svg down slightly so it fits inside the circle */
+md-icon.btn-icon-circle {
+  font-size: 20px;
+}
+
+/* Cutout effect for icons */
+md-filled-button .btn-icon-circle {
+  color: var(--md-sys-color-primary) !important;
+}
+
+md-elevated-button .btn-icon-circle {
+  color: #ffffff !important;
+}
+
+/* Revert project button to white, but keep text on-primary */
+md-elevated-button {
+  --md-elevated-button-container-color: #ffffff;
+  --md-elevated-button-label-text-color: var(--md-sys-color-on-primary);
+}
+
+.chip-bg-blend {
+  background-color: color-mix(in srgb, var(--md-sys-color-primary) 50%, #000000);
 }
