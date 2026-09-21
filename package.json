@@ -1,16 +1,27 @@
 {
   "name": "portfolio.me",
   "version": "1.0.0",
-  "description": "",
+  "description": "[Portfolio Website](https://sarraf-5757.github.io/)",
   "main": "index.js",
   "scripts": {
-    "build-css": "tailwindcss build src/style.css -o output/styles.css"
+    "build-css": "tailwindcss -i css/input.css -o css/tailwind.css --minify"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "dependencies": {
-    "@tailwindcss/cli": "^4.2.2",
+    "@material/material-color-utilities": "^0.4.0",
+    "@material/web": "^2.5.0",
+    "@tailwindcss/cli": "^4.0.0",
+    "material-shapes-ts": "^0.3.0",
     "tailwindcss": "^3.4.19"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SARRAF-5757/SARRAF-5757.github.io.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/SARRAF-5757/SARRAF-5757.github.io/issues"
+  },
+  "homepage": "https://github.com/SARRAF-5757/SARRAF-5757.github.io#readme"
 }

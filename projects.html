@@ -1,161 +1,134 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sarraf Ahmed | Technical Projects</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="/image/png" href="images/favicon.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body class="bg-primary text-white">
+    <link rel="stylesheet" href="css/tailwind.css" />
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sarraf Ahmed | Technical Projects</title>
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    body { background-color: var(--md-sys-color-background); color: var(--md-sys-color-on-background); }
+    . { background-color: var(--md-sys-color-surface-container); : 28px; }
+    .project-card { : 28px;  position: relative; }
+    .nav-link { color: var(--md-sys-color-on-surface); text-decoration: none; padding: 8px 16px; : 20px; transition: background-color 0.2s; }
+    .nav-link:hover { background-color: var(--md-sys-color-surface-container-highest); }
+  </style>
+</head>
+  <body class="bg-background text-onBackground">
     <!--* Navigation *-->
-    <nav class="fixed top-0 w-full z-50 glass-effect">
+    <nav class="fixed top-0 w-full z-50 ">
       <div class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
           <a href="index.html" class="flex items-center space-x-2">
-            <img src="images/logo.png" alt="Logo" class="h-10" />
+            <div id="navbar-logo-container" class="flex items-center"></div>
           </a>
-          <div class="hidden md:flex space-x-8">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="index.html#about" class="nav-link">Skills</a>
-            <a href="index.html#projects" class="nav-link">Projects</a>
-            <a href="index.html#misc" class="nav-link">Misc</a>
-            <a href="index.html#socials" class="nav-link">Socials</a>
+          <div class="hidden md:flex segmented-btn-container">
+            <a href="index.html" class="segmented-btn">Home</a>
+            <a href="index.html#about" class="segmented-btn">Skills</a>
+            <a href="index.html#projects" class="segmented-btn active">Projects</a>
+            <a href="index.html#misc" class="segmented-btn">Misc</a>
+            <a href="index.html#socials" class="segmented-btn">Socials</a>
           </div>
         </div>
       </div>
     </nav>
 
     <!--* Projects Header *-->
-    <section class="pt-32 pb-10 bg-primary">
+    <section class="pt-32 pb-10 bg-background">
       <div class="container mx-auto px-6">
-        <h1 class="text-5xl md:text-6xl font-bold mb-4 text-center fade-in">Technical <span class="gradient-text">Projects</span></h1>
-        <p class="text-center text-gray-400 text-xl mb-8">All my technical and development projects</p>
+        <h1 class="text-5xl md:text-6xl font-bold mb-4 text-center fade-in">Technical <span class="text-primary">Projects</span></h1>
+        <p class="text-center text-onSurfaceVariant text-xl mb-8">All my technical and development projects</p>
       </div>
     </section>
 
     <!--* All Projects *-->
-    <section class="py-10 bg-primary">
+    <section class="py-10 bg-background">
       <div class="container mx-auto px-6">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <!--# Project 1: Waqt #-->
-          <div class="project-card card-hover glass-effect rounded-xl overflow-hidden">
+          <div class="project-card card-hover  rounded-xl">
             <img src="https://github.com/SARRAF-5757/Waqt/blob/master/images/icon.png?raw=true" alt="Waqt" />
-            <div class="project-overlay">
-              <h3 class="text-2xl font-bold mb-2 text-white">Waqt</h3>
-              <p class="text-white text-center mb-4 px-4">A simple React Native app for helping you improve your prayer habits.</p>
-              <a
-                href="https://github.com/SARRAF-5757/Waqt"
-                target="_blank"
-                class="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition"
-              >
-                <i class="fab fa-github mr-2"></i>View on GitHub
-              </a>
+            <div class="project-overlay m3-shape-gem">
+              <h3 class="text-2xl font-bold mb-2 text-onPrimary">Waqt</h3>
+              <p class="text-onPrimary text-center mb-4 px-4">A simple React Native app for helping you improve your prayer habits.</p>
+              <md-elevated-button href="https://github.com/SARRAF-5757/Waqt" target="_blank"><i class="fab fa-github mr-2"></i> View on GitHub
+              </md-elevated-button>
             </div>
           </div>
 
           <!--# Project 2: OMP-Wizard #-->
-          <div class="project-card card-hover glass-effect rounded-xl overflow-hidden">
+          <div class="project-card card-hover  rounded-xl">
             <img src="images/OMP-Wizard.png" alt="OMP-Wizard" onerror="this.src = 'https://via.placeholder.com/400?text=OMP-Wizard'" />
-            <div class="project-overlay">
-              <h3 class="text-2xl font-bold mb-2 text-white">OMP-Wizard</h3>
-              <p class="text-white text-center mb-4 px-4">A TUI setup wizard for Oh-My-Posh prompt engine</p>
-              <a
-                href="https://github.com/SARRAF-5757/OMP-Wizard"
-                target="_blank"
-                class="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition"
-              >
-                <i class="fab fa-github mr-2"></i>View on GitHub
-              </a>
+            <div class="project-overlay m3-shape-pill">
+              <h3 class="text-2xl font-bold mb-2 text-onPrimary">OMP-Wizard</h3>
+              <p class="text-onPrimary text-center mb-4 px-4">A TUI setup wizard for Oh-My-Posh prompt engine</p>
+              <md-elevated-button href="https://github.com/SARRAF-5757/OMP-Wizard" target="_blank"><i class="fab fa-github mr-2"></i> View on GitHub
+              </md-elevated-button>
             </div>
           </div>
 
           <!--# Project 3: Wordle Bot #-->
-          <div class="project-card card-hover glass-effect rounded-xl overflow-hidden">
+          <div class="project-card card-hover  rounded-xl">
             <img src="https://github.com/ColeCurrent/Wordle-Bot/blob/main/public/favicon.png?raw=true" alt="Wordle Bot" />
-            <div class="project-overlay">
-              <h3 class="text-2xl font-bold mb-2 text-white">Wordle Bot</h3>
-              <p class="text-white text-center mb-4 px-4">
+            <div class="project-overlay m3-shape-clover4leaf">
+              <h3 class="text-2xl font-bold mb-2 text-onPrimary">Wordle Bot</h3>
+              <p class="text-onPrimary text-center mb-4 px-4">
                 Algorithm that solves a wordle problem faster than most human. Want to challenge yourself? Give the Wordle Bot a try!
               </p>
               <div class="flex flex-col space-y-2">
-                <a
-                  href="https://github.com/ColeCurrent/Wordle-Bot"
-                  target="_blank"
-                  class="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition"
-                >
-                  <i class="fab fa-github mr-2"></i>View on GitHub
-                </a>
-                <a
-                  href="https://devpost.com/software/wordle-bot-av9s34"
-                  target="_blank"
-                  class="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition"
-                >
-                  <i class="fas fa-external-link-alt mr-2"></i>View on DevPost
-                </a>
+                <md-elevated-button href="https://github.com/ColeCurrent/Wordle-Bot" target="_blank"><i class="fab fa-github mr-2"></i> View on GitHub
+                </md-elevated-button>
+                <md-elevated-button href="https://devpost.com/software/wordle-bot-av9s34" target="_blank"><i class="fas fa-external-link-alt mr-2"></i> View on DevPost
+                </md-elevated-button>
               </div>
             </div>
           </div>
 
           <!--# Project 4: FreeWili-IR #-->
-          <div class="project-card card-hover glass-effect rounded-xl overflow-hidden">
+          <div class="project-card card-hover  rounded-xl">
             <img src="https://www.jameco.com/Jameco/Products/MakeImag/2738991.jpg" alt="FreeWili-IR" />
-            <div class="project-overlay">
-              <h3 class="text-2xl font-bold mb-2 text-white">FreeWili-IR</h3>
-              <p class="text-white text-center mb-4 px-4">A fusion of the games "Whack-a-mole" & "Keep Talking" in the embedded system FreeWili Platform.</p>
-              <a
-                href="https://github.com/SARRAF-5757/FreeWil-iR"
-                target="_blank"
-                class="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition"
-              >
-                <i class="fab fa-github mr-2"></i>View on GitHub
-              </a>
+            <div class="project-overlay m3-shape-cookie4sided">
+              <h3 class="text-2xl font-bold mb-2 text-onPrimary">FreeWili-IR</h3>
+              <p class="text-onPrimary text-center mb-4 px-4">A fusion of the games"Whack-a-mole" &"Keep Talking" in the embedded system FreeWili Platform.</p>
+              <md-elevated-button href="https://github.com/SARRAF-5757/FreeWil-iR" target="_blank"><i class="fab fa-github mr-2"></i> View on GitHub
+              </md-elevated-button>
             </div>
           </div>
 
           <!--# Project 5: Wheel-A-Way #-->
-          <div class="project-card card-hover glass-effect rounded-xl overflow-hidden">
+          <div class="project-card card-hover  rounded-xl">
             <img
               src="https://github.com/Wheel-A-Way/Wheel-A-Way.github.io/blob/main/assets/rocketship.jpeg?raw=true"
               alt="OMP-Wizard"
               onerror="this.src = 'https://via.placeholder.com/400?text=OMP-Wizard'"
             />
-            <div class="project-overlay">
-              <h3 class="text-2xl font-bold mb-2 text-white">Wheel-A-Way</h3>
-              <p class="text-white text-center mb-4 px-4">A VR experience to help build empathy towards those with accessibility constraints</p>
-              <a href="https://wheel-a-way.github.io/" target="_blank" class="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition">
-                <i class="fas fa-globe mr-2"></i>Visit Website
-              </a>
+            <div class="project-overlay m3-shape-pill">
+              <h3 class="text-2xl font-bold mb-2 text-onPrimary">Wheel-A-Way</h3>
+              <p class="text-onPrimary text-center mb-4 px-4">A VR experience to help build empathy towards those with accessibility constraints</p>
+              <md-elevated-button href="https://wheel-a-way.github.io/" target="_blank"><i class="fas fa-globe mr-2"></i> Visit Website
+              </md-elevated-button>
             </div>
           </div>
 
           <!--# Project 6: Virtual Museum Experience #-->
-          <div class="project-card card-hover glass-effect rounded-xl overflow-hidden">
+          <div class="project-card card-hover  rounded-xl">
             <img
-              src="https://www.archaeological.org/wp-content/uploads/2019/04/kelsey_museum_logo.png"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5qFp9e-gwfiYQ7VJuOZKwx2quySu9T57Flte81yoUuV7WsMzf8gZSk91r&s=10"
               alt="OMP-Wizard"
               onerror="this.src = 'https://via.placeholder.com/400?text=OMP-Wizard'"
             />
-            <div class="project-overlay">
-              <h3 class="text-2xl font-bold mb-2 text-white">Virtual Museum Experience</h3>
-              <p class="text-white text-center mb-4 px-4">An AR museum experience built for the Kelsey Museum of Archeology</p>
+            <div class="project-overlay m3-shape-pill">
+              <h3 class="text-2xl font-bold mb-2 text-onPrimary">Virtual Museum Experience</h3>
+              <p class="text-onPrimary text-center mb-4 px-4">An AR museum experience built for the Kelsey Museum of Archeology</p>
               <div class="flex flex-col space-y-2">
-                <a
-                  href="https://github.com/altrealityinitiative/Kelsey-Museum-Virtual-Experience"
-                  target="_blank"
-                  class="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition"
-                >
-                  <i class="fab fa-github mr-2"></i>View on GitHub
-                </a>
-                <a
-                  href="https://www.8thwall.com/sarraf/external/altrealityinitiative/kelsey-museum/project"
-                  target="_blank"
-                  class="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition"
-                >
-                  <i class="fas fa-external-link-alt mr-2"></i>View on 8th Wall
-                </a>
+                <md-elevated-button href="https://github.com/altrealityinitiative/Kelsey-Museum-Virtual-Experience" target="_blank"><i class="fab fa-github mr-2"></i> View on GitHub
+                </md-elevated-button>
+                <md-elevated-button href="https://www.8thwall.com/sarraf/external/altrealityinitiative/kelsey-museum/project" target="_blank"><i class="fas fa-external-link-alt mr-2"></i> View on 8th Wall
+                </md-elevated-button>
               </div>
             </div>
           </div>
@@ -164,72 +137,52 @@
     </section>
 
     <!--* Fun Projects Header *-->
-    <section id="fun" class="pt-32 pb-10 bg-secondary">
+    <section id="fun" class="pt-32 pb-10 bg-surfaceContainerLow">
       <div class="container mx-auto px-6">
-        <h1 class="text-5xl md:text-6xl font-bold mb-4 text-center fade-in">Fun <span class="gradient-text">Projects</span></h1>
-        <p class="text-center text-gray-400 text-xl mb-8">Creative and personal projects I've worked on</p>
+        <h1 class="text-5xl md:text-6xl font-bold mb-4 text-center fade-in">Fun <span class="text-primary">Projects</span></h1>
+        <p class="text-center text-onSurfaceVariant text-xl mb-8">Creative and personal projects I've worked on</p>
       </div>
     </section>
 
     <!--* All Fun Projects *-->
-    <section class="py-10 bg-secondary">
+    <section class="py-10 bg-surfaceContainerLow">
       <div class="container mx-auto px-6">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <!--# Fun Project 1: BlackGlass #-->
-          <div class="project-card card-hover glass-effect rounded-xl overflow-hidden">
+          <div class="project-card card-hover  rounded-xl">
             <img src="images/BlackGlass.png" alt="BlackGlass" />
-            <div class="project-overlay">
-              <h3 class="text-2xl font-bold mb-2 text-white">BlackGlass</h3>
-              <p class="text-white text-center mb-4 px-4">
+            <div class="project-overlay m3-shape-clover4leaf">
+              <h3 class="text-2xl font-bold mb-2 text-onPrimary">BlackGlass</h3>
+              <p class="text-onPrimary text-center mb-4 px-4">
                 An opinionated browser skin for Firefox based Zen browser focused to bring transparency and pleasant roundness in your web experience.
               </p>
-              <a
-                href="https://github.com/SARRAF-5757/BlackGlass"
-                target="_blank"
-                class="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition"
-              >
-                <i class="fab fa-github mr-2"></i>View on GitHub
-              </a>
+              <md-elevated-button href="https://github.com/SARRAF-5757/BlackGlass" target="_blank"><i class="fab fa-github mr-2"></i> View on GitHub
+              </md-elevated-button>
             </div>
           </div>
 
           <!--# Fun Project 2: Saricons #-->
-          <div class="project-card card-hover glass-effect rounded-xl overflow-hidden">
+          <div class="project-card card-hover  rounded-xl">
             <img src="images/saricons.png" alt="Saricons" />
-            <div class="project-overlay">
-              <h3 class="text-2xl font-bold mb-2 text-white">Saricons</h3>
-              <p class="text-white text-center mb-4 px-4">Fork of an android icon pack app with further customizations and added icon support</p>
-              <a
-                href="https://github.com/SARRAF-5757/Saricons"
-                target="_blank"
-                class="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition"
-              >
-                <i class="fab fa-github mr-2"></i>View on GitHub
-              </a>
+            <div class="project-overlay m3-shape-slanted">
+              <h3 class="text-2xl font-bold mb-2 text-onPrimary">Saricons</h3>
+              <p class="text-onPrimary text-center mb-4 px-4">Fork of an android icon pack app with further customizations and added icon support</p>
+              <md-elevated-button href="https://github.com/SARRAF-5757/Saricons" target="_blank"><i class="fab fa-github mr-2"></i> View on GitHub
+              </md-elevated-button>
             </div>
           </div>
 
           <!--# Fun Project 3: Xiaomi Mi Band Resources #-->
-          <div class="project-card card-hover glass-effect rounded-xl overflow-hidden">
+          <div class="project-card card-hover  rounded-xl">
             <img src="images/mi-band.png" alt="Xiaomi Mi Band Resources" />
-            <div class="project-overlay">
-              <h3 class="text-2xl font-bold mb-2 text-white">Xiaomi Mi Band Resources</h3>
-              <p class="text-white text-center mb-4 px-4">Custom flashable resource packs and watch faces for Xiaomi Mi Band 3 and 4</p>
+            <div class="project-overlay m3-shape-cookie6sided">
+              <h3 class="text-2xl font-bold mb-2 text-onPrimary">Xiaomi Mi Band Resources</h3>
+              <p class="text-onPrimary text-center mb-4 px-4">Custom flashable resource packs and watch faces for Xiaomi Mi Band 3 and 4</p>
               <div class="flex flex-col space-y-2">
-                <a
-                  href="https://sarrafsmbstudio.carrd.co/"
-                  target="_blank"
-                  class="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition"
-                >
-                  <i class="fas fa-globe mr-2"></i>Visit Website
-                </a>
-                <a
-                  href="https://geekdoing.com/members/sarraf.157979/"
-                  target="_blank"
-                  class="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition"
-                >
-                  <i class="fas fa-users mr-2"></i>View on GeekDoing
-                </a>
+                <md-elevated-button href="https://sarrafsmbstudio.carrd.co/" target="_blank"><i class="fas fa-globe mr-2"></i> Visit Website
+                </md-elevated-button>
+                <md-elevated-button href="https://geekdoing.com/members/sarraf.157979/" target="_blank"><i class="fas fa-users mr-2"></i> View on GeekDoing
+                </md-elevated-button>
               </div>
             </div>
           </div>
@@ -238,79 +191,79 @@
     </section>
 
     <!--* Course Projects Header *-->
-    <section id="course" class="pt-32 pb-10 bg-primary">
+    <section id="course" class="pt-32 pb-10 bg-background">
       <div class="container mx-auto px-6">
-        <h1 class="text-5xl md:text-6xl font-bold mb-4 text-center fade-in">Course <span class="gradient-text">Projects</span></h1>
-        <p class="text-center text-gray-400 text-xl mb-2">Projects that were part of my course curriculum</p>
-        <p class="text-center text-gray-400 text-sm mb-2">[Codebase not included due to UofM Honor Code]</p>
+        <h1 class="text-5xl md:text-6xl font-bold mb-4 text-center fade-in">Course <span class="text-primary">Projects</span></h1>
+        <p class="text-center text-onSurfaceVariant text-xl mb-2">Projects that were part of my course curriculum</p>
+        <p class="text-center text-onSurfaceVariant text-sm mb-2">[Codebase not included due to UofM Honor Code]</p>
       </div>
     </section>
 
     <!--* All Mention-worthy Course Projects *-->
-    <section class="py-10 bg-primary">
+    <section class="py-10 bg-background">
       <div class="container mx-auto px-6">
         <div class="grid md:grid-cols-3 gap-8 mb-12">
           <!--# Course Project 1 #-->
-          <div class="course-project-card card-hover glass-effect rounded-xl p-6">
-            <h3 class="text-2xl font-bold mb-4 text-white text-center">Instagram Clone</h3>
-            <p class="text-gray-300 text-center">
+          <div class="course-project-card m3-shape-cookie6sided card-hover  rounded-xl p-6">
+            <h3 class="text-2xl font-bold mb-4 text-onBackground text-center">Instagram Clone</h3>
+            <p class="text-onSurfaceVariant text-center">
               Full-stack web application featuring user authentication, posts, follows, likes, and comments. Built with Flask backend and modern JavaScript frontend.
             </p>
           </div>
 
           <!--# Course Project 2 #-->
-          <div class="course-project-card card-hover glass-effect rounded-xl p-6">
-            <h3 class="text-2xl font-bold mb-4 text-white text-center">Search Engine</h3>
-            <p class="text-gray-300 text-center">Distributed search engine with custom map-reduce implementation for indexing and querying large document collections.</p>
+          <div class="course-project-card m3-shape-pentagon card-hover  rounded-xl p-6">
+            <h3 class="text-2xl font-bold mb-4 text-onBackground text-center">Search Engine</h3>
+            <p class="text-onSurfaceVariant text-center">Distributed search engine with custom map-reduce implementation for indexing and querying large document collections.</p>
           </div>
 
           <!--# Course Project 3 #-->
-          <div class="course-project-card card-hover glass-effect rounded-xl p-6">
-            <h3 class="text-2xl font-bold mb-4 text-white text-center">Terminal Text Editor</h3>
-            <p class="text-gray-300 text-center">
+          <div class="course-project-card m3-shape-pentagon card-hover  rounded-xl p-6">
+            <h3 class="text-2xl font-bold mb-4 text-onBackground text-center">Terminal Text Editor</h3>
+            <p class="text-onSurfaceVariant text-center">
               Terminal-based text editor backend using doubly linked list data structures, designed for femto and e0 frontend interfaces.
             </p>
           </div>
 
           <!--# Course Project 4 #-->
-          <div class="course-project-card card-hover glass-effect rounded-xl p-6">
-            <h3 class="text-2xl font-bold mb-4 text-white text-center">Content-aware Image Resizer</h3>
-            <p class="text-gray-300 text-center">A cli tool written in C++ for resizing images by removing pixels using matrices without losing quality.</p>
+          <div class="course-project-card m3-shape-slanted card-hover  rounded-xl p-6">
+            <h3 class="text-2xl font-bold mb-4 text-onBackground text-center">Content-aware Image Resizer</h3>
+            <p class="text-onSurfaceVariant text-center">A cli tool written in C++ for resizing images by removing pixels using matrices without losing quality.</p>
           </div>
 
           <!--# Course Project 5 #-->
-          <div class="course-project-card card-hover glass-effect rounded-xl p-6">
-            <h3 class="text-2xl font-bold mb-4 text-white text-center">Stock Market Simulator</h3>
-            <p class="text-gray-300 text-center">C++ bot to analyze a stock market offers and make smart purchase decision to maximize profit and minimize loss.</p>
+          <div class="course-project-card m3-shape-slanted card-hover  rounded-xl p-6">
+            <h3 class="text-2xl font-bold mb-4 text-onBackground text-center">Stock Market Simulator</h3>
+            <p class="text-onSurfaceVariant text-center">C++ bot to analyze a stock market offers and make smart purchase decision to maximize profit and minimize loss.</p>
           </div>
 
           <!--# Course Project 6 #-->
-          <div class="course-project-card card-hover glass-effect rounded-xl p-6">
-            <h3 class="text-2xl font-bold mb-4 text-white text-center">Machine Learning for Message Processing</h3>
-            <p class="text-gray-300 text-center">Machine learning algorithm written in C++ to categorize messages.</p>
+          <div class="course-project-card m3-shape-pill card-hover  rounded-xl p-6">
+            <h3 class="text-2xl font-bold mb-4 text-onBackground text-center">Machine Learning for Message Processing</h3>
+            <p class="text-onSurfaceVariant text-center">Machine learning algorithm written in C++ to categorize messages.</p>
           </div>
 
           <!--# Course Project 7 #-->
-          <div class="course-project-card card-hover glass-effect rounded-xl p-6">
-            <h3 class="text-2xl font-bold mb-4 text-white text-center">Traffic Light Simulator</h3>
-            <p class="text-gray-300 text-center">
+          <div class="course-project-card m3-shape-verysunny card-hover  rounded-xl p-6">
+            <h3 class="text-2xl font-bold mb-4 text-onBackground text-center">Traffic Light Simulator</h3>
+            <p class="text-onSurfaceVariant text-center">
               Multi-lane crossroad traffic system simulator on an FPGA using Verilog HDL, optimized to reduce vehicle waiting time on all lanes.
             </p>
           </div>
 
           <!--# Course Project 8 #-->
-          <div class="course-project-card card-hover glass-effect rounded-xl p-6">
+          <div class="course-project-card m3-shape-slanted card-hover  rounded-xl p-6">
             <a href="projects/VisLab_Visualized.html">
-              <h3 class="text-2xl font-bold mb-4 text-white text-center">VisLab Visualized</h3>
-              <p class="text-gray-300 text-center">Computer lab simulator in Unreal Engine.</p>
+              <h3 class="text-2xl font-bold mb-4 text-onBackground text-center">VisLab Visualized</h3>
+              <p class="text-onSurfaceVariant text-center">Computer lab simulator in Unreal Engine.</p>
             </a>
           </div>
 
           <!--# Course Project 8 #-->
-          <div class="course-project-card card-hover glass-effect rounded-xl p-6">
+          <div class="course-project-card m3-shape-sunny card-hover  rounded-xl p-6">
             <a href="projects/A2GO.html">
-              <h3 class="text-2xl font-bold mb-4 text-white text-center">Ann Arbor Go</h3>
-              <p class="text-gray-300 text-center">Pokemon Go-style game about planting trees and fending off squirrels all around Ann Arbor.</p>
+              <h3 class="text-2xl font-bold mb-4 text-onBackground text-center">Ann Arbor Go</h3>
+              <p class="text-onSurfaceVariant text-center">Pokemon Go-style game about planting trees and fending off squirrels all around Ann Arbor.</p>
             </a>
           </div>
         </div>
@@ -318,12 +271,25 @@
     </section>
 
     <!--* Back to Home *-->
-    <section class="py-12 bg-secondary">
+    <section class="py-12 bg-surfaceContainerLow">
       <div class="container mx-auto px-6 text-center">
-        <a href="index.html" class="inline-block px-8 py-3 btn rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all text-white">
-          <i class="fas fa-arrow-left mr-2"></i>Back to Home
-        </a>
+        <md-filled-button href="index.html"><md-icon slot="icon">arrow_back</md-icon>Back to Home
+        </md-filled-button>
       </div>
     </section>
-  </body>
+  
+    <!-- Material You Setup -->
+    <div class="fixed top-1/2 left-0 transform -translate-y-1/2 z-50 flex items-center">
+      <div id="color-picker-container" class=" rounded-full p-2 flex flex-col gap-2 transition-all duration-300 cursor-pointer" style="height: 52px; width: 52px;" onclick="toggleColorPicker(event)">
+        <!-- The selected color circle -->
+        <div id="current-color-circle" class="w-9 h-9 rounded-full transition-colors duration-300 flex-shrink-0 mx-auto"></div>
+        
+        <!-- Options (rendered via JS) -->
+        <div id="color-options" class="flex flex-col gap-2 opacity-0 transition-opacity duration-300 pointer-events-none items-center mt-1">
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="js/theme.js"></script>
+</body>
 </html>
