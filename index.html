@@ -1,762 +1,687 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="css/tailwind.css" />
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sarraf Ahmed | Portfolio</title>
     <meta name="google-site-verification" content="PkKrU3PuTkaCVB8ARXjai9_z0JlMDJC0JoH47FNW--A" />
     <meta name="msvalidate.01" content="D8829E16D8934017D22C3962E4EA332B" />
     <meta name="Sarraf Ahmed" content="Personal portoflio, software developer" />
-    <title>Sarraf Ahmed | Portfolio</title>
-    <link rel="icon" type="image/png" href="images/favicon.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <!-- Pre-paint: apply the saved light/dark choice and cached theme tokens before anything renders. -->
+    <script>
+      (function () {
+        try {
+          var d = document.documentElement,
+            ls = localStorage,
+            s = ls.getItem("m3-scheme");
+          var dark = s === "dark" || (s !== "light" && matchMedia("(prefers-color-scheme: dark)").matches);
+          d.dataset.scheme = dark ? "dark" : "light";
+          var c = JSON.parse(ls.getItem("m3-theme-cache") || "null");
+          if (c && c.dark === dark && c.color === (ls.getItem("m3-theme-color") || "#4CAF50")) {
+            var st = document.createElement("style");
+            st.id = "theme-cache";
+            st.textContent = "html{" + c.css + "}";
+            document.head.appendChild(st);
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wdth,wght,ROND@6..144,75..125,100..1000,0..100&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css" />
+    <link rel="stylesheet" href="css/tailwind.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <script type="module" src="js/dist/main.js"></script>
   </head>
-  <body class="bg-background text-onBackground">
-    <!--* Navigation *-->
-    <nav class="fixed top-0 w-full z-50 bg-surfaceContainer/80 backdrop-blur-md">
-      <div class="container mx-auto px-6 py-4">
-        <div class="flex items-center justify-between">
-          <div class="flex items-center space-x-2">
-            <div id="navbar-logo-container" class="flex items-center"></div>
-          </div>
-          <div class="hidden md:flex segmented-btn-container">
-            <a href="#home" onclick="smoothScroll(event, 'home', this)" class="segmented-btn active">Home</a>
-            <a href="#about" onclick="smoothScroll(event, 'about', this)" class="segmented-btn">Skills</a>
-            <a href="#projects" onclick="smoothScroll(event, 'projects', this)" class="segmented-btn">Projects</a>
-            <a href="#misc" onclick="smoothScroll(event, 'misc', this)" class="segmented-btn">Misc</a>
-            <a href="#socials" onclick="smoothScroll(event, 'socials', this)" class="segmented-btn">Socials</a>
-          </div>
-          <button id="mobile-menu-button" class="md:hidden text-onBackground" onclick="toggleMobileMenu()">
-            <i id="menu-icon" class="fas fa-bars text-2xl"></i>
-          </button>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden mt-4 pb-4">
-          <div class="flex flex-col space-y-4">
-            <a
-              href="#home"
-              onclick="
-                smoothScroll(event, 'home');
-                toggleMobileMenu();
-              "
-              class="nav-link py-2"
-              >Home</a
-            >
-            <a
-              href="#about"
-              onclick="
-                smoothScroll(event, 'about');
-                toggleMobileMenu();
-              "
-              class="nav-link py-2"
-              >Skills</a
-            >
-            <a
-              href="#projects"
-              onclick="
-                smoothScroll(event, 'projects');
-                toggleMobileMenu();
-              "
-              class="nav-link py-2"
-              >Projects</a
-            >
-            <a
-              href="#misc"
-              onclick="
-                smoothScroll(event, 'misc');
-                toggleMobileMenu();
-              "
-              class="nav-link py-2"
-              >Misc</a
-            >
-            <a
-              href="#socials"
-              onclick="
-                smoothScroll(event, 'socials');
-                toggleMobileMenu();
-              "
-              class="nav-link py-2"
-              >Socials</a
-            >
-          </div>
-        </div>
-      </div>
-    </nav>
-
-    <!--* Main Page *-->
-    <section id="home" class="min-h-screen flex items-center justify-center relative bg-background">
-      <!-- <canvas id="network-canvas" class="absolute inset-0"></canvas> -->
-
-      <div class="container mx-auto px-6 relative z-10">
-        <div class="text-right md:text-right fade-in max-w-4xl ml-auto">
-          <p class="text-lg md:text-2xl mb-4 px-6 py-3 inline-block rounded-full font-semibold bg-surfaceContainer/80 backdrop-blur-md">
-            Student at the <span class="text-um-blue">University</span> of <span class="text-um-maize">Michigan</span>
-          </p>
-          <h1 class="leading-snug md:leading-snug tagline-text text-6xl md:text-7xl font-bold mb-6 text-right">
-            Hi, It's your<br />
-            friendly neighborhood<br />
-            <span class="text-primary">Sarraf</span> Ahmed.
-          </h1>
-          <div class="mt-8 flex justify-end space-x-4">
-            <md-filled-button href="#about" onclick="smoothScroll(event, 'about')">More About Me </md-filled-button>
-            <md-outlined-button href="/projects.html"> View Projects </md-outlined-button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--* About Section *-->
-    <section id="about" class="py-20 bg-background">
-      <div class="container mx-auto px-6">
-        <h2 class="text-4xl md:text-5xl font-bold text-center fade-in">About <span class="text-primary">Me</span></h2>
-        <div class="max-w-4xl mx-auto">
-          <div class="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
-            <div class="slide-in-left relative flex items-center justify-center w-48 h-48 md:w-64 md:h-64 shrink-0">
-              <div class="absolute inset-0 rounded-full" style="background-color: var(--md-sys-color-primary)"></div>
-              <div class="absolute rounded-full w-36 h-36 md:w-48 md:h-48" style="background-color: rgba(0, 0, 0, 0.5)"></div>
-              <img src="images/dev.png" alt="Sarraf Ahmed" class="relative w-full h-full object-contain p-4 z-10" />
-            </div>
-            <p class="text-xl text-onSurfaceVariant text-center md:text-left slide-in-right flex-1">
-              I'm a senior at the University of Michigan studying Computer Science, passionate about building software solutions to real-life hurdles and exploring the
-              fun world of technology.
-            </p>
-          </div>
-
-          <br />
-
-          <!--# Tabs #-->
-          <div class="bg-surfaceContainer/80 backdrop-blur-md rounded-xl p-8 slide-in-right">
-            <div class="segmented-btn-container mb-8">
-              <button class="segmented-btn active" onclick="openTab('skills', this)">Skills</button>
-              <button class="segmented-btn" onclick="openTab('experience', this)">Experience</button>
-              <button class="segmented-btn" onclick="openTab('education', this)">Education</button>
-            </div>
-
-            <!--@ Skills Tab @-->
-            <div id="skills" class="tab-content">
-              <div class="space-y-8">
-                <!--$ Languages & Frameworks $-->
-                <div>
-                  <h3 class="text-2xl font-bold text-primary mb-4">Languages & Frameworks</h3>
-                  <div class="flex flex-wrap gap-4 items-center">
-                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" class="w-8 h-8" />
-                      <span class="text-white font-semibold">C++</span>
-                    </div>
-                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="w-8 h-8" />
-                      <span class="text-white font-semibold">Python</span>
-                    </div>
-                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" class="w-8 h-8" />
-                      <span class="text-white font-semibold">Java</span>
-                    </div>
-                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/expo/expo-original.svg" alt="React Native" class="w-8 h-8" />
-                      <span class="text-white font-semibold">Expo</span>
-                    </div>
-                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactnative/reactnative-original.svg" alt="React Native" class="w-8 h-8" />
-                      <span class="text-white font-semibold">React Native</span>
-                    </div>
-                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML" class="w-8 h-8" />
-                      <span class="text-white font-semibold">HTML</span>
-                    </div>
-                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS" class="w-8 h-8" />
-                      <span class="text-white font-semibold">CSS</span>
-                    </div>
-                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" class="w-8 h-8" />
-                      <span class="text-white font-semibold">Tailwind CSS</span>
-                    </div>
-                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-8 h-8" />
-                      <span class="text-white font-semibold">JavaScript</span>
-                    </div>
-                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" class="w-8 h-8" />
-                      <span class="text-white font-semibold">TypeScript</span>
-                    </div>
-                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" alt="TypeScript" class="w-8 h-8" />
-                      <span class="text-white font-semibold">SQlite</span>
-                    </div>
-                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
-                      <img src="https://www.svgrepo.com/show/374163/verilog.svg" alt="TypeScript" class="w-8 h-8" />
-                      <span class="text-white font-semibold">Verilog</span>
-                    </div>
-                  </div>
-                </div>
-
-                <!--$ My Toolset $-->
-                <div>
-                  <h3 class="text-2xl font-bold text-primary mb-4">My Toolset</h3>
-                  <div class="flex flex-wrap gap-4 items-center">
-                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/neovim/neovim-original.svg" alt="Neovim" class="w-8 h-8" />
-                      <span class="text-white font-semibold">Neovim</span>
-                    </div>
-                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
-                      <img
-                        src="https://static0.xdaimages.com/wordpress/wp-content/uploads/2025/01/ghostty-logo.png?q=70&fit=contain&w=420&dpr=1"
-                        alt="Ghostty"
-                        class="w-8 h-8"
-                      />
-                      <span class="text-white font-semibold">Ghostty</span>
-                    </div>
-                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VSCode" class="w-8 h-8" />
-                      <span class="text-white font-semibold">VSCode</span>
-                    </div>
-                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" class="w-8 h-8" />
-                      <span class="text-white font-semibold">Git</span>
-                    </div>
-                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/zsh/zsh-original.svg" alt="Git" class="w-8 h-8" />
-                      <span class="text-white font-semibold">ZSH</span>
-                    </div>
-                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unrealengine/unrealengine-original.svg" alt="Unity" class="w-8 h-8" />
-                      <span class="text-white font-semibold">Unreal Engine</span>
-                    </div>
-                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original.svg" alt="Unity" class="w-8 h-8" />
-                      <span class="text-white font-semibold">Unity</span>
-                    </div>
-                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
-                      <img src="https://miro.medium.com/v2/resize:fit:1500/1%2ASYC2GgJ5vG1DJrRI9A9Leg.png" alt="8th Wall" class="w-8 h-8" />
-                      <span class="text-white font-semibold">8th Wall</span>
-                    </div>
-                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/arduino/arduino-original-wordmark.svg" alt="Arduino" class="w-8 h-8" />
-                      <span class="text-white font-semibold">Arduino</span>
-                    </div>
-                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
-                      <img src="https://media.imgcdn.org/repo/2023/03/alteryx-designer/alteryx-designer-logo.png" alt="Alteryx" class="w-8 h-8" />
-                      <span class="text-white font-semibold">Alteryx</span>
-                    </div>
-                    <div class="flex items-center space-x-2 chip-bg-blend rounded-full px-4 py-2">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Qlik_Logo_No_Trademark_2_Color_Positive_RGB.png" alt="Qlik" class="w-8 h-8" />
-                      <span class="text-white font-semibold">Qlik Sense</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!--@ Experience Tab @-->
-            <div id="experience" class="tab-content hidden">
-              <ul class="space-y-8">
-                <li>
-                  <h3 class="text-xl font-semibold text-primary mb-3">University of Michigan Transportation Research Institute - Research Assistant</h3>
-                  <ul class="space-y-2 text-onSurfaceVariant ml-4">
-                    <li class="flex items-start">
-                      <i class="fas fa-chevron-right text-primary text-sm mr-3 mt-1"></i>
-                      <span
-                        >Upgraded a <strong class="text-onBackground">driving simulator in Unreal Engine</strong> to facilitate UMTRI studies, peer-review research
-                        proposals, and conduct demos for study proposals.</span
-                      >
-                    </li>
-                    <li class="flex items-start">
-                      <i class="fas fa-chevron-right text-primary text-sm mr-3 mt-1"></i>
-                      <span
-                        >Developed an infinite highway map using <strong class="text-onBackground">seed-based procedural content generation</strong> and implemented a
-                        novel experimental traffic light system.</span
-                      >
-                    </li>
-                    <li class="flex items-start">
-                      <i class="fas fa-chevron-right text-primary text-sm mr-3 mt-1"></i>
-                      <span
-                        >Overhauled <strong class="text-onBackground">steering wheel torque feedback</strong> for true-to-life resistance scaling and integrated
-                        <strong class="text-onBackground">lane alert systems</strong> including rumble strips and Botts' Dots.</span
-                      >
-                    </li>
-                    <li class="flex items-start">
-                      <i class="fas fa-chevron-right text-primary text-sm mr-3 mt-1"></i>
-                      <span
-                        >Engineered <strong class="text-onBackground">physically accurate vehicle models</strong> and authored extensive technical documentation and
-                        transition guides for the returning team.</span
-                      >
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <h3 class="text-xl font-semibold text-primary mb-3">Vice President & Cohort Leader at Alternate Reality Initiative</h3>
-                  <ul class="space-y-2 text-onSurfaceVariant ml-4">
-                    <li class="flex items-start">
-                      <i class="fas fa-chevron-right text-primary text-sm mr-3 mt-1"></i>
-                      <span>Led technical workshops <strong class="text-onBackground">teaching AR/VR development tools</strong> and workflows to club members.</span>
-                    </li>
-                    <li class="flex items-start">
-                      <i class="fas fa-chevron-right text-primary text-sm mr-3 mt-1"></i>
-                      <span
-                        >Directed a 12-member team in developing an <strong class="text-onBackground">AR Museum Experience</strong> for the Kelsey Museum of Archaeology,
-                        emphasizing stability, performance optimization, and user experience refinement for launch.</span
-                      >
-                    </li>
-                    <li class="flex items-start">
-                      <i class="fas fa-chevron-right text-primary text-sm mr-3 mt-1"></i>
-                      <span
-                        >Evaluated and <strong class="text-onBackground">selected development platforms</strong>, AR frameworks, and tools, establishing the tech stack
-                        and <strong class="text-onBackground">onboarding team members</strong> to ensure consistent implementation.</span
-                      >
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <h3 class="text-xl font-semibold text-primary mb-3">Hacker at MHacks</h3>
-                  <ul class="space-y-2 text-onSurfaceVariant ml-4">
-                    <li class="flex items-start">
-                      <i class="fas fa-chevron-right text-primary text-sm mr-3 mt-1"></i>
-                      <span
-                        >Developed a strategy algorithm that leveraged the New York Times' <strong class="text-onBackground">Wordle</strong> word bank data to find
-                        optimal guesses for a game.</span
-                      >
-                    </li>
-                    <li class="flex items-start">
-                      <i class="fas fa-chevron-right text-primary text-sm mr-3 mt-1"></i>
-                      <span
-                        >Designed and built a competitive Wordle web game with an <strong class="text-onBackground">intelligent artificial opponent</strong> leveraging
-                        the algorithm to efficiently analyze word patterns and solve the game in as few attempts as possible.</span
-                      >
-                    </li>
-                    <li class="flex items-start">
-                      <i class="fas fa-chevron-right text-primary text-sm mr-3 mt-1"></i>
-                      <span>Collaborated with a team of students from other universities, combining complementary skill sets.</span>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <h3 class="text-xl font-semibold text-primary mb-3">Ford Motor Company - Data Analytics Intern</h3>
-                  <ul class="space-y-2 text-onSurfaceVariant ml-4">
-                    <li class="flex items-start">
-                      <i class="fas fa-chevron-right text-primary text-sm mr-3 mt-1"></i>
-                      <span
-                        >Worked alongside senior analysts & interns in Ford's analytics team to build an
-                        <strong class="text-onBackground">automated interactive FAQ dashboard</strong>.</span
-                      >
-                    </li>
-                    <li class="flex items-start">
-                      <i class="fas fa-chevron-right text-primary text-sm mr-3 mt-1"></i>
-                      <span
-                        >Used <strong class="text-onBackground">Alteryx</strong> to extract, clean & <strong class="text-onBackground">Qlik Sense</strong> to visualize
-                        forum data.</span
-                      >
-                    </li>
-                    <li class="flex items-start">
-                      <i class="fas fa-chevron-right text-primary text-sm mr-3 mt-1"></i>
-                      <span
-                        >Analyzed <strong class="text-onBackground">9,000+ messages</strong> from Yammer & Webex using
-                        <strong class="text-onBackground">REST APIs</strong>.</span
-                      >
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-
-            <!--@ Education Tab @-->
-            <div id="education" class="tab-content hidden">
-              <ul class="space-y-6">
-                <li class="flex items-start space-x-4">
-                  <i class="fas fa-graduation-cap text-primary text-2xl mt-1"></i>
-                  <div>
-                    <h3 class="text-xl font-semibold text-primary mb-2">University of Michigan</h3>
-                    <p class="text-onSurfaceVariant">BS in Computer Science (2023-Current)</p>
-                  </div>
-                </li>
-                <li class="flex items-start space-x-4">
-                  <i class="fas fa-school text-primary text-2xl mt-1"></i>
-                  <div>
-                    <h3 class="text-xl font-semibold text-primary mb-2">Hamtramck High School</h3>
-                    <p class="text-onSurfaceVariant">High School Diploma (2019-2023)</p>
-                  </div>
-                </li>
-              </ul>
+  <body>
+    <!-- <m3e-theme> must stay the direct child of <body>: it writes every color/motion token onto <html>.
+         Saved color + light/dark choice are applied by js/prefs.js; the left theme rail is injected by js/site.js. -->
+    <m3e-theme id="theme" color="#4CAF50" variant="vibrant" scheme="auto" motion="expressive">
+      <!--* Navigation *-->
+      <header class="site-nav fixed top-0 inset-x-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 h-[72px] flex items-center justify-between gap-4" aria-label="Primary">
+          <!--# Logo (SVG injected by js/site.js) #-->
+          <a href="#home" class="flex items-center rounded-lg" aria-label="Sarraf Ahmed, back to top">
+            <span id="navbar-logo-container" class="flex items-center"></span>
+          </a>
+          <!--# Desktop nav: connected button group, highlighted by scrollspy in js/site.js #-->
+          <m3e-button-group variant="connected" class="hidden md:flex">
+            <m3e-button variant="tonal" toggle href="#home" data-nav-target="home">Home</m3e-button>
+            <m3e-button variant="tonal" toggle href="#about" data-nav-target="about">Skills</m3e-button>
+            <m3e-button variant="tonal" toggle href="#projects" data-nav-target="projects">Projects</m3e-button>
+            <m3e-button variant="tonal" toggle href="#misc" data-nav-target="misc">Misc</m3e-button>
+            <m3e-button variant="tonal" toggle href="#socials" data-nav-target="socials">Socials</m3e-button>
+          </m3e-button-group>
+          <!--# Mobile menu toggle #-->
+          <m3e-icon-button id="mobile-menu-button" class="md:hidden" variant="tonal" toggle aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+            <m3e-icon variant="rounded" name="menu"></m3e-icon>
+            <m3e-icon slot="selected" variant="rounded" name="close"></m3e-icon>
+          </m3e-icon-button>
+        </nav>
+        <!--# Mobile menu (slides down below 768px) #-->
+        <div id="mobile-menu" class="md:hidden">
+          <div>
+            <div class="container mx-auto px-4 pb-4 flex flex-col items-stretch gap-1">
+              <m3e-button variant="text" href="#home">Home</m3e-button>
+              <m3e-button variant="text" href="#about">Skills</m3e-button>
+              <m3e-button variant="text" href="#projects">Projects</m3e-button>
+              <m3e-button variant="text" href="#misc">Misc</m3e-button>
+              <m3e-button variant="text" href="#socials">Socials</m3e-button>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </header>
 
-    <!--* Projects Section *-->
-    <section id="projects" class="py-20 bg-surfaceContainerLow">
-      <div class="container mx-auto px-6">
-        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center fade-in">Technical <span class="text-primary">Projects</span></h2>
-        <p class="text-center text-onSurfaceVariant mb-12">Need-induced personal projects and hackathon projects</p>
-
-        <div class="grid md:grid-cols-3 gap-8 mb-12">
-          <!--# Project 1 #-->
-          <div class="project-card card-hover bg-surfaceContainer/80 backdrop-blur-md rounded-xl">
-            <img src="https://github.com/SARRAF-5757/Waqt/blob/master/images/icon.png?raw=true" alt="Waqt" />
-            <div class="project-overlay m3-shape-slanted">
-              <h3 class="text-2xl font-bold mb-2 text-onPrimary">Waqt</h3>
-              <p class="text-onPrimary text-center mb-4">A simple React Native app for helping you improve your prayer habits.</p>
-              <md-elevated-button href="https://github.com/SARRAF-5757/Waqt" target="_blank"
-                ><i class="fab fa-github mr-2 btn-icon-circle"></i> GitHub
-              </md-elevated-button>
-            </div>
+      <main>
+        <!--* Hero *-->
+        <section id="home" data-nav="home" class="relative min-h-[100svh] flex items-center overflow-hidden pt-28 pb-16">
+          <!--# Decorative morphing shape (cycles shapes, see js/site.js "Hero shape loop") #-->
+          <div class="hero-shape-wrap w-[80vmin] md:w-[62vmin] max-w-[640px] -left-[22vmin] md:left-[1vw] top-1/2 -translate-y-1/2" aria-hidden="true">
+            <m3e-shape id="hero-shape" name="12-sided-cookie"></m3e-shape>
           </div>
 
-          <!--# Project 2 #-->
-          <div class="project-card card-hover bg-surfaceContainer/80 backdrop-blur-md rounded-xl">
-            <img src="images/OMP-Wizard.png" alt="OMP-Wizard" onerror="this.src = 'https://via.placeholder.com/400?text=OMP-Wizard'" />
-            <div class="project-overlay m3-shape-sunny">
-              <h3 class="text-2xl font-bold mb-2 text-onPrimary">OMP-Wizard</h3>
-              <p class="text-onPrimary text-center mb-4">A TUI setup wizard for Oh-My-Posh prompt engine</p>
-              <md-elevated-button href="https://github.com/SARRAF-5757/OMP-Wizard" target="_blank"
-                ><i class="fab fa-github mr-2 btn-icon-circle"></i> GitHub
-              </md-elevated-button>
-            </div>
-          </div>
-
-          <!--# Project 3 #-->
-          <div class="project-card card-hover bg-surfaceContainer/80 backdrop-blur-md rounded-xl">
-            <img src="images/mac-performance-monitor-1.png" alt="Mac Performance Monitor" onerror="this.src = 'https://via.placeholder.com/400?text=Mac+Performance+Monitor'" />
-            <div class="project-overlay m3-shape-pill">
-              <h3 class="text-2xl font-bold mb-2 text-onPrimary">Mac Performance Monitor</h3>
-              <p class="text-onPrimary text-center mb-4">
-                A Raycast extension to quickly glance at CPU, memory, GPU, disk, power, and thermal history directly from Raycast.
+          <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl ml-auto text-right reveal">
+              <!--# University pill #-->
+              <p class="um-pill inline-block rounded-full px-4 py-2 md:px-5 md:py-2.5 mb-6 text-sm sm:text-base md:text-xl font-semibold whitespace-nowrap">
+                Student at the <span class="um-blue">University</span> of <span class="um-maize">Michigan</span>
               </p>
-              <md-elevated-button href="https://github.com/SARRAF-5757/raycast-mac-performance-monitor" target="_blank"
-                ><i class="fab fa-github mr-2 btn-icon-circle"></i> GitHub
-              </md-elevated-button>
-            </div>
-          </div>
-        </div>
-
-        <div class="text-center">
-          <md-filled-button href="projects.html" trailing-icon> View More <md-icon slot="icon" class="btn-icon-circle">arrow_forward</md-icon></md-filled-button>
-        </div>
-      </div>
-    </section>
-
-    <!--* Fun Projects Section *-->
-    <section id="fun-projects" class="py-20 bg-background">
-      <div class="container mx-auto px-6">
-        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center fade-in">Fun <span class="text-primary">Projects</span></h2>
-        <p class="text-center text-onSurfaceVariant mb-12">Creative and less intensive projects</p>
-
-        <div class="grid md:grid-cols-3 gap-8 mb-12">
-          <!--# Fun Project 1 #-->
-          <div class="project-card card-hover bg-surfaceContainer/80 backdrop-blur-md rounded-xl">
-            <img src="images/BlackGlass.png" alt="BlackGlass" />
-            <div class="project-overlay m3-shape-gem">
-              <h3 class="text-2xl font-bold mb-2 text-onPrimary">BlackGlass</h3>
-              <p class="text-onPrimary text-center mb-4">
-                An opinionated browser skin for Firefox based Zen browser focused to bring transparency and pleasant roundness in your web experience.
-              </p>
-              <md-elevated-button href="https://github.com/SARRAF-5757/BlackGlass" target="_blank"
-                ><i class="fab fa-github mr-2 btn-icon-circle"></i> GitHub
-              </md-elevated-button>
-            </div>
-          </div>
-
-          <!--# Fun Project 2 #-->
-          <div class="project-card card-hover bg-surfaceContainer/80 backdrop-blur-md rounded-xl">
-            <img src="images/saricons.png" alt="Saricons" />
-            <div class="project-overlay m3-shape-clover4leaf">
-              <h3 class="text-2xl font-bold mb-2 text-onPrimary">Saricons</h3>
-              <p class="text-onPrimary text-center mb-4">Fork of an android icon pack app with further customizations and added icon support</p>
-              <md-elevated-button href="https://github.com/SARRAF-5757/Saricons" target="_blank"
-                ><i class="fab fa-github mr-2 btn-icon-circle"></i> GitHub
-              </md-elevated-button>
-            </div>
-          </div>
-
-          <!--# Fun Project 3 #-->
-          <div class="project-card card-hover bg-surfaceContainer/80 backdrop-blur-md rounded-xl">
-            <img src="images/mi-band.png" alt="Xiaomi Mi Band Resources" />
-            <div class="project-overlay m3-shape-pentagon">
-              <h3 class="text-2xl font-bold mb-2 text-onPrimary">Xiaomi Mi Band Resources</h3>
-              <p class="text-onPrimary text-center mb-4">Custom flashable resource packs and watch faces for Xiaomi Mi Band 3 and 4</p>
-              <div class="flex space-x-2">
-                <md-elevated-button href="https://sarrafsmbstudio.carrd.co/" target="_blank"> Website </md-elevated-button>
-                <md-elevated-button href="https://geekdoing.com/members/sarraf.157979/" target="_blank"> GeekDoing </md-elevated-button>
+              <!--# Headline #-->
+              <h1 class="type-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.05] mb-10">
+                Hi, It's your<br />
+                friendly neighborhood<br />
+                <span class="text-primary type-rounded">Sarraf</span> Ahmed.
+              </h1>
+              <!--# Call-to-action buttons #-->
+              <div class="flex flex-wrap justify-end gap-3">
+                <m3e-button variant="filled" size="medium" href="#about">
+                  More about me
+                  <m3e-icon slot="trailing-icon" variant="rounded" name="arrow_downward"></m3e-icon>
+                </m3e-button>
+                <m3e-button variant="outlined" size="medium" href="projects.html">View projects</m3e-button>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div class="text-center">
-          <md-filled-button href="projects.html#fun" trailing-icon> View More <md-icon slot="icon" class="btn-icon-circle">arrow_forward</md-icon></md-filled-button>
-        </div>
-      </div>
-    </section>
-
-    <!--* Course Projects Section *-->
-    <section id="course-projects" class="py-20 bg-surfaceContainerLow">
-      <div class="container mx-auto px-6">
-        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center fade-in">Course <span class="text-primary">Projects</span></h2>
-        <p class="text-center text-onSurfaceVariant mb-12">Projects that were part of my course curriculum</p>
-
-        <div class="grid md:grid-cols-3 gap-8 mb-12">
-          <!--# Course Project 1 #-->
-          <div class="course-project-card m3-shape-cookie4sided card-hover rounded-xl p-6">
-            <h3 class="text-2xl font-bold mb-4 text-onBackground text-center">Instagram Clone</h3>
-            <p class="text-onSurfaceVariant text-center">
-              Full-stack web application featuring user authentication, posts, follows, likes, and comments. Built with Flask backend and modern JavaScript frontend.
-            </p>
-          </div>
-
-          <!--# Course Project 2 #-->
-          <div class="course-project-card m3-shape-cookie6sided card-hover rounded-xl p-6">
-            <h3 class="text-2xl font-bold mb-4 text-onBackground text-center">Search Engine</h3>
-            <p class="text-onSurfaceVariant text-center">
-              Distributed search engine with custom map-reduce implementation for indexing and querying large document collections.
-            </p>
-          </div>
-
-          <!--# Course Project 3 #-->
-          <div class="course-project-card m3-shape-flower card-hover rounded-xl p-6">
-            <h3 class="text-2xl font-bold mb-4 text-onBackground text-center">Terminal Text Editor</h3>
-            <p class="text-onSurfaceVariant text-center">
-              Terminal-based text editor backend using doubly linked list data structures, designed for femto and e0 frontend interfaces.
-            </p>
-          </div>
-        </div>
-        <div class="text-center">
-          <md-filled-button href="projects.html#course" trailing-icon> View More <md-icon slot="icon" class="btn-icon-circle">arrow_forward</md-icon></md-filled-button>
-        </div>
-      </div>
-    </section>
-
-    <!--* Miscellaneous Section *-->
-    <section id="misc" class="py-20 bg-background">
-      <div class="container mx-auto px-6">
-        <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center fade-in">
-          <span class="text-primary">Miscellaneous</span>
-        </h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-          <a href="https://github.com/SARRAF-5757/.dotfiles" target="_blank" class="misc-card m3-shape-pill p-8 text-center">
-            <i class="fas fa-code text-5xl text-primary mb-4"></i>
-            <h3 class="text-2xl font-bold mb-2">Dotfiles</h3>
-            <p class="text-onSurfaceVariant">All of my configurations</p>
-          </a>
-
-          <a href="https://unsplash.com/@sarraf5757" target="_blank" class="misc-card m3-shape-pentagon p-8 text-center">
-            <i class="fas fa-camera text-5xl text-primary mb-4"></i>
-            <h3 class="text-2xl font-bold mb-2">Unsplash</h3>
-            <p class="text-onSurfaceVariant">My occasional photography whims</p>
-          </a>
-
-          <a href="https://macosicons.com/u/s@rr@f" target="_blank" class="misc-card m3-shape-cookie6sided p-8 text-center">
-            <i class="fas fa-palette text-5xl text-primary mb-4"></i>
-            <h3 class="text-2xl font-bold mb-2">macOS Icons</h3>
-            <p class="text-onSurfaceVariant">MacOS app icons by me :)</p>
-          </a>
-
-          <a href="https://monkeytype.com/profile/SARRAF5757" target="_blank" class="misc-card m3-shape-cookie4sided p-8 text-center">
-            <i class="fas fa-keyboard text-5xl text-primary mb-4"></i>
-            <h3 class="text-2xl font-bold mb-2">MonkeyType</h3>
-            <p class="text-onSurfaceVariant">My best so far</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!--* Fun Things Section *-->
-    <section id="fun-things" class="py-20 bg-surfaceContainerLow">
-      <div class="container mx-auto px-6">
-        <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center fade-in">Fun <span class="text-primary">Things</span></h2>
-        <div class="max-w-5xl mx-auto">
-          <!--# Tabs #-->
-          <div class="bg-surfaceContainer/80 backdrop-blur-md rounded-xl p-8 slide-in-right">
-            <div class="segmented-btn-container mb-8">
-              <button class="segmented-btn active" onclick="openFunTab('hobbies-hopped', this)">Hobbies Hopped</button>
-              <button class="segmented-btn" onclick="openFunTab('Ex-browsers', this)">Ex-Browsers</button>
-              <button class="segmented-btn" onclick="openFunTab('+', this)">+</button>
-            </div>
-
-            <!--@ Hobbies Hopped Tab @-->
-            <div id="hobbies-hopped" class="tab-content">
-              <p class="mb-4 text-onSurfaceVariant">
-                I tend to go in-and out of hobbies a lot. And when I get into one, I REALLY get into it. Here are some of the ones I've gone through over the years
-              </p>
-              <ul class="space-y-4 text-onSurfaceVariant">
-                <li class="flex items-start">
-                  <i class="fas fa-circle text-primary text-xs mr-3 mt-2"></i>
-                  <span>Fitness Tracker Modding</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-circle text-primary text-xs mr-3 mt-2"></i>
-                  <span>Action Figure Collecting</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-circle text-primary text-xs mr-3 mt-2"></i>
-                  <span>Building Mechanical Keyboards</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-circle text-primary text-xs mr-3 mt-2"></i>
-                  <span>Coding (still ongoing, apparently)</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-circle text-primary text-xs mr-3 mt-2"></i>
-                  <span>Yo-Yoing</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-circle text-primary text-xs mr-3 mt-2"></i>
-                  <span>Balisong Flipping</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-circle text-primary text-xs mr-3 mt-2"></i>
-                  <span>Skateboarding (current)</span>
-                </li>
-              </ul>
-            </div>
-
-            <!--@ Ex-Browsers Tab @-->
-            <div id="Ex-browsers" class="tab-content hidden">
-              <p class="mb-4 text-onSurfaceVariant">In search of the perfect browser, I've gone through many over the years. Here's a log of all of them.</p>
-              <h3 class="text-lg font-bold mb-2 text-onBackground">Desktop</h3>
-              <ul class="space-y-4 text-onSurfaceVariant">
-                <li class="flex items-start">
-                  <i class="fas fa-circle text-primary text-xs mr-3 mt-2"></i>
-                  <span>Chrome 🤮</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-circle text-primary text-xs mr-3 mt-2"></i>
-                  <span>Edge (Only because I was on windows)</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-circle text-primary text-xs mr-3 mt-2"></i>
-                  <span>Opera (For a very short while)</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-circle text-primary text-xs mr-3 mt-2"></i>
-                  <span>Brave</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-circle text-primary text-xs mr-3 mt-2"></i>
-                  <span>Vivaldi</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-circle text-primary text-xs mr-3 mt-2"></i>
-                  <span>Firefox</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-circle text-primary text-xs mr-3 mt-2"></i>
-                  <span>Arc (BCNY stopped developement)</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-circle text-primary text-xs mr-3 mt-2"></i>
-                  <span>Zen (current)</span>
-                </li>
-              </ul>
-
-              <br />
-
-              <h3 class="text-lg font-bold mb-2 text-onBackground">Mobile</h3>
-              <ul class="space-y-4 text-onSurfaceVariant">
-                <li class="flex items-start">
-                  <i class="fas fa-circle text-primary text-xs mr-3 mt-2"></i>
-                  <span>Chrome</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-circle text-primary text-xs mr-3 mt-2"></i>
-                  <span>Firefox</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-circle text-primary text-xs mr-3 mt-2"></i>
-                  <span>Kiwi (Discontinued)</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-circle text-primary text-xs mr-3 mt-2"></i>
-                  <span>Firefox</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-circle text-primary text-xs mr-3 mt-2"></i>
-                  <span>Chromite</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-circle text-primary text-xs mr-3 mt-2"></i>
-                  <span>Soul (current)</span>
-                </li>
-              </ul>
-            </div>
-
-            <!--@ Favorite Android Apps Tab @-->
-            <!-- <div id="android-apps" class="tab-content hidden">
-                <p class="mb-4 text-onSurfaceVariant">
-                  Coming...
+        <!--* About *-->
+        <section id="about" data-nav="about" class="py-20 md:py-28">
+          <div class="container mx-auto px-6">
+            <h2 class="type-headline text-4xl md:text-5xl text-center mb-12 reveal">About <span class="text-primary">Me</span></h2>
+            <div class="max-w-4xl mx-auto">
+              <!--# Avatar + intro (avatar morphs on hover) #-->
+              <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12 mb-12 reveal" data-morph>
+                <div class="w-48 h-48 md:w-64 md:h-64 shrink-0">
+                  <m3e-shape class="avatar-shape" name="12-sided-cookie" data-hover-shape="sunny">
+                    <img src="images/dev.png" alt="Illustrated avatar of Sarraf Ahmed" width="256" height="256" />
+                  </m3e-shape>
+                </div>
+                <p class="text-xl md:text-2xl leading-relaxed text-onSurfaceVariant text-center md:text-left">
+                  I'm a senior at the University of Michigan studying Computer Science, passionate about building software solutions to real-life hurdles and exploring
+                  the fun world of technology.
                 </p>
-                <ul class="space-y-4 text-onSurfaceVariant">
-                  <li class="flex items-start">
-                    <i class="fas fa-circle text-primary text-xs mr-3 mt-2"></i>
-                    <span>...</span>
-                  </li>
-                  <li class="flex items-start">
-                    <i class="fas fa-circle text-primary text-xs mr-3 mt-2"></i>
-                    <span>...</span>
-                  </li>
-                </ul>
-              </div> -->
+              </div>
 
-            <!--@ + @-->
-            <div id="+" class="tab-content hidden">
-              <ul class="space-y-4 text-onSurfaceVariant">
-                <span>More coming...</span>
-              </ul>
+              <!--# Tabs #-->
+              <div class="panel-card p-4 sm:p-8 reveal">
+                <m3e-tabs>
+                  <m3e-tab selected for="tab-skills"><m3e-icon slot="icon" variant="rounded" name="code"></m3e-icon>Skills</m3e-tab>
+                  <m3e-tab for="tab-experience"><m3e-icon slot="icon" variant="rounded" name="work"></m3e-icon>Experience</m3e-tab>
+                  <m3e-tab for="tab-education"><m3e-icon slot="icon" variant="rounded" name="school"></m3e-icon>Education</m3e-tab>
+
+                  <!--@ Skills @-->
+                  <m3e-tab-panel id="tab-skills">
+                    <div class="space-y-8">
+                      <div>
+                        <!--$ Languages & Frameworks $-->
+                        <h3 class="text-2xl font-bold text-primary mb-4">Languages &amp; Frameworks</h3>
+                        <m3e-chip-set>
+                          <m3e-chip
+                            ><img slot="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/cplusplus/cplusplus-original.svg" alt="" />C++</m3e-chip
+                          >
+                          <m3e-chip
+                            ><img slot="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/python/python-original.svg" alt="" />Python</m3e-chip
+                          >
+                          <m3e-chip><img slot="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/java/java-original.svg" alt="" />Java</m3e-chip>
+                          <m3e-chip
+                            ><img
+                              slot="icon"
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/expo/expo-original.svg"
+                              alt=""
+                              class="invert-on-dark"
+                            />Expo</m3e-chip
+                          >
+                          <m3e-chip
+                            ><img slot="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/reactnative/reactnative-original.svg" alt="" />React
+                            Native</m3e-chip
+                          >
+                          <m3e-chip><img slot="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/html5/html5-original.svg" alt="" />HTML</m3e-chip>
+                          <m3e-chip><img slot="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/css3/css3-original.svg" alt="" />CSS</m3e-chip>
+                          <m3e-chip
+                            ><img slot="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/tailwindcss/tailwindcss-original.svg" alt="" />Tailwind
+                            CSS</m3e-chip
+                          >
+                          <m3e-chip
+                            ><img
+                              slot="icon"
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/javascript/javascript-original.svg"
+                              alt=""
+                            />JavaScript</m3e-chip
+                          >
+                          <m3e-chip
+                            ><img
+                              slot="icon"
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/typescript/typescript-original.svg"
+                              alt=""
+                            />TypeScript</m3e-chip
+                          >
+                          <m3e-chip
+                            ><img slot="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/sqlite/sqlite-original.svg" alt="" />SQLite</m3e-chip
+                          >
+                          <m3e-chip><img slot="icon" src="https://www.svgrepo.com/show/374163/verilog.svg" alt="" />Verilog</m3e-chip>
+                        </m3e-chip-set>
+                      </div>
+                      <div>
+                        <!--$ My Toolset $-->
+                        <h3 class="text-2xl font-bold text-primary mb-4">My Toolset</h3>
+                        <m3e-chip-set>
+                          <m3e-chip
+                            ><img slot="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/neovim/neovim-original.svg" alt="" />Neovim</m3e-chip
+                          >
+                          <m3e-chip
+                            ><img
+                              slot="icon"
+                              src="https://static0.xdaimages.com/wordpress/wp-content/uploads/2025/01/ghostty-logo.png?q=70&fit=contain&w=420&dpr=1"
+                              alt=""
+                            />Ghostty</m3e-chip
+                          >
+                          <m3e-chip
+                            ><img slot="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/vscode/vscode-original.svg" alt="" />VSCode</m3e-chip
+                          >
+                          <m3e-chip><img slot="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/git/git-original.svg" alt="" />Git</m3e-chip>
+                          <m3e-chip><img slot="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/zsh/zsh-original.svg" alt="" />ZSH</m3e-chip>
+                          <m3e-chip
+                            ><img
+                              slot="icon"
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/unrealengine/unrealengine-original.svg"
+                              alt=""
+                              class="invert-on-dark"
+                            />Unreal Engine</m3e-chip
+                          >
+                          <m3e-chip
+                            ><img
+                              slot="icon"
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/unity/unity-original.svg"
+                              alt=""
+                              class="invert-on-dark"
+                            />Unity</m3e-chip
+                          >
+                          <m3e-chip><img slot="icon" src="https://miro.medium.com/v2/resize:fit:1500/1%2ASYC2GgJ5vG1DJrRI9A9Leg.png" alt="" />8th Wall</m3e-chip>
+                          <m3e-chip
+                            ><img
+                              slot="icon"
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/arduino/arduino-original-wordmark.svg"
+                              alt=""
+                            />Arduino</m3e-chip
+                          >
+                          <m3e-chip><img slot="icon" src="https://media.imgcdn.org/repo/2023/03/alteryx-designer/alteryx-designer-logo.png" alt="" />Alteryx</m3e-chip>
+                          <m3e-chip
+                            ><img slot="icon" src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Qlik_Logo_No_Trademark_2_Color_Positive_RGB.png" alt="" />Qlik
+                            Sense</m3e-chip
+                          >
+                        </m3e-chip-set>
+                      </div>
+                    </div>
+                  </m3e-tab-panel>
+
+                  <!--@ Experience @-->
+                  <m3e-tab-panel id="tab-experience">
+                    <div class="space-y-4">
+                      <!--$ University of Michigan Transportation Research Institute $-->
+                      <m3e-card variant="outlined" class="exp-card">
+                        <div class="p-5 sm:p-6">
+                          <h3 class="text-xl font-semibold text-primary mb-3">University of Michigan Transportation Research Institute · Research Assistant</h3>
+                          <ul class="exp-list">
+                            <li>
+                              Upgraded a <strong>driving simulator in Unreal Engine</strong> to facilitate UMTRI studies, peer-review research proposals, and conduct
+                              demos for study proposals.
+                            </li>
+                            <li>
+                              Developed an infinite highway map using <strong>seed-based procedural content generation</strong> and implemented a novel experimental
+                              traffic light system.
+                            </li>
+                            <li>
+                              Overhauled <strong>steering wheel torque feedback</strong> for true-to-life resistance scaling and integrated
+                              <strong>lane alert systems</strong> including rumble strips and Botts' Dots.
+                            </li>
+                            <li>
+                              Engineered <strong>physically accurate vehicle models</strong> and authored extensive technical documentation and transition guides for the
+                              returning team.
+                            </li>
+                          </ul>
+                        </div>
+                      </m3e-card>
+                      <!--$ Alternate Reality Initiative $-->
+                      <m3e-card variant="outlined" class="exp-card">
+                        <div class="p-5 sm:p-6">
+                          <h3 class="text-xl font-semibold text-primary mb-3">Alternate Reality Initiative · Vice President &amp; Cohort Leader</h3>
+                          <ul class="exp-list">
+                            <li>Led technical workshops <strong>teaching AR/VR development tools</strong> and workflows to club members.</li>
+                            <li>
+                              Directed a 12-member team in developing an <strong>AR Museum Experience</strong> for the Kelsey Museum of Archaeology, emphasizing
+                              stability, performance optimization, and user experience refinement for launch.
+                            </li>
+                            <li>
+                              Evaluated and <strong>selected development platforms</strong>, AR frameworks, and tools, establishing the tech stack and
+                              <strong>onboarding team members</strong> to ensure consistent implementation.
+                            </li>
+                          </ul>
+                        </div>
+                      </m3e-card>
+                      <!--$ MHacks $-->
+                      <m3e-card variant="outlined" class="exp-card">
+                        <div class="p-5 sm:p-6">
+                          <h3 class="text-xl font-semibold text-primary mb-3">MHacks · Hacker</h3>
+                          <ul class="exp-list">
+                            <li>
+                              Developed a strategy algorithm that leveraged the New York Times' <strong>Wordle</strong> word bank data to find optimal guesses for a game.
+                            </li>
+                            <li>
+                              Designed and built a competitive Wordle web game with an <strong>intelligent artificial opponent</strong> leveraging the algorithm to
+                              efficiently analyze word patterns and solve the game in as few attempts as possible.
+                            </li>
+                            <li>Collaborated with a team of students from other universities, combining complementary skill sets.</li>
+                          </ul>
+                        </div>
+                      </m3e-card>
+                      <!--$ Ford Motor Company $-->
+                      <m3e-card variant="outlined" class="exp-card">
+                        <div class="p-5 sm:p-6">
+                          <h3 class="text-xl font-semibold text-primary mb-3">Ford Motor Company · Data Analytics Intern</h3>
+                          <ul class="exp-list">
+                            <li>
+                              Worked alongside senior analysts &amp; interns in Ford's analytics team to build an <strong>automated interactive FAQ dashboard</strong>.
+                            </li>
+                            <li>Used <strong>Alteryx</strong> to extract and clean, and <strong>Qlik Sense</strong> to visualize forum data.</li>
+                            <li>Analyzed <strong>9,000+ messages</strong> from Yammer &amp; Webex using <strong>REST APIs</strong>.</li>
+                          </ul>
+                        </div>
+                      </m3e-card>
+                    </div>
+                  </m3e-tab-panel>
+
+                  <!--@ Education @-->
+                  <m3e-tab-panel id="tab-education">
+                    <ul class="space-y-4">
+                      <!--$ University of Michigan $-->
+                      <li class="flex items-center gap-4">
+                        <m3e-shape class="course-badge" name="9-sided-cookie" aria-hidden="true"><m3e-icon variant="rounded" name="school"></m3e-icon></m3e-shape>
+                        <div>
+                          <h3 class="text-xl font-semibold text-primary">University of Michigan</h3>
+                          <p class="text-onSurfaceVariant">BS in Computer Science (2023–Current)</p>
+                        </div>
+                      </li>
+                      <!--$ Hamtramck High School $-->
+                      <li class="flex items-center gap-4">
+                        <m3e-shape class="course-badge" name="4-sided-cookie" aria-hidden="true"><m3e-icon variant="rounded" name="history_edu"></m3e-icon></m3e-shape>
+                        <div>
+                          <h3 class="text-xl font-semibold text-primary">Hamtramck High School</h3>
+                          <p class="text-onSurfaceVariant">High School Diploma (2019–2023)</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </m3e-tab-panel>
+                </m3e-tabs>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!--* Socials Section *-->
-    <section id="socials" class="py-20 bg-background">
-      <div class="container mx-auto px-6">
-        <h2 class="text-3xl md:text-5xl font-bold mb-12 text-center fade-in">Find Me <span class="text-primary">Here</span></h2>
-        <div class="flex justify-center space-x-8 flex-wrap gap-6">
-          <a href="https://www.linkedin.com/in/sarraf-ahmed/" target="_blank" class="misc-card w-28 md:w-32 m3-shape-cookie6sided p-4">
-            <i class="fab fa-linkedin text-3xl"></i>
-            <p class="text-center text-sm mt-2 font-semibold">LinkedIn</p>
-          </a>
-          <a href="https://github.com/SARRAF-5757" target="_blank" class="misc-card w-28 md:w-32 m3-shape-clover4leaf p-4">
-            <i class="fab fa-github text-3xl"></i>
-            <p class="text-center text-sm mt-2 font-semibold">GitHub</p>
-          </a>
-          <a href="https://devpost.com/SARRAF-5757" target="_blank" class="misc-card w-28 md:w-32 m3-shape-verysunny p-4">
-            <i class="fab fa-dev text-3xl"></i>
-            <p class="text-center text-sm mt-2 font-semibold">Devpost</p>
-          </a>
-          <a href="https://discordapp.com/users/737065241309085746" target="_blank" class="misc-card w-28 md:w-32 m3-shape-gem p-4">
-            <i class="fab fa-discord text-3xl"></i>
-            <p class="text-center text-sm mt-2 font-semibold">Discord</p>
-          </a>
-          <a href="https://www.instagram.com/sarraf_5757" target="_blank" class="misc-card w-28 md:w-32 m3-shape-pill p-4">
-            <i class="fab fa-instagram text-3xl"></i>
-            <p class="text-center text-sm mt-2 font-semibold">Instagram</p>
-          </a>
-        </div>
-      </div>
-    </section>
+        <!--* Technical Projects *-->
+        <section id="projects" data-nav="projects" class="py-20 md:py-28">
+          <div class="container mx-auto px-6">
+            <h2 class="type-headline text-4xl md:text-5xl mb-4 text-center reveal">Technical <span class="text-primary">Projects</span></h2>
+            <p class="section-subtitle text-center text-lg mb-12 reveal">Need-induced personal projects and hackathon projects</p>
 
-    <!--! Scripts !-->
-    <script src="js/ui.js"></script>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12" data-stagger>
+              <!--# Waqt #-->
+              <m3e-card class="project-card reveal" data-morph>
+                <div class="project-card-inner">
+                  <m3e-shape class="project-shape logo-backdrop" name="square" data-hover-shape="slanted">
+                    <img src="https://github.com/SARRAF-5757/Waqt/blob/master/images/icon.png?raw=true" alt="Waqt app icon" loading="lazy" decoding="async" />
+                  </m3e-shape>
+                  <div class="project-body">
+                    <h3 class="text-2xl font-bold">Waqt</h3>
+                    <p>A simple React Native app for helping you improve your prayer habits.</p>
+                    <div class="project-actions">
+                      <m3e-button variant="tonal" href="https://github.com/SARRAF-5757/Waqt" target="_blank" rel="noopener"
+                        ><i slot="icon" class="fa-brands fa-github" aria-hidden="true"></i>GitHub</m3e-button
+                      >
+                    </div>
+                  </div>
+                </div>
+              </m3e-card>
 
-    <!-- Material You Setup -->
-    <div class="fixed top-1/2 left-0 transform -translate-y-1/2 z-50 flex items-center">
-      <div
-        id="color-picker-container"
-        class="bg-surfaceContainerHigh rounded-full p-2 flex flex-col gap-2 transition-all duration-300 cursor-pointer"
-        style="height: 52px; width: 52px"
-        onclick="toggleColorPicker(event)"
-      >
-        <!-- The selected color circle -->
-        <div id="current-color-circle" class="w-9 h-9 rounded-full transition-colors duration-300 flex-shrink-0 mx-auto"></div>
+              <!--# OMP-Wizard #-->
+              <m3e-card class="project-card reveal" data-morph>
+                <div class="project-card-inner">
+                  <m3e-shape class="project-shape" name="square" data-hover-shape="sunny">
+                    <img src="images/OMP-Wizard.png" alt="OMP-Wizard terminal setup wizard" loading="lazy" decoding="async" />
+                  </m3e-shape>
+                  <div class="project-body">
+                    <h3 class="text-2xl font-bold">OMP-Wizard</h3>
+                    <p>A TUI setup wizard for the Oh-My-Posh prompt engine.</p>
+                    <div class="project-actions">
+                      <m3e-button variant="tonal" href="https://github.com/SARRAF-5757/OMP-Wizard" target="_blank" rel="noopener"
+                        ><i slot="icon" class="fa-brands fa-github" aria-hidden="true"></i>GitHub</m3e-button
+                      >
+                    </div>
+                  </div>
+                </div>
+              </m3e-card>
 
-        <!-- Options (rendered via JS) -->
-        <div id="color-options" class="flex flex-col gap-2 opacity-0 transition-opacity duration-300 pointer-events-none items-center mt-1"></div>
-      </div>
-    </div>
+              <!--# Mac Performance Monitor #-->
+              <m3e-card class="project-card reveal" data-morph>
+                <div class="project-card-inner">
+                  <m3e-shape class="project-shape" name="square" data-hover-shape="pill">
+                    <img src="images/mac-performance-monitor.png" alt="Mac Performance Monitor Raycast extension" loading="lazy" decoding="async" />
+                  </m3e-shape>
+                  <div class="project-body">
+                    <h3 class="text-2xl font-bold">Mac Performance Monitor</h3>
+                    <p>A Raycast extension to quickly glance at CPU, memory, GPU, disk, power, and thermal history directly from Raycast.</p>
+                    <div class="project-actions">
+                      <m3e-button variant="tonal" href="https://github.com/SARRAF-5757/raycast-mac-performance-monitor" target="_blank" rel="noopener"
+                        ><i slot="icon" class="fa-brands fa-github" aria-hidden="true"></i>GitHub</m3e-button
+                      >
+                    </div>
+                  </div>
+                </div>
+              </m3e-card>
+            </div>
 
-    <script type="module" src="js/theme.js"></script>
+            <!--# View more #-->
+            <div class="text-center">
+              <m3e-button variant="filled" href="projects.html">View more<m3e-icon slot="trailing-icon" variant="rounded" name="arrow_forward"></m3e-icon></m3e-button>
+            </div>
+          </div>
+        </section>
+
+        <!--* Fun Projects *-->
+        <section id="fun-projects" data-nav="projects" class="py-20 md:py-28">
+          <div class="container mx-auto px-6">
+            <h2 class="type-headline text-4xl md:text-5xl mb-4 text-center reveal">Fun <span class="text-primary">Projects</span></h2>
+            <p class="section-subtitle text-center text-lg mb-12 reveal">Creative and less intensive projects</p>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12" data-stagger>
+              <!--# BlackGlass #-->
+              <m3e-card class="project-card reveal" data-morph>
+                <div class="project-card-inner">
+                  <m3e-shape class="project-shape" name="square" data-hover-shape="gem">
+                    <img src="images/BlackGlass.png" alt="BlackGlass browser theme" loading="lazy" decoding="async" />
+                  </m3e-shape>
+                  <div class="project-body">
+                    <h3 class="text-2xl font-bold">BlackGlass</h3>
+                    <p>An opinionated browser skin for the Firefox-based Zen browser that brings transparency and pleasant roundness to your web experience.</p>
+                    <div class="project-actions">
+                      <m3e-button variant="tonal" href="https://github.com/SARRAF-5757/BlackGlass" target="_blank" rel="noopener"
+                        ><i slot="icon" class="fa-brands fa-github" aria-hidden="true"></i>GitHub</m3e-button
+                      >
+                    </div>
+                  </div>
+                </div>
+              </m3e-card>
+
+              <!--# Saricons #-->
+              <m3e-card class="project-card reveal" data-morph>
+                <div class="project-card-inner">
+                  <m3e-shape class="project-shape" name="square" data-hover-shape="4-leaf-clover">
+                    <img src="images/saricons.png" alt="Saricons icon pack" loading="lazy" decoding="async" />
+                  </m3e-shape>
+                  <div class="project-body">
+                    <h3 class="text-2xl font-bold">Saricons</h3>
+                    <p>Fork of an Android icon pack app with further customizations and added icon support.</p>
+                    <div class="project-actions">
+                      <m3e-button variant="tonal" href="https://github.com/SARRAF-5757/Saricons" target="_blank" rel="noopener"
+                        ><i slot="icon" class="fa-brands fa-github" aria-hidden="true"></i>GitHub</m3e-button
+                      >
+                    </div>
+                  </div>
+                </div>
+              </m3e-card>
+
+              <!--# Mi Band #-->
+              <m3e-card class="project-card reveal" data-morph>
+                <div class="project-card-inner">
+                  <m3e-shape class="project-shape" name="square" data-hover-shape="pentagon">
+                    <img src="images/mi-band.png" alt="Xiaomi Mi Band watch faces" loading="lazy" decoding="async" />
+                  </m3e-shape>
+                  <div class="project-body">
+                    <h3 class="text-2xl font-bold">Xiaomi Mi Band Resources</h3>
+                    <p>Custom flashable resource packs and watch faces for Xiaomi Mi Band 3 and 4.</p>
+                    <div class="project-actions">
+                      <m3e-button variant="tonal" href="https://sarrafsmbstudio.carrd.co/" target="_blank" rel="noopener"
+                        ><m3e-icon slot="icon" variant="rounded" name="language"></m3e-icon>Website</m3e-button
+                      >
+                      <m3e-button variant="outlined" href="https://geekdoing.com/members/sarraf.157979/" target="_blank" rel="noopener"
+                        ><m3e-icon slot="icon" variant="rounded" name="group"></m3e-icon>GeekDoing</m3e-button
+                      >
+                    </div>
+                  </div>
+                </div>
+              </m3e-card>
+            </div>
+
+            <!--# View more #-->
+            <div class="text-center">
+              <m3e-button variant="filled" href="projects.html#fun"
+                >View more<m3e-icon slot="trailing-icon" variant="rounded" name="arrow_forward"></m3e-icon
+              ></m3e-button>
+            </div>
+          </div>
+        </section>
+
+        <!--* Course Projects *-->
+        <section id="course-projects" data-nav="projects" class="py-20 md:py-28">
+          <div class="container mx-auto px-6">
+            <h2 class="type-headline text-4xl md:text-5xl mb-4 text-center reveal">Course <span class="text-primary">Projects</span></h2>
+            <p class="section-subtitle text-center text-lg mb-12 reveal">Projects that were part of my course curriculum</p>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12" data-stagger>
+              <!--# Instagram Clone #-->
+              <m3e-card class="course-card reveal" data-morph>
+                <div class="course-card-inner">
+                  <m3e-shape class="course-badge" name="4-sided-cookie" data-hover-shape="flower" aria-hidden="true"
+                    ><m3e-icon variant="rounded" name="photo_camera"></m3e-icon
+                  ></m3e-shape>
+                  <h3 class="text-2xl font-bold">Instagram Clone</h3>
+                  <p>
+                    Full-stack web application featuring user authentication, posts, follows, likes, and comments. Built with a Flask backend and modern JavaScript
+                    frontend.
+                  </p>
+                </div>
+              </m3e-card>
+              <!--# Search Engine #-->
+              <m3e-card class="course-card reveal" data-morph>
+                <div class="course-card-inner">
+                  <m3e-shape class="course-badge" name="6-sided-cookie" data-hover-shape="sunny" aria-hidden="true"
+                    ><m3e-icon variant="rounded" name="travel_explore"></m3e-icon
+                  ></m3e-shape>
+                  <h3 class="text-2xl font-bold">Search Engine</h3>
+                  <p>Distributed search engine with a custom MapReduce implementation for indexing and querying large document collections.</p>
+                </div>
+              </m3e-card>
+              <!--# Terminal Text Editor #-->
+              <m3e-card class="course-card reveal" data-morph>
+                <div class="course-card-inner">
+                  <m3e-shape class="course-badge" name="flower" data-hover-shape="8-leaf-clover" aria-hidden="true"
+                    ><m3e-icon variant="rounded" name="terminal"></m3e-icon
+                  ></m3e-shape>
+                  <h3 class="text-2xl font-bold">Terminal Text Editor</h3>
+                  <p>Terminal-based text editor backend using doubly linked list data structures, designed for femto and e0 frontend interfaces.</p>
+                </div>
+              </m3e-card>
+            </div>
+
+            <!--# View more #-->
+            <div class="text-center">
+              <m3e-button variant="filled" href="projects.html#course"
+                >View more<m3e-icon slot="trailing-icon" variant="rounded" name="arrow_forward"></m3e-icon
+              ></m3e-button>
+            </div>
+          </div>
+        </section>
+
+        <!--* Miscellaneous *-->
+        <section id="misc" data-nav="misc" class="py-20 md:py-28">
+          <div class="container mx-auto px-6">
+            <h2 class="type-headline text-4xl md:text-5xl mb-12 text-center reveal"><span class="text-primary">Miscellaneous</span></h2>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto" data-stagger>
+              <!--# Dotfiles #-->
+              <a href="https://github.com/SARRAF-5757/.dotfiles" target="_blank" rel="noopener" class="tile tile-misc reveal" data-morph>
+                <m3e-shape class="tile-shape" name="pill" data-hover-shape="6-sided-cookie" aria-hidden="true"
+                  ><m3e-icon variant="rounded" name="code"></m3e-icon
+                ></m3e-shape>
+                <span class="tile-title text-xl">Dotfiles</span>
+                <span class="tile-desc">All of my configurations</span>
+              </a>
+              <!--# Unsplash #-->
+              <a href="https://unsplash.com/@sarraf5757" target="_blank" rel="noopener" class="tile tile-misc reveal" data-morph>
+                <m3e-shape class="tile-shape" name="pentagon" data-hover-shape="flower" aria-hidden="true"
+                  ><m3e-icon variant="rounded" name="photo_camera"></m3e-icon
+                ></m3e-shape>
+                <span class="tile-title text-xl">Unsplash</span>
+                <span class="tile-desc">My occasional photography whims</span>
+              </a>
+              <!--# macOS Icons #-->
+              <a href="https://macosicons.com/u/s@rr@f" target="_blank" rel="noopener" class="tile tile-misc reveal" data-morph>
+                <m3e-shape class="tile-shape" name="6-sided-cookie" data-hover-shape="soft-burst" aria-hidden="true"
+                  ><m3e-icon variant="rounded" name="palette"></m3e-icon
+                ></m3e-shape>
+                <span class="tile-title text-xl">macOS Icons</span>
+                <span class="tile-desc">macOS app icons by me :)</span>
+              </a>
+              <!--# MonkeyType #-->
+              <a href="https://monkeytype.com/profile/SARRAF5757" target="_blank" rel="noopener" class="tile tile-misc reveal" data-morph>
+                <m3e-shape class="tile-shape" name="4-sided-cookie" data-hover-shape="puffy-diamond" aria-hidden="true"
+                  ><m3e-icon variant="rounded" name="keyboard"></m3e-icon
+                ></m3e-shape>
+                <span class="tile-title text-xl">MonkeyType</span>
+                <span class="tile-desc">My best so far</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!--* Fun Things *-->
+        <section id="fun-things" data-nav="misc" class="py-20 md:py-28">
+          <div class="container mx-auto px-6">
+            <h2 class="type-headline text-4xl md:text-5xl mb-12 text-center reveal">Fun <span class="text-primary">Things</span></h2>
+            <!--# Tabs #-->
+            <div class="max-w-5xl mx-auto panel-card p-4 sm:p-8 reveal">
+              <m3e-tabs>
+                <m3e-tab selected for="tab-hobbies"><m3e-icon slot="icon" variant="rounded" name="skateboarding"></m3e-icon>Hobbies Hopped</m3e-tab>
+                <m3e-tab for="tab-browsers"><m3e-icon slot="icon" variant="rounded" name="public"></m3e-icon>Ex-Browsers</m3e-tab>
+                <m3e-tab for="tab-more"><m3e-icon slot="icon" variant="rounded" name="add"></m3e-icon>More</m3e-tab>
+
+                <!--@ Hobbies @-->
+                <m3e-tab-panel id="tab-hobbies">
+                  <p class="mb-4 text-onSurfaceVariant">
+                    I tend to go in and out of hobbies a lot. And when I get into one, I REALLY get into it. Here are some of the ones I've gone through over the years.
+                  </p>
+                  <ul class="dot-list">
+                    <li>Fitness Tracker Modding</li>
+                    <li>Action Figure Collecting</li>
+                    <li>Building Mechanical Keyboards</li>
+                    <li>Coding (still ongoing, apparently)</li>
+                    <li>Yo-Yoing</li>
+                    <li>Balisong Flipping</li>
+                    <li>Skateboarding (current)</li>
+                  </ul>
+                </m3e-tab-panel>
+
+                <!--@ Browsers @-->
+                <m3e-tab-panel id="tab-browsers">
+                  <p class="mb-6 text-onSurfaceVariant">In search of the perfect browser, I've gone through many over the years. Here's a log of all of them.</p>
+                  <div class="grid sm:grid-cols-2 gap-8">
+                    <div>
+                      <!--$ Desktop $-->
+                      <h3 class="text-lg font-bold mb-3">Desktop</h3>
+                      <ul class="dot-list">
+                        <li>Chrome 🤮</li>
+                        <li>Edge (Only because I was on Windows)</li>
+                        <li>Opera (For a very short while)</li>
+                        <li>Brave</li>
+                        <li>Vivaldi</li>
+                        <li>Firefox</li>
+                        <li>Arc (BCNY stopped development)</li>
+                        <li>Zen (current)</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <!--$ Mobile $-->
+                      <h3 class="text-lg font-bold mb-3">Mobile</h3>
+                      <ul class="dot-list">
+                        <li>Chrome</li>
+                        <li>Firefox</li>
+                        <li>Kiwi (Discontinued)</li>
+                        <li>Firefox</li>
+                        <li>Chromite</li>
+                        <li>Soul (current)</li>
+                      </ul>
+                    </div>
+                  </div>
+                </m3e-tab-panel>
+
+                <!--@ More @-->
+                <m3e-tab-panel id="tab-more">
+                  <p class="text-onSurfaceVariant">More coming…</p>
+                </m3e-tab-panel>
+              </m3e-tabs>
+            </div>
+          </div>
+        </section>
+
+        <!--* Socials *-->
+        <section id="socials" data-nav="socials" class="py-20 md:py-28">
+          <div class="container mx-auto px-6">
+            <h2 class="type-headline text-4xl md:text-5xl mb-12 text-center reveal">Find Me <span class="text-primary">Here</span></h2>
+            <div class="flex flex-wrap justify-center gap-4 sm:gap-6" data-stagger>
+              <!--# LinkedIn #-->
+              <a href="https://www.linkedin.com/in/sarraf-ahmed/" target="_blank" rel="noopener" class="tile tile-social reveal">
+                <m3e-shape class="tile-shape" name="6-sided-cookie" aria-hidden="true"><i class="fa-brands fa-linkedin"></i></m3e-shape>
+                <span class="tile-title">LinkedIn</span>
+              </a>
+              <!--# GitHub #-->
+              <a href="https://github.com/SARRAF-5757" target="_blank" rel="noopener" class="tile tile-social reveal">
+                <m3e-shape class="tile-shape" name="4-leaf-clover" aria-hidden="true"><i class="fa-brands fa-github"></i></m3e-shape>
+                <span class="tile-title">GitHub</span>
+              </a>
+              <!--# Devpost #-->
+              <a href="https://devpost.com/SARRAF-5757" target="_blank" rel="noopener" class="tile tile-social reveal">
+                <m3e-shape class="tile-shape" name="very-sunny" aria-hidden="true"><i class="fa-brands fa-dev"></i></m3e-shape>
+                <span class="tile-title">Devpost</span>
+              </a>
+              <!--# Discord #-->
+              <a href="https://discordapp.com/users/737065241309085746" target="_blank" rel="noopener" class="tile tile-social reveal">
+                <m3e-shape class="tile-shape" name="gem" aria-hidden="true"><i class="fa-brands fa-discord"></i></m3e-shape>
+                <span class="tile-title">Discord</span>
+              </a>
+              <!--# Instagram #-->
+              <a href="https://www.instagram.com/sarraf_5757" target="_blank" rel="noopener" class="tile tile-social reveal">
+                <m3e-shape class="tile-shape" name="pill" aria-hidden="true"><i class="fa-brands fa-instagram"></i></m3e-shape>
+                <span class="tile-title">Instagram</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!--* Footer *-->
+      <footer class="py-10 text-center text-sm text-onSurfaceVariant">© Sarraf Ahmed</footer>
+    </m3e-theme>
   </body>
 </html>

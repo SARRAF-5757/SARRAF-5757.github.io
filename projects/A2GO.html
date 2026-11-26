@@ -1,58 +1,103 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="../css/tailwind.css" />
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sarraf Ahmed | VisLab Visualized</title>
-    <link rel="icon" type="/image/png" href="../images/favicon.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <title>Sarraf Ahmed | Ann Arbor Go</title>
+    <meta name="description" content="Pokémon Go-style game about planting trees and fending off squirrels all around Ann Arbor." />
+    <meta name="google-site-verification" content="PkKrU3PuTkaCVB8ARXjai9_z0JlMDJC0JoH47FNW--A" />
+    <meta name="msvalidate.01" content="D8829E16D8934017D22C3962E4EA332B" />
+    <!-- Pre-paint: apply the saved light/dark choice and cached theme tokens before anything renders. -->
+    <script>
+      (function () {
+        try {
+          var d = document.documentElement, ls = localStorage, s = ls.getItem("m3-scheme");
+          var dark = s === "dark" || (s !== "light" && matchMedia("(prefers-color-scheme: dark)").matches);
+          d.dataset.scheme = dark ? "dark" : "light";
+          var c = JSON.parse(ls.getItem("m3-theme-cache") || "null");
+          if (c && c.dark === dark && c.color === (ls.getItem("m3-theme-color") || "#4CAF50")) {
+            var st = document.createElement("style");
+            st.id = "theme-cache";
+            st.textContent = "html{" + c.css + "}";
+            document.head.appendChild(st);
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wdth,wght,ROND@6..144,75..125,100..1000,0..100&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css" />
+    <link rel="stylesheet" href="../css/tailwind.css" />
     <link rel="stylesheet" href="../css/styles.css" />
+    <script type="module" src="../js/dist/main.js"></script>
   </head>
-  <body class="bg-background text-onBackground">
-    <!--* Navigation *-->
-    <nav class="fixed top-0 w-full z-50 bg-surfaceContainer/80 backdrop-blur-md">
-      <div class="container mx-auto px-6 py-4">
-        <div class="flex items-center justify-between">
-          <a href="../index.html" class="flex items-center space-x-2">
-            <div id="navbar-logo-container" class="flex items-center"></div>
+  <body>
+    <m3e-theme id="theme" color="#4CAF50" variant="vibrant" scheme="auto" motion="expressive">
+      <!--* Navigation *-->
+      <header class="site-nav fixed top-0 inset-x-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 h-[72px] flex items-center justify-between gap-4" aria-label="Primary">
+          <a href="../index.html" class="flex items-center rounded-lg" aria-label="Sarraf Ahmed, home">
+            <span id="navbar-logo-container" class="flex items-center"></span>
           </a>
-          <div class="hidden md:flex segmented-btn-container">
-            <a href="../index.html" class="segmented-btn">Home</a>
-            <a href="../index.html#about" class="segmented-btn">Skills</a>
-            <a href="../index.html#projects" class="segmented-btn active">Projects</a>
-            <a href="../index.html#misc" class="segmented-btn">Misc</a>
-            <a href="../index.html#socials" class="segmented-btn">Socials</a>
+          <m3e-button-group variant="connected" class="hidden md:flex">
+            <m3e-button variant="tonal" toggle href="../index.html">Home</m3e-button>
+            <m3e-button variant="tonal" toggle href="../index.html#about">Skills</m3e-button>
+            <m3e-button variant="tonal" toggle href="../index.html#projects" selected>Projects</m3e-button>
+            <m3e-button variant="tonal" toggle href="../index.html#misc">Misc</m3e-button>
+            <m3e-button variant="tonal" toggle href="../index.html#socials">Socials</m3e-button>
+          </m3e-button-group>
+          <m3e-icon-button id="mobile-menu-button" class="md:hidden" variant="tonal" toggle aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+            <m3e-icon variant="rounded" name="menu"></m3e-icon>
+            <m3e-icon slot="selected" variant="rounded" name="close"></m3e-icon>
+          </m3e-icon-button>
+        </nav>
+        <div id="mobile-menu" class="md:hidden">
+          <div>
+            <div class="container mx-auto px-4 pb-4 flex flex-col items-stretch gap-1">
+              <m3e-button variant="text" href="../index.html">Home</m3e-button>
+              <m3e-button variant="text" href="../index.html#about">Skills</m3e-button>
+              <m3e-button variant="text" href="../index.html#projects">Projects</m3e-button>
+              <m3e-button variant="text" href="../index.html#misc">Misc</m3e-button>
+              <m3e-button variant="text" href="../index.html#socials">Socials</m3e-button>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </header>
 
-    <section class="py-12 bg-surfaceContainerLow">
-      <div class="flex h-screen items-center justify-center">
-        <iframe
-          width="90%"
-          height="90%"
-          src="https://www.youtube.com/embed/ZQlAZuxRyVI?si=_oRSqMFBjC2RsFLi"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </section>
+            <main>
+        <!--* Demo video *-->
+        <section class="pt-32 pb-16">
+          <div class="container mx-auto px-6 max-w-5xl">
+            <h1 class="type-headline text-4xl md:text-6xl mb-4 text-center reveal">Ann Arbor Go</h1>
+            <p class="section-subtitle text-center text-xl mb-10 reveal">Pokémon Go-style game about planting trees and fending off squirrels all around Ann Arbor.</p>
+            <div class="video-frame reveal">
+              <iframe
+                src="https://www.youtube.com/embed/ZQlAZuxRyVI?si=_oRSqMFBjC2RsFLi"
+                title="Ann Arbor Go demo video"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </section>
 
-    <!--* Back to Home *-->
-    <section class="py-12 bg-surfaceContainer">
-      <div class="container mx-auto px-6 text-center">
-        <md-filled-button href="../index.html" has-icon><md-icon slot="icon" class="btn-icon-circle">arrow_back</md-icon> Back to Home</md-filled-button>
-      </div>
-    </section>
-    <!--! Scripts !-->
-    <script src="../js/ui.js"></script>
-    <script type="module" src="../js/theme.js"></script>
+        <!--* Back links *-->
+        <section class="py-12">
+          <div class="container mx-auto px-6 flex flex-wrap justify-center gap-3">
+            <m3e-button variant="filled" href="../projects.html#course"><m3e-icon slot="icon" variant="rounded" name="arrow_back"></m3e-icon>Back to Projects</m3e-button>
+            <m3e-button variant="outlined" href="../index.html"><m3e-icon slot="icon" variant="rounded" name="home"></m3e-icon>Home</m3e-button>
+          </div>
+        </section>
+      </main>
+
+      <!--* Footer *-->
+      <footer class="py-10 text-center text-sm text-onSurfaceVariant">© Sarraf Ahmed</footer>
+    </m3e-theme>
   </body>
 </html>
