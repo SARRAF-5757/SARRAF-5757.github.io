@@ -190,10 +190,16 @@ m3e-card[actionable] {
   color: var(--md-sys-color-on-primary-container);
 }
 
-/* Brand icons from Font Awesome sized like Material Symbols inside M3E buttons. */
-m3e-button i[slot="icon"] {
-  font-size: 18px;
-  line-height: 1;
+/* Brand icons (inline SVG sprite at the top of <body>) take the current text color. */
+.brand-icon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
+m3e-button .brand-icon[slot="icon"] {
+  width: 18px;
+  height: 18px;
 }
 
 /*! ---------------------------------------------------- TYPOGRAPHY ---- !*/
@@ -409,7 +415,7 @@ html[data-scheme="dark"] .um-pill {
   width: 100%;
 }
 
-/* dev.png is a portrait (691×889) whose head sits left of center. Give it a smaller box
+/* dev.webp is a portrait (560×720) whose head sits left of center. Give it a smaller box
    (less zoomed) placed right of center; `top`/`left` move it, `width`/`height` zoom it.
    A transform here would escape the shape's clip-path in Chromium. */
 .avatar-shape img {
@@ -543,6 +549,14 @@ html[data-scheme="dark"] .invert-on-dark {
   --m3e-shape-container-color: var(--md-sys-color-on-primary-fixed-variant);
 }
 
+/* Tailwind's base styles set img { height: auto }, which would beat M3E's slotted
+   sizing; keep project images filling (and cropped to) their shape. */
+.project-shape img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .project-card:hover .project-shape,
 .project-card:focus-within .project-shape {
   rotate: -6deg;
@@ -585,7 +599,7 @@ html[data-scheme="dark"] .invert-on-dark {
 
 .course-badge m3e-icon,
 .tile-shape m3e-icon,
-.tile-shape i {
+.tile-shape .brand-icon {
   position: absolute;
   inset: 0;
   margin: auto;
@@ -648,7 +662,7 @@ html[data-scheme="dark"] .invert-on-dark {
 }
 
 .tile-shape m3e-icon,
-.tile-shape i {
+.tile-shape .brand-icon {
   width: 1em;
   height: 1em;
   display: grid;
@@ -664,8 +678,8 @@ html[data-scheme="dark"] .invert-on-dark {
 }
 
 /* Counter-rotate the glyph so it stays upright while the shape spins. */
-.tile:hover .tile-shape :is(m3e-icon, i),
-.tile:focus-visible .tile-shape :is(m3e-icon, i) {
+.tile:hover .tile-shape :is(m3e-icon, .brand-icon),
+.tile:focus-visible .tile-shape :is(m3e-icon, .brand-icon) {
   rotate: -180deg;
 }
 

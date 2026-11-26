@@ -1,3 +1,48 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/*
+ * Tailwind CSS v4 entry point (compiled to css/tailwind.css by `bun run build`).
+ * Replaces the old tailwind.config.js: everything is configured here in CSS.
+ */
+
+/* Only scan the files that contain class names. Leaving out js/dist keeps the
+   bundled M3E library from generating thousands of junk utilities. */
+@import "tailwindcss" source(none);
+@source "../*.html";
+@source "../projects/*.html";
+@source "../js/*.js";
+
+/*
+ * Material 3 color roles. The values are CSS variables written at runtime by
+ * <m3e-theme>, so `inline` makes utilities reference them directly
+ * (bg-primary -> background-color: var(--md-sys-color-primary)).
+ * Opacity modifiers like bg-surfaceContainer/80 work out of the box in v4.
+ */
+@theme inline {
+  --color-primary: var(--md-sys-color-primary);
+  --color-onPrimary: var(--md-sys-color-on-primary);
+  --color-primaryContainer: var(--md-sys-color-primary-container);
+  --color-onPrimaryContainer: var(--md-sys-color-on-primary-container);
+  --color-secondary: var(--md-sys-color-secondary);
+  --color-onSecondary: var(--md-sys-color-on-secondary);
+  --color-secondaryContainer: var(--md-sys-color-secondary-container);
+  --color-onSecondaryContainer: var(--md-sys-color-on-secondary-container);
+  --color-tertiary: var(--md-sys-color-tertiary);
+  --color-onTertiary: var(--md-sys-color-on-tertiary);
+  --color-tertiaryContainer: var(--md-sys-color-tertiary-container);
+  --color-onTertiaryContainer: var(--md-sys-color-on-tertiary-container);
+  --color-background: var(--md-sys-color-background);
+  --color-onBackground: var(--md-sys-color-on-background);
+  --color-surface: var(--md-sys-color-surface);
+  --color-onSurface: var(--md-sys-color-on-surface);
+  --color-onSurfaceVariant: var(--md-sys-color-on-surface-variant);
+  --color-surfaceContainerLowest: var(--md-sys-color-surface-container-lowest);
+  --color-surfaceContainerLow: var(--md-sys-color-surface-container-low);
+  --color-surfaceContainer: var(--md-sys-color-surface-container);
+  --color-surfaceContainerHigh: var(--md-sys-color-surface-container-high);
+  --color-surfaceContainerHighest: var(--md-sys-color-surface-container-highest);
+  --color-inverseSurface: var(--md-sys-color-inverse-surface);
+  --color-inverseOnSurface: var(--md-sys-color-inverse-on-surface);
+  --color-outline: var(--md-sys-color-outline);
+  --color-outlineVariant: var(--md-sys-color-outline-variant);
+
+  --font-sans: "Google Sans Flex", "Google Sans", Roboto, system-ui, sans-serif;
+}

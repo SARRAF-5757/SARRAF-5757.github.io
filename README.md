@@ -11,4 +11,8 @@ bun install
 bun start
 ```
 
-`bun start` rebuilds `css/tailwind.css` and `js/dist/main.js`, then serves the site at http://localhost:3000.
+`bun start` rebuilds the site, then serves it at http://localhost:3000. The build:
+
+1. `scripts/sync-icons.js` finds every `<m3e-icon name="...">` and updates the Material Symbols font link so only those icons are downloaded.
+2. Tailwind CSS v4 compiles `css/input.css` (the theme config lives there) to `css/tailwind.css`.
+3. Bun bundles `js/main.js` (M3E components + site logic) to `js/dist/main.js`.

@@ -51,7 +51,11 @@ function setFavicon(hex) {
 function cacheTokens() {
   const cs = getComputedStyle(root);
   const css = CACHED_TOKENS.map((t) => `${t}:${cs.getPropertyValue(t).trim()}`).join(";");
-  write(STORAGE.cache, JSON.stringify({ color: savedColor(), dark: isDark(), css }));
+  // Tint the mobile browser bar to match the nav surface.
+  const themeColor = cs.getPropertyValue("--md-sys-color-surface-container").trim();
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta && themeColor) meta.content = themeColor;
+  write(STORAGE.cache, JSON.stringify({ color: savedColor(), dark: isDark(), css, themeColor }));
   // The pre-paint cache has done its job; drop it so it can't shadow later changes.
   document.getElementById("theme-cache")?.remove();
 }

@@ -7,6 +7,19 @@
     <meta name="description" content="Computer lab simulator in Unreal Engine." />
     <meta name="google-site-verification" content="PkKrU3PuTkaCVB8ARXjai9_z0JlMDJC0JoH47FNW--A" />
     <meta name="msvalidate.01" content="D8829E16D8934017D22C3962E4EA332B" />
+    <!-- Link previews (LinkedIn, Discord, iMessage, X) + mobile browser bar color -->
+    <link rel="canonical" href="https://sarraf-5757.github.io/projects/VisLab_Visualized.html" />
+    <meta name="theme-color" content="#121414" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sarraf Ahmed" />
+    <meta property="og:title" content="Sarraf Ahmed | VisLab Visualized" />
+    <meta property="og:description" content="Computer lab simulator in Unreal Engine." />
+    <meta property="og:url" content="https://sarraf-5757.github.io/projects/VisLab_Visualized.html" />
+    <meta property="og:image" content="https://sarraf-5757.github.io/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Sarraf Ahmed, CS student at the University of Michigan" />
+    <meta name="twitter:card" content="summary_large_image" />
     <!-- Pre-paint: apply the saved light/dark choice and cached theme tokens before anything renders. -->
     <script>
       (function () {
@@ -20,6 +33,7 @@
             st.id = "theme-cache";
             st.textContent = "html{" + c.css + "}";
             document.head.appendChild(st);
+            if (c.themeColor) document.querySelector('meta[name="theme-color"]').content = c.themeColor;
           }
         } catch (e) {}
       })();
@@ -28,9 +42,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wdth,wght,ROND@6..144,75..125,100..1000,0..100&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,arrow_back,arrow_downward,arrow_forward,close,code,dark_mode,group,history_edu,home,keyboard,language,light_mode,menu,monitoring,open_in_new,palette,park,photo_camera,photo_size_select_large,psychology,public,school,skateboarding,terminal,traffic,travel_explore,view_in_ar,work&display=block" />
     <link rel="stylesheet" href="../css/tailwind.css" />
     <link rel="stylesheet" href="../css/styles.css" />
     <script type="module" src="../js/dist/main.js"></script>

@@ -7,6 +7,19 @@
     <meta name="description" content="Technical, fun, and course projects by Sarraf Ahmed." />
     <meta name="google-site-verification" content="PkKrU3PuTkaCVB8ARXjai9_z0JlMDJC0JoH47FNW--A" />
     <meta name="msvalidate.01" content="D8829E16D8934017D22C3962E4EA332B" />
+    <!-- Link previews (LinkedIn, Discord, iMessage, X) + mobile browser bar color -->
+    <link rel="canonical" href="https://sarraf-5757.github.io/projects.html" />
+    <meta name="theme-color" content="#121414" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sarraf Ahmed" />
+    <meta property="og:title" content="Sarraf Ahmed | Projects" />
+    <meta property="og:description" content="Technical, fun, and course projects by Sarraf Ahmed." />
+    <meta property="og:url" content="https://sarraf-5757.github.io/projects.html" />
+    <meta property="og:image" content="https://sarraf-5757.github.io/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Sarraf Ahmed, CS student at the University of Michigan" />
+    <meta name="twitter:card" content="summary_large_image" />
     <!-- Pre-paint: apply the saved light/dark choice and cached theme tokens before anything renders. -->
     <script>
       (function () {
@@ -22,6 +35,7 @@
             st.id = "theme-cache";
             st.textContent = "html{" + c.css + "}";
             document.head.appendChild(st);
+            if (c.themeColor) document.querySelector('meta[name="theme-color"]').content = c.themeColor;
           }
         } catch (e) {}
       })();
@@ -30,14 +44,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wdth,wght,ROND@6..144,75..125,100..1000,0..100&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,arrow_back,arrow_downward,arrow_forward,close,code,dark_mode,group,history_edu,home,keyboard,language,light_mode,menu,monitoring,open_in_new,palette,park,photo_camera,photo_size_select_large,psychology,public,school,skateboarding,terminal,traffic,travel_explore,view_in_ar,work&display=block" />
     <link rel="stylesheet" href="css/tailwind.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <script type="module" src="js/dist/main.js"></script>
   </head>
   <body>
+    <!--! Brand icon sprite: use with <svg class="brand-icon"><use href="#icon-NAME"></use></svg>.
+          GitHub, Devpost, Discord, Instagram: Simple Icons (CC0). LinkedIn: Font Awesome Free (CC BY 4.0, fontawesome.com). !-->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
+      <symbol id="icon-github" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" /></symbol>
+      <symbol id="icon-devpost" viewBox="0 0 24 24"><path d="M6.002 1.61L0 12.004 6.002 22.39h11.996L24 12.004 17.998 1.61zm1.593 4.084h3.947c3.605 0 6.276 1.695 6.276 6.31 0 4.436-3.21 6.302-6.456 6.302H7.595zm2.517 2.449v7.714h1.241c2.646 0 3.862-1.55 3.862-3.861.009-2.569-1.096-3.853-3.767-3.853Z" /></symbol>
+      <symbol id="icon-discord" viewBox="0 0 24 24"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z" /></symbol>
+      <symbol id="icon-instagram" viewBox="0 0 24 24"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" /></symbol>
+      <symbol id="icon-linkedin" viewBox="0 0 448 512"><path d="M416 32L31.9 32C14.3 32 0 46.5 0 64.3L0 447.7C0 465.5 14.3 480 31.9 480L416 480c17.6 0 32-14.5 32-32.3l0-383.4C448 46.5 433.6 32 416 32zM135.4 416l-66.4 0 0-213.8 66.5 0 0 213.8-.1 0zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77zM384.3 416l-66.4 0 0-104c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9l0 105.8-66.4 0 0-213.8 63.7 0 0 29.2 .9 0c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9l0 117.2z" /></symbol>
+    </svg>
     <!-- <m3e-theme> must stay the direct child of <body>: it writes every color/motion token onto <html>.
          Saved color + light/dark choice are applied by js/prefs.js; the left theme rail is injected by js/site.js. -->
     <m3e-theme id="theme" color="#4CAF50" variant="vibrant" scheme="auto" motion="expressive">
@@ -87,14 +108,14 @@
               <m3e-card class="project-card reveal" data-morph>
                 <div class="project-card-inner">
                   <m3e-shape class="project-shape logo-backdrop" name="square" data-hover-shape="gem">
-                    <img src="https://github.com/SARRAF-5757/Waqt/blob/master/images/icon.png?raw=true" alt="Waqt app icon" loading="lazy" decoding="async" />
+                    <img width="800" height="800" src="images/projects/waqt.webp" alt="Waqt app icon" loading="lazy" decoding="async" />
                   </m3e-shape>
                   <div class="project-body">
                     <h3 class="text-2xl font-bold">Waqt</h3>
                     <p>A simple React Native app for helping you improve your prayer habits.</p>
                     <div class="project-actions">
                       <m3e-button variant="tonal" href="https://github.com/SARRAF-5757/Waqt" target="_blank" rel="noopener"
-                        ><i slot="icon" class="fa-brands fa-github" aria-hidden="true"></i>View on GitHub</m3e-button
+                        ><svg slot="icon" class="brand-icon" aria-hidden="true"><use href="#icon-github"></use></svg>View on GitHub</m3e-button
                       >
                     </div>
                   </div>
@@ -105,14 +126,14 @@
               <m3e-card class="project-card reveal" data-morph>
                 <div class="project-card-inner">
                   <m3e-shape class="project-shape" name="square" data-hover-shape="pill">
-                    <img src="images/OMP-Wizard.png" alt="OMP-Wizard terminal setup wizard" loading="lazy" decoding="async" />
+                    <img width="532" height="532" src="images/projects/omp-wizard.webp" alt="OMP-Wizard terminal setup wizard" loading="lazy" decoding="async" />
                   </m3e-shape>
                   <div class="project-body">
                     <h3 class="text-2xl font-bold">OMP-Wizard</h3>
                     <p>A TUI setup wizard for the Oh-My-Posh prompt engine.</p>
                     <div class="project-actions">
                       <m3e-button variant="tonal" href="https://github.com/SARRAF-5757/OMP-Wizard" target="_blank" rel="noopener"
-                        ><i slot="icon" class="fa-brands fa-github" aria-hidden="true"></i>View on GitHub</m3e-button
+                        ><svg slot="icon" class="brand-icon" aria-hidden="true"><use href="#icon-github"></use></svg>View on GitHub</m3e-button
                       >
                     </div>
                   </div>
@@ -123,14 +144,14 @@
               <m3e-card class="project-card reveal" data-morph>
                 <div class="project-card-inner">
                   <m3e-shape class="project-shape" name="square" data-hover-shape="sunny">
-                    <img src="images/mac-performance-monitor.png" alt="Mac Performance Monitor Raycast extension" loading="lazy" decoding="async" />
+                    <img width="800" height="800" src="images/projects/mac-performance-monitor.webp" alt="Mac Performance Monitor Raycast extension" loading="lazy" decoding="async" />
                   </m3e-shape>
                   <div class="project-body">
                     <h3 class="text-2xl font-bold">Mac Performance Monitor</h3>
                     <p>A Raycast extension to quickly glance at CPU, memory, GPU, disk, power, and thermal history directly from Raycast.</p>
                     <div class="project-actions">
                       <m3e-button variant="tonal" href="https://github.com/SARRAF-5757/raycast-mac-performance-monitor" target="_blank" rel="noopener"
-                        ><i slot="icon" class="fa-brands fa-github" aria-hidden="true"></i>View on GitHub</m3e-button
+                        ><svg slot="icon" class="brand-icon" aria-hidden="true"><use href="#icon-github"></use></svg>View on GitHub</m3e-button
                       >
                     </div>
                   </div>
@@ -141,14 +162,14 @@
               <m3e-card class="project-card reveal" data-morph>
                 <div class="project-card-inner">
                   <m3e-shape class="project-shape" name="square" data-hover-shape="4-leaf-clover">
-                    <img src="https://github.com/ColeCurrent/Wordle-Bot/blob/main/public/favicon.png?raw=true" alt="Wordle Bot logo" loading="lazy" decoding="async" />
+                    <img width="800" height="800" src="images/projects/wordle-bot.webp" alt="Wordle Bot logo" loading="lazy" decoding="async" />
                   </m3e-shape>
                   <div class="project-body">
                     <h3 class="text-2xl font-bold">Wordle Bot</h3>
                     <p>An algorithm that solves Wordle faster than most humans. Want to challenge yourself? Give the Wordle Bot a try!</p>
                     <div class="project-actions">
                       <m3e-button variant="tonal" href="https://github.com/ColeCurrent/Wordle-Bot" target="_blank" rel="noopener"
-                        ><i slot="icon" class="fa-brands fa-github" aria-hidden="true"></i>View on GitHub</m3e-button
+                        ><svg slot="icon" class="brand-icon" aria-hidden="true"><use href="#icon-github"></use></svg>View on GitHub</m3e-button
                       >
                       <m3e-button variant="outlined" href="https://devpost.com/software/wordle-bot-av9s34" target="_blank" rel="noopener"
                         ><m3e-icon slot="icon" variant="rounded" name="open_in_new"></m3e-icon>View on Devpost</m3e-button
@@ -162,14 +183,14 @@
               <m3e-card class="project-card reveal" data-morph>
                 <div class="project-card-inner">
                   <m3e-shape class="project-shape" name="square" data-hover-shape="4-sided-cookie">
-                    <img src="https://shop.freewili.com/cdn/shop/files/Free_WiLi_3qrtr.png" alt="FreeWili embedded device" loading="lazy" decoding="async" />
+                    <img width="800" height="800" src="images/projects/freewili.webp" alt="FreeWili embedded device" loading="lazy" decoding="async" />
                   </m3e-shape>
                   <div class="project-body">
                     <h3 class="text-2xl font-bold">FreeWili-IR</h3>
                     <p>A fusion of the games “Whack-a-Mole” &amp; “Keep Talking” on the FreeWili embedded platform.</p>
                     <div class="project-actions">
                       <m3e-button variant="tonal" href="https://github.com/SARRAF-5757/FreeWil-iR" target="_blank" rel="noopener"
-                        ><i slot="icon" class="fa-brands fa-github" aria-hidden="true"></i>View on GitHub</m3e-button
+                        ><svg slot="icon" class="brand-icon" aria-hidden="true"><use href="#icon-github"></use></svg>View on GitHub</m3e-button
                       >
                     </div>
                   </div>
@@ -180,8 +201,8 @@
               <m3e-card class="project-card reveal" data-morph>
                 <div class="project-card-inner">
                   <m3e-shape class="project-shape" name="square" data-hover-shape="pill">
-                    <img
-                      src="https://github.com/Wheel-A-Way/Wheel-A-Way.github.io/blob/main/assets/rocketship.jpeg?raw=true"
+                    <img width="800" height="800"
+                      src="images/projects/wheel-a-way.webp"
                       alt="Wheel-A-Way VR experience artwork"
                       loading="lazy"
                       decoding="async"
@@ -203,8 +224,8 @@
               <m3e-card class="project-card reveal" data-morph>
                 <div class="project-card-inner">
                   <m3e-shape class="project-shape" name="square" data-hover-shape="6-sided-cookie">
-                    <img
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5qFp9e-gwfiYQ7VJuOZKwx2quySu9T57Flte81yoUuV7WsMzf8gZSk91r&amp;s=10"
+                    <img width="301" height="334"
+                      src="images/projects/kelsey-museum.webp"
                       alt="Kelsey Museum of Archaeology"
                       loading="lazy"
                       decoding="async"
@@ -215,7 +236,7 @@
                     <p>An AR museum experience built for the Kelsey Museum of Archaeology.</p>
                     <div class="project-actions">
                       <m3e-button variant="tonal" href="https://github.com/altrealityinitiative/Kelsey-Museum-Virtual-Experience" target="_blank" rel="noopener"
-                        ><i slot="icon" class="fa-brands fa-github" aria-hidden="true"></i>View on GitHub</m3e-button
+                        ><svg slot="icon" class="brand-icon" aria-hidden="true"><use href="#icon-github"></use></svg>View on GitHub</m3e-button
                       >
                       <m3e-button
                         variant="outlined"
@@ -241,14 +262,14 @@
               <m3e-card class="project-card reveal" data-morph>
                 <div class="project-card-inner">
                   <m3e-shape class="project-shape" name="square" data-hover-shape="4-leaf-clover">
-                    <img src="images/BlackGlass.png" alt="BlackGlass browser theme" loading="lazy" decoding="async" />
+                    <img width="768" height="800" src="images/projects/blackglass.webp" alt="BlackGlass browser theme" loading="lazy" decoding="async" />
                   </m3e-shape>
                   <div class="project-body">
                     <h3 class="text-2xl font-bold">BlackGlass</h3>
                     <p>An opinionated browser skin for the Firefox-based Zen browser that brings transparency and pleasant roundness to your web experience.</p>
                     <div class="project-actions">
                       <m3e-button variant="tonal" href="https://github.com/SARRAF-5757/BlackGlass" target="_blank" rel="noopener"
-                        ><i slot="icon" class="fa-brands fa-github" aria-hidden="true"></i>View on GitHub</m3e-button
+                        ><svg slot="icon" class="brand-icon" aria-hidden="true"><use href="#icon-github"></use></svg>View on GitHub</m3e-button
                       >
                     </div>
                   </div>
@@ -259,14 +280,14 @@
               <m3e-card class="project-card reveal" data-morph>
                 <div class="project-card-inner">
                   <m3e-shape class="project-shape" name="square" data-hover-shape="slanted">
-                    <img src="images/saricons.png" alt="Saricons icon pack" loading="lazy" decoding="async" />
+                    <img width="512" height="512" src="images/projects/saricons.webp" alt="Saricons icon pack" loading="lazy" decoding="async" />
                   </m3e-shape>
                   <div class="project-body">
                     <h3 class="text-2xl font-bold">Saricons</h3>
                     <p>Fork of an Android icon pack app with further customizations and added icon support.</p>
                     <div class="project-actions">
                       <m3e-button variant="tonal" href="https://github.com/SARRAF-5757/Saricons" target="_blank" rel="noopener"
-                        ><i slot="icon" class="fa-brands fa-github" aria-hidden="true"></i>View on GitHub</m3e-button
+                        ><svg slot="icon" class="brand-icon" aria-hidden="true"><use href="#icon-github"></use></svg>View on GitHub</m3e-button
                       >
                     </div>
                   </div>
@@ -277,7 +298,7 @@
               <m3e-card class="project-card reveal" data-morph>
                 <div class="project-card-inner">
                   <m3e-shape class="project-shape" name="square" data-hover-shape="6-sided-cookie">
-                    <img src="images/mi-band.png" alt="Xiaomi Mi Band watch faces" loading="lazy" decoding="async" />
+                    <img width="800" height="800" src="images/projects/mi-band.webp" alt="Xiaomi Mi Band watch faces" loading="lazy" decoding="async" />
                   </m3e-shape>
                   <div class="project-body">
                     <h3 class="text-2xl font-bold">Xiaomi Mi Band Resources</h3>
